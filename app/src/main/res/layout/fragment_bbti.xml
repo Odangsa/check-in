@@ -21,7 +21,7 @@
         android:textColor="@color/navy"
         android:drawableLeft="@drawable/icon_bookmark_checked"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"></TextView>
 
     <ImageView
         android:layout_width="match_parent"
@@ -32,7 +32,7 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginTop="10dp"
-        />
+        ></ImageView>
 
 
     <LinearLayout
@@ -51,7 +51,7 @@
             android:textStyle="bold"
             android:textColor="@color/navy"
             android:layout_marginLeft="25dp"
-            android:gravity="bottom"/>
+            android:gravity="bottom"></TextView>
 
         <TextView
             android:layout_width="match_parent"
@@ -61,7 +61,7 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:textColor="@color/gray"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"></TextView>
 
     </LinearLayout>
 
@@ -72,20 +72,19 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
         android:layout_weight="0.5"
-        android:backgroundTint="@drawable/btn_round_navy_filled"
         android:text="시작하기 →"
         android:textColor="@color/white"
         android:textSize="20dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"></Button>
 
     <!-- navbar로 변경 예정 -->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"/>
+        android:layout_weight="0.5"></View>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"></View>
 </LinearLayout>

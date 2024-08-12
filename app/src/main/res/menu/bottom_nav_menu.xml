@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/navigation_home"
+    android:icon="@drawable/home_selector"
+    android:title="홈"/>
+<item
+    android:id="@+id/navigation_bbti"
+    android:icon="@drawable/bbti_selector"
+    android:title="BBTI"/>
+<item
+    android:id="@+id/navigation_today_book"
+    android:icon="@drawable/today_book_selector"
+    android:title="오늘의 책"/>
+<item
+    android:id="@+id/navigation_person"
+    android:icon="@drawable/person_selector"
+    android:title="마이 페이지"/>
+</menu>
