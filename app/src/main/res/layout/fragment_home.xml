@@ -2,7 +2,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -258,17 +259,6 @@
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:gravity="center_vertical"/>
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:text="모두보기"
-                    android:textSize="13dp"
-                    android:textColor="@color/black"
-                    android:backgroundTint="@color/gray_light"/>
 
             </LinearLayout>
 

@@ -23,4 +23,68 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"></TextView>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:src="@drawable/img_bookbti_tmp"
+        android:scaleType="centerCrop"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="■ 파도와 한 몸! 파도타는 서퍼🏄‍♂️"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        android:textColor="@color/navy"
+        android:paddingLeft="25dp"
+        android:paddingTop="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="0.1"
+            android:src="@drawable/icon_bookmark"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.9"
+            android:textSize="15dp"
+            android:textColor="@color/gray_dark"
+            android:text="이 유형은 어쩌구 저쩌구 저쩌구 어니ㅏ어리나ㅓㅇ뢰마ㅓㄴ욀ㅇ나ㅓ리모나ㅓㅇ룀"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="0.1"
+            android:src="@drawable/icon_bookmark"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.9"
+            android:textSize="15dp"
+            android:textColor="@color/gray_dark"
+            android:text="이 유형은 어쩌구 저쩌구 저쩌구 어니ㅏ어리나ㅓㅇ뢰마ㅓㄴ욀ㅇ나ㅓ리모나ㅓㅇ룀"/>
+    </LinearLayout>
+
 </LinearLayout>
