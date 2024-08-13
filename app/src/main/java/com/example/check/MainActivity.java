@@ -34,6 +34,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.check.fragments.HomeFragment;
 import com.example.check.fragments.BBTIFragment;
+import com.example.check.fragments.TodayBookFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -57,9 +58,10 @@ public class MainActivity extends AppCompatActivity {
             int itemId = item.getItemId();
             if (itemId == R.id.navigation_home) {
                 selectedFragment = new HomeFragment();
-            }
-            else if (itemId == R.id.navigation_bbti) {
+            } else if (itemId == R.id.navigation_bbti) {
                 selectedFragment = new BBTIFragment();
+            } else if (itemId == R.id.navigation_today_book) {
+                selectedFragment = new TodayBookFragment();
             }
             // 다른 메뉴 아이템에 대한 처리...
 

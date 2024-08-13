@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Check"
         tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".recommandation_2"
             android:exported="true">
@@ -30,15 +41,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".Main2_stamp"
             android:exported="true" />
@@ -51,6 +54,11 @@
         <activity
             android:name=".bookbti_1"
             android:exported="true" />
+
+        <meta-data
+            android:name="com.kakao.vectormap.APP_KEY"
+            android:value="125a750250f0d2368be4baefe6c8b349"/>
     </application>
+
 
 </manifest>
