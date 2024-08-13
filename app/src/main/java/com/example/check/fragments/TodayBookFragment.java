@@ -1,7 +1,7 @@
 package com.example.check.fragments;
 
 
-import com.example.check.fragments.todaybook.BookDetailFragment;
+import com.example.check.fragments.todayBook.BookDetailFragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
