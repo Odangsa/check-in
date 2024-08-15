@@ -20,10 +20,10 @@ region_dict = {'서울':11, '부산':21, '대구':22, '인천':23, '광주': 24,
 
 def getlibraries(usr_addr: str, isbn: str):
     conn = HTTPConnection('data4library.kr')
-    authKey = settings.LIB_AUTH_TOKEN
+    auth_key = settings.LIB_AUTH_TOKEN
     
     # 도서 상세정보 요청
-    body = f'authKey={authKey}&isbn13={isbn}'
+    body = f'authKey={auth_key}&isbn13={isbn}'
     conn.request('GET', f'/api/srchDtlList?{body}', headers={'Host': 'data4library.kr'})
     response = conn.getresponse()
     r = response.read().decode()
@@ -40,7 +40,7 @@ def getlibraries(usr_addr: str, isbn: str):
 
     # 도서 소장 Library 목록 요청
     region = region_dict[usr_addr.split()[0]]
-    body = f'authKey={authKey}&isbn={isbn}&region={region}&pageSize=1500'
+    body = f'authKey={auth_key}&isbn={isbn}&region={region}&pageSize=1500'
     conn.request('GET', f'/api/libSrchByBook?{body}', headers={'Host': 'data4library.kr'})
     response = conn.getresponse()
     r = response.read().decode()

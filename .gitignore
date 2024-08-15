@@ -4,3 +4,4 @@ __pycache__
 *.pyc
 kakaoMobilityRestKey.txt
 secrets.json
+.DS_Store
