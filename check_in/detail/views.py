@@ -7,7 +7,7 @@ import requests
 import json
 from django.conf import settings
 
-class DetailsView(View):
+class DetailView(View):
     def get(self, request):
         addr = request.GET['addr']
         isbn = request.GET['isbn']
