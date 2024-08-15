@@ -3,3 +3,4 @@ kakaoRestKey.txt
 __pycache__
 *.pyc
 kakaoMobilityRestKey.txt
+secrets.json

@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
+import json
+from django.core.exceptions import ImproperlyConfigured
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,6 +23,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+secret_file = os.path.join(BASE_DIR, 'secrets.json')
+
+with open(secret_file) as f:
+    secrets = json.loads(f.read())
+
+    def get_secret(setting, secrets=secrets):
+        try:
+            return secrets[setting]
+        except KeyError:
+            error_msg = "Set te {} environment variable".format(setting)
+            raise ImproperlyConfigured(error_msg)
+
+    KAKAO_REST_TOKEN = get_secret('KAKAO_REST_TOKEN')
+    KAKAO_MOBILITY_TOKEN = get_secret('KAKAO_MOBILITY_TOKEN')
+    LIB_AUTH_TOKEN = get_secret('LIB_AUTH_TOKEN')
+
 SECRET_KEY = 'django-insecure-#)mr_a#@9&_jy)s#axdyeusrcc=5$z^wo!g1&58-65yue6hzkw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -37,7 +56,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
 ]
 
 MIDDLEWARE = [
