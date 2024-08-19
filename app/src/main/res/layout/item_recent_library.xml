@@ -4,19 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/background_gray_stroke"
-    android:padding="10dp"
+    android:padding="8dp"
     android:layout_marginTop="2dp"
     android:layout_marginBottom="2dp">
 
     <ImageView
         android:id="@+id/library_image"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/img_cn_library"
+        android:layout_width="48dp"
+        android:layout_height="54dp"
         android:scaleType="centerCrop"
+        android:src="@drawable/img_cn_library"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/library_name"
