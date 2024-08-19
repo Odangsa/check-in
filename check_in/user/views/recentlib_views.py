@@ -16,5 +16,4 @@ class RecentLibView(View):
             recent_libraries.append({"library" : data['libraryname'], "visit_count": data['count']})
         
         response = {'userid': userid, 'recent_libraries': recent_libraries}
-        print(response)
         return JsonResponse(response, status=200)
