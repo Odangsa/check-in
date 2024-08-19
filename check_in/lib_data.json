@@ -1,0 +1,162 @@
+[
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-01",
+      "libraryname": "구로꿈나무어린이도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-02",
+      "libraryname": "서울특별시교육청구로도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-03",
+      "libraryname": "금천구립가산도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-04",
+      "libraryname": "금천구립가산도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-05",
+      "libraryname": "구로꿈나무어린이도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-06",
+      "libraryname": "서울특별시교육청구로도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-07",
+      "libraryname": "구로꿈나무어린이도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-08",
+      "libraryname": "서울특별시교육청구로도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-09",
+      "libraryname": "서울특별시교육청구로도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-10",
+      "libraryname": "금천구립가산도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-11",
+      "libraryname": "구로꿈나무어린이도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-12",
+      "libraryname": "서울특별시교육청구로도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-13",
+      "libraryname": "금천구립가산도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-14",
+      "libraryname": "서울특별시교육청구로도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-15",
+      "libraryname": "금천구립가산도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-16",
+      "libraryname": "서울특별시교육청구로도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-17",
+      "libraryname": "금천구립가산도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-18",
+      "libraryname": "금천구립가산도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-19",
+      "libraryname": "구로꿈나무어린이도서관"
+    }
+  },
+  {
+    "model": "user.visit",
+    "fields": {
+      "userid": "junho",
+      "visitdate": "2024-01-20",
+      "libraryname": "서울특별시교육청구로도서관"
+    }
+  }
+]
