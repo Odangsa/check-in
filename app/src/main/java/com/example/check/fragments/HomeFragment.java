@@ -100,7 +100,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void addLibraryView(String name, int visitCount) {
-        View libraryView = getLayoutInflater().inflate(R.layout.item_recent_library, recentLibrariesContainer, false);
+        View libraryView = getLayoutInflater().inflate(R.layout.item_home_recent_library, recentLibrariesContainer, false);
 
         ImageView libraryImage = libraryView.findViewById(R.id.library_image);
         TextView libraryName = libraryView.findViewById(R.id.library_name);
