@@ -12,6 +12,14 @@ public class BookDetail {
     String description;
     List<Library> libs;
 
+    public BookDetail(String ISBN, String bookname, String authors, String publisher, String publishyear, String bookimageURL, String description, List<Library> libs) {
+        this.ISBN = ISBN;
+        this.bookname = bookname;
+        this.authors = authors;
+        this.publisher = publisher;
+        this.publishyear = publishyear;
+    }
+
     public String getISBN() {
         return ISBN;
     }

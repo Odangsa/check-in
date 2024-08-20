@@ -1,12 +1,14 @@
 package com.example.check.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.widget.SearchView;
 import com.bumptech.glide.Glide;
@@ -19,6 +21,7 @@ import java.nio.charset.StandardCharsets;
 
 public class HomeFragment extends Fragment {
 
+    private static final String TAG = "HomeFragment";
     private LinearLayout recentLibrariesContainer;
     private LinearLayout recommendedBooksContainer;
 
@@ -47,10 +50,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        // 테스트 메서드 호출
+        testDataLoading();
+
         return view;
     }
 
     private void loadRecentLibraries() {
+        Log.d(TAG, "Loading recent libraries");
         try {
             String jsonString = loadJSONFromRaw(R.raw.lib);
             JSONObject jsonObject = new JSONObject(jsonString);
@@ -61,25 +68,17 @@ public class HomeFragment extends Fragment {
                 String name = libraryObject.getString("library");
                 int visitCount = libraryObject.getInt("visit_count");
 
-                View libraryView = getLayoutInflater().inflate(R.layout.item_recent_library, recentLibrariesContainer, false);
-
-                ImageView libraryImage = libraryView.findViewById(R.id.library_image);
-                TextView libraryName = libraryView.findViewById(R.id.library_name);
-                TextView visitCountView = libraryView.findViewById(R.id.visit_count);
-
-                // TODO: Set the correct image for each library
-                libraryImage.setImageResource(R.drawable.img_cn_library);
-                libraryName.setText(name);
-                visitCountView.setText("방문횟수: " + visitCount);
-
-                recentLibrariesContainer.addView(libraryView);
+                addLibraryView(name, visitCount);
             }
+            Log.d(TAG, "Recent libraries loaded successfully");
         } catch (JSONException e) {
-            e.printStackTrace();
+            Log.e(TAG, "Error parsing recent libraries JSON", e);
+            showToast("최근 도서관 데이터 파싱 중 오류가 발생했습니다.");
         }
     }
 
     private void loadRecommendedBooks() {
+        Log.d(TAG, "Loading recommended books");
         try {
             String jsonString = loadJSONFromRaw(R.raw.recommendation_book);
             JSONObject jsonObject = new JSONObject(jsonString);
@@ -91,27 +90,47 @@ public class HomeFragment extends Fragment {
                 String authors = bookObject.getString("authors");
                 String bookimageURL = bookObject.getString("bookimageURL");
 
-                View bookView = getLayoutInflater().inflate(R.layout.item_recommended_book, recommendedBooksContainer, false);
-
-                ImageView bookImage = bookView.findViewById(R.id.book_image);
-                TextView bookNameView = bookView.findViewById(R.id.book_name);
-                TextView authorView = bookView.findViewById(R.id.book_author);
-
-                Glide.with(this).load(bookimageURL).into(bookImage);
-                bookNameView.setText(bookname);
-                authorView.setText("▸ 저자: " + authors);
-
-                recommendedBooksContainer.addView(bookView);
-
-                if (i < jsonArray.length() - 1) {
-                    View divider = new View(getContext());
-                    divider.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1));
-                    divider.setBackgroundColor(getResources().getColor(R.color.gray));
-                    recommendedBooksContainer.addView(divider);
-                }
+                addBookView(bookname, authors, bookimageURL);
             }
+            Log.d(TAG, "Recommended books loaded successfully");
         } catch (JSONException e) {
-            e.printStackTrace();
+            Log.e(TAG, "Error parsing recommended books JSON", e);
+            showToast("추천 도서 데이터 파싱 중 오류가 발생했습니다.");
+        }
+    }
+
+    private void addLibraryView(String name, int visitCount) {
+        View libraryView = getLayoutInflater().inflate(R.layout.item_recent_library, recentLibrariesContainer, false);
+
+        ImageView libraryImage = libraryView.findViewById(R.id.library_image);
+        TextView libraryName = libraryView.findViewById(R.id.library_name);
+        TextView visitCountView = libraryView.findViewById(R.id.visit_count);
+
+        libraryImage.setImageResource(R.drawable.img_cn_library);
+        libraryName.setText(name);
+        visitCountView.setText("방문횟수: " + visitCount);
+
+        recentLibrariesContainer.addView(libraryView);
+    }
+
+    private void addBookView(String bookname, String authors, String bookimageURL) {
+        View bookView = getLayoutInflater().inflate(R.layout.item_recommended_book, recommendedBooksContainer, false);
+
+        ImageView bookImage = bookView.findViewById(R.id.book_image);
+        TextView bookNameView = bookView.findViewById(R.id.book_name);
+        TextView authorView = bookView.findViewById(R.id.book_author);
+
+        Glide.with(this).load(bookimageURL).into(bookImage);
+        bookNameView.setText(bookname);
+        authorView.setText("▸ 저자: " + authors);
+
+        recommendedBooksContainer.addView(bookView);
+
+        if (recommendedBooksContainer.getChildCount() > 1) {
+            View divider = new View(getContext());
+            divider.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1));
+            divider.setBackgroundColor(getResources().getColor(R.color.gray));
+            recommendedBooksContainer.addView(divider);
         }
     }
 
@@ -124,12 +143,39 @@ public class HomeFragment extends Fragment {
             is.close();
             return new String(buffer, StandardCharsets.UTF_8);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e(TAG, "Error loading JSON from raw resource", e);
             return null;
         }
     }
 
     private void performSearch(String query) {
         // TODO: Implement search functionality
+        Log.d(TAG, "Performing search with query: " + query);
+    }
+
+    private void testDataLoading() {
+        Log.d(TAG, "Starting data loading test");
+
+        // 최근 도서관 데이터 로드 테스트
+        String recentLibrariesJson = loadJSONFromRaw(R.raw.lib);
+        if (recentLibrariesJson != null) {
+            Log.d(TAG, "Recent libraries loaded successfully: " + recentLibrariesJson);
+        } else {
+            Log.e(TAG, "Failed to load recent libraries JSON");
+        }
+
+        // 추천 도서 데이터 로드 테스트
+        String recommendedBooksJson = loadJSONFromRaw(R.raw.recommendation_book);
+        if (recommendedBooksJson != null) {
+            Log.d(TAG, "Recommended books loaded successfully: " + recommendedBooksJson);
+        } else {
+            Log.e(TAG, "Failed to load recommended books JSON");
+        }
+    }
+
+    private void showToast(String message) {
+        if (getContext() != null) {
+            Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+        }
     }
 }

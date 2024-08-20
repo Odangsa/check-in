@@ -8,6 +8,14 @@ public class Library {
     double longitude;
     Integer distance;  // Integer를 사용하여 null 값 처리
 
+    public Library(String libname, String libaddr, double latitude, double longitude, Integer distance) {
+        this.libname = libname;
+        this.libaddr = libaddr;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.distance = distance;
+    }
+
     public String getLibname() {
         return libname;
     }
