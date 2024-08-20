@@ -1,0 +1,39 @@
+{
+  "ISBN": 9781509885398,
+  "bookname": "Dinosaur Roar! 25th Anniversary Edition (Paperback)",
+  "authors": "헨리에타 스틱랜드 (지은이), 폴 스틱랜드 (그림)",
+  "publisher": "Pan MacMillan",
+  "publishyear": "2018",
+  "bookimageURL": "https://bookthumb-phinf.pstatic.net/cover/141/087/14108776.jpg?type=m1&udate=20181023",
+  "description": "으르렁 우는 공룡, 찍찍 우는 공룡...",
+  "libs": [
+    {
+      "libname": "금천구립도서관",
+      "libaddr": "dsafda",
+      "latitude": 100,
+      "longitude": 200,
+      "distance": 11
+    },
+    {
+      "libname": "숭실대도서관",
+      "libaddr": "dsafda",
+      "latitude": 100,
+      "longitude": 200,
+      "distance": 12
+    },
+    {
+      "libname": "서울대도서관",
+      "libaddr": "dsafda",
+      "latitude": 100,
+      "longitude": 200,
+      "distance": 13
+    },
+    {
+      "libname": "서울대도서관",
+      "libaddr": "dsafda",
+      "latitude": 100,
+      "longitude": 200,
+      "distance": "None"
+    }
+  ]
+}

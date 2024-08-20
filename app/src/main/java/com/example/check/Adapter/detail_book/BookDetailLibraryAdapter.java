@@ -13,17 +13,18 @@ import com.example.check.model.bookDetail.Library;
 
 import java.util.List;
 
-public class LibraryAdapter extends RecyclerView.Adapter<LibraryAdapter.LibraryViewHolder> {
+public class BookDetailLibraryAdapter extends RecyclerView.Adapter<BookDetailLibraryAdapter.LibraryViewHolder> {
+
     private List<Library> libraries;
 
-    public LibraryAdapter(List<Library> libraries) {
+    public BookDetailLibraryAdapter(List<Library> libraries) {
         this.libraries = libraries;
     }
 
     @NonNull
     @Override
     public LibraryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_library, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_book_detail_library, parent, false);
         return new LibraryViewHolder(view);
     }
 
@@ -31,6 +32,7 @@ public class LibraryAdapter extends RecyclerView.Adapter<LibraryAdapter.LibraryV
     public void onBindViewHolder(@NonNull LibraryViewHolder holder, int position) {
         Library library = libraries.get(position);
         holder.libNameTextView.setText(library.getLibname());
+        holder.libAddressTextView.setText(library.getLibaddr());
         holder.distanceTextView.setText(library.getDistance() != null ? library.getDistance() + "km" : "거리 정보 없음");
     }
 
@@ -41,11 +43,13 @@ public class LibraryAdapter extends RecyclerView.Adapter<LibraryAdapter.LibraryV
 
     static class LibraryViewHolder extends RecyclerView.ViewHolder {
         TextView libNameTextView;
+        TextView libAddressTextView;
         TextView distanceTextView;
 
         LibraryViewHolder(@NonNull View itemView) {
             super(itemView);
             libNameTextView = itemView.findViewById(R.id.libNameTextView);
+            libAddressTextView = itemView.findViewById(R.id.libAddressTextView);
             distanceTextView = itemView.findViewById(R.id.distanceTextView);
         }
     }
