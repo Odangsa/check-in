@@ -13,6 +13,7 @@ import com.example.check.model.bookDetail.Library;
 
 import java.util.List;
 
+
 public class BookDetailLibraryAdapter extends RecyclerView.Adapter<BookDetailLibraryAdapter.LibraryViewHolder> {
 
     private List<Library> libraries;

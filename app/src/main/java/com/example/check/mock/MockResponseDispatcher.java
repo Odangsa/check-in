@@ -1,9 +1,12 @@
 package com.example.check.mock;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.util.Log;
+
+import androidx.annotation.NonNull;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
@@ -15,7 +18,7 @@ import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.RecordedRequest;
 
 public class MockResponseDispatcher extends Dispatcher {
-
+    private static final String TAG = "MockResponseDispatcher";
     private static Context context;
     private static final Map<String, String> mockResponses = new HashMap<>();
 
@@ -23,37 +26,45 @@ public class MockResponseDispatcher extends Dispatcher {
         context = appContext.getApplicationContext();
     }
 
+    @NonNull
     @Override
     public MockResponse dispatch(RecordedRequest request) {
         String path = request.getPath();
+        Log.d(TAG, "Received request for path: " + path);
+
         if (path != null) {
             if (path.startsWith("/lib")) {
-                return new MockResponse().setResponseCode(200).setBody(getMockResponse("lib.json"));
-            } else if (path.startsWith("/recommendation_book")) {
-                return new MockResponse().setResponseCode(200).setBody(getMockResponse("recommendation_book.json"));
+                return new MockResponse().setResponseCode(200).setBody(getMockResponse("lib"));
+            } else if (path.startsWith("/recommendation_book_two")) {
+                return new MockResponse().setResponseCode(200).setBody(getMockResponse("recommendation_book_two"));
             } else if (path.startsWith("/book_detail")) {
-                return new MockResponse().setResponseCode(200).setBody(getMockResponse("book_detail.json"));
-            } else if (path.startsWith("/recommendations")) {
-                return new MockResponse().setResponseCode(200).setBody(getMockResponse("recommendations.json"));
+                return new MockResponse().setResponseCode(200).setBody(getMockResponse("book_detail"));
+            } else if (path.startsWith("/recommendations_today_book")) {
+                return new MockResponse().setResponseCode(200).setBody(getMockResponse("recommendations_today_book"));
             }
         }
+        Log.w(TAG, "No matching path found for: " + path);
         return new MockResponse().setResponseCode(404);
     }
 
     public static String getMockResponse(String fileName) {
         if (!mockResponses.containsKey(fileName)) {
-            mockResponses.put(fileName, readMockJsonFromAssets(fileName));
+            mockResponses.put(fileName, readMockJsonFromRaw(fileName));
         }
         return mockResponses.get(fileName);
     }
 
-    private static String readMockJsonFromAssets(String fileName) {
+    private static String readMockJsonFromRaw(String fileName) {
         try {
-            InputStream inputStream = context.getAssets().open("mock_responses/" + fileName);
+            Resources resources = context.getResources();
+            int resourceId = resources.getIdentifier(fileName, "raw", context.getPackageName());
+            InputStream inputStream = resources.openRawResource(resourceId);
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-            return reader.lines().collect(Collectors.joining(System.lineSeparator()));
-        } catch (IOException e) {
-            e.printStackTrace();
+            String content = reader.lines().collect(Collectors.joining(System.lineSeparator()));
+            Log.d(TAG, "Successfully read mock JSON for: " + fileName);
+            return content;
+        } catch (Exception e) {
+            Log.e(TAG, "Error reading mock JSON for: " + fileName, e);
             return "";
         }
     }

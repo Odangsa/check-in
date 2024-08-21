@@ -3,19 +3,57 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="16dp">
+    android:weightSum="5"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp">
 
-    <TextView
-        android:id="@+id/libNameTextView"
+    <ImageView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="16sp"/>
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        android:padding="5dp"
+        android:src="@drawable/icon_location"/>
 
-    <TextView
-        android:id="@+id/distanceTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4.3"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:background="@drawable/background_gray_stroke">
 
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/img_ssu_library"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:id="@+id/libNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="🔵"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/distanceTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/gray_dark"
+            android:textStyle="bold"
+            android:textSize="13dp"
+            android:gravity="center|left"/>
+    </LinearLayout>
 </LinearLayout>

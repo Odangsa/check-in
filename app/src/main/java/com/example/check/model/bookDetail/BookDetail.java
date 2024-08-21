@@ -12,13 +12,8 @@ public class BookDetail {
     String description;
     List<Library> libs;
 
-    public BookDetail(String ISBN, String bookname, String authors, String publisher, String publishyear, String bookimageURL, String description, List<Library> libs) {
-        this.ISBN = ISBN;
-        this.bookname = bookname;
-        this.authors = authors;
-        this.publisher = publisher;
-        this.publishyear = publishyear;
-    }
+
+
 
     public String getISBN() {
         return ISBN;
@@ -50,6 +45,38 @@ public class BookDetail {
 
     public List<Library> getLibs() {
         return libs;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public void setBookname(String bookname) {
+        this.bookname = bookname;
+    }
+
+    public void setAuthors(String authors) {
+        this.authors = authors;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public void setPublishyear(String publishyear) {
+        this.publishyear = publishyear;
+    }
+
+    public void setBookimageURL(String bookimageURL) {
+        this.bookimageURL = bookimageURL;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setLibs(List<Library> libs) {
+        this.libs = libs;
     }
 
     // getters and setters

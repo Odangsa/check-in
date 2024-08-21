@@ -80,7 +80,7 @@ public class HomeFragment extends Fragment {
     private void loadRecommendedBooks() {
         Log.d(TAG, "Loading recommended books");
         try {
-            String jsonString = loadJSONFromRaw(R.raw.recommendation_book);
+            String jsonString = loadJSONFromRaw(R.raw.recommendation_book_two);
             JSONObject jsonObject = new JSONObject(jsonString);
             JSONArray jsonArray = jsonObject.getJSONArray("books");
 
@@ -165,7 +165,7 @@ public class HomeFragment extends Fragment {
         }
 
         // 추천 도서 데이터 로드 테스트
-        String recommendedBooksJson = loadJSONFromRaw(R.raw.recommendation_book);
+        String recommendedBooksJson = loadJSONFromRaw(R.raw.recommendation_book_two);
         if (recommendedBooksJson != null) {
             Log.d(TAG, "Recommended books loaded successfully: " + recommendedBooksJson);
         } else {

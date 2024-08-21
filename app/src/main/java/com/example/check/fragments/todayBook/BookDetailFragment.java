@@ -1,84 +1,138 @@
 package com.example.check.fragments.todayBook;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
-import com.example.check.Adapter.detail_book.BookDetailLibraryAdapter;
 import com.example.check.R;
+import com.example.check.api.ApiService;
 import com.example.check.model.bookDetail.BookDetail;
 import com.example.check.model.bookDetail.Library;
-import com.google.gson.Gson;
+
 import java.util.List;
 
-public class BookDetailFragment extends Fragment {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-    private static final String ARG_BOOK_DETAIL = "book_detail";
+public class BookDetailFragment extends Fragment {
+    private static final String TAG = "BookDetailFragment";
+    private static final String ARG_ISBN = "isbn";
 
     private ImageView bookImageView;
-    private TextView bookNameTextView, authorsTextView, publisherTextView, publishYearTextView, descriptionTextView;
-    private RecyclerView librariesRecyclerView;
-    private BookDetailLibraryAdapter libraryAdapter;
+    private TextView bookNameTextView, authorTextView, publisherTextView, publishYearTextView, descriptionTextView;
+    private LinearLayout librariesContainer;
 
-    public static BookDetailFragment newInstance(BookDetail bookDetail) {
+    private ApiService apiService;
+
+    public static BookDetailFragment newInstance(String isbn) {
         BookDetailFragment fragment = new BookDetailFragment();
         Bundle args = new Bundle();
-        Gson gson = new Gson();
-        String bookDetailJson = gson.toJson(bookDetail);
-        args.putString(ARG_BOOK_DETAIL, bookDetailJson);
+        args.putString(ARG_ISBN, isbn);
         fragment.setArguments(args);
         return fragment;
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_book_detail_screen, container, false);
+        return inflater.inflate(R.layout.fragment_book_detail, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        initializeViews(view);
+
+        String isbn = getArguments() != null ? getArguments().getString(ARG_ISBN) : null;
+
+
+    }
+
+
+    private void initializeViews(View view) {
         bookImageView = view.findViewById(R.id.bookImageView);
         bookNameTextView = view.findViewById(R.id.bookNameTextView);
-        authorsTextView = view.findViewById(R.id.authorsTextView);
+        authorTextView = view.findViewById(R.id.authorTextView);
         publisherTextView = view.findViewById(R.id.publisherTextView);
         publishYearTextView = view.findViewById(R.id.publishYearTextView);
         descriptionTextView = view.findViewById(R.id.descriptionTextView);
-        librariesRecyclerView = view.findViewById(R.id.librariesRecyclerView);
-
-        librariesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        if (getArguments() != null) {
-            String bookDetailJson = getArguments().getString(ARG_BOOK_DETAIL);
-            Gson gson = new Gson();
-            BookDetail bookDetail = gson.fromJson(bookDetailJson, BookDetail.class);
-            bindBookDetails(bookDetail);
-        }
+        librariesContainer = view.findViewById(R.id.librariesContainer);
     }
 
-    private void bindBookDetails(BookDetail bookDetail) {
+    private void loadBookDetail(String isbn) {
+        apiService.getBookDetail(isbn).enqueue(new Callback<BookDetail>() {
+            @Override
+            public void onResponse(Call<BookDetail> call, Response<BookDetail> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    displayBookDetail(response.body());
+                } else {
+                    showErrorMessage("책 정보를 불러오는데 실패했습니다.");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<BookDetail> call, Throwable t) {
+                showErrorMessage("네트워크 오류: " + t.getMessage());
+            }
+        });
+    }
+
+    private void displayBookDetail(BookDetail bookDetail) {
         Glide.with(this)
                 .load(bookDetail.getBookimageURL())
+                .placeholder(R.drawable.placeholder_image)
+                .error(R.drawable.placeholder_image)
                 .into(bookImageView);
 
         bookNameTextView.setText(bookDetail.getBookname());
-        authorsTextView.setText(bookDetail.getAuthors());
-        publisherTextView.setText(bookDetail.getPublisher());
-        publishYearTextView.setText(bookDetail.getPublishyear());
+        authorTextView.setText("▸ 저자 : " + bookDetail.getAuthors());
+        publisherTextView.setText("▸ 출판 : " + bookDetail.getPublisher());
+        publishYearTextView.setText("▸ 발행 : " + bookDetail.getPublishyear());
         descriptionTextView.setText(bookDetail.getDescription());
 
-        List<Library> libraries = bookDetail.getLibs();
-        libraryAdapter = new BookDetailLibraryAdapter(libraries);
-        librariesRecyclerView.setAdapter(libraryAdapter);
+        displayLibraries(bookDetail.getLibs());
+    }
+
+    private void displayLibraries(List<Library> libraries) {
+        librariesContainer.removeAllViews();
+        for (Library library : libraries) {
+            View libraryView = getLayoutInflater().inflate(R.layout.item_library, librariesContainer, false);
+
+            TextView libNameTextView = libraryView.findViewById(R.id.libNameTextView);
+            TextView distanceTextView = libraryView.findViewById(R.id.distanceTextView);
+
+            libNameTextView.setText(library.getLibname());
+
+            Integer distance = library.getDistance();
+            String distanceText = distance != null ?
+                    String.format("%.1f km", distance / 1000.0) : "거리 정보 없음";
+            distanceTextView.setText(distanceText);
+
+            librariesContainer.addView(libraryView);
+        }
+    }
+
+    private void showErrorMessage(String message) {
+        Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+        Log.e(TAG, "Error: " + message);
     }
 }
