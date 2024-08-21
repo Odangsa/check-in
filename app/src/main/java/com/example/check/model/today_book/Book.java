@@ -15,4 +15,24 @@ public class Book {
         }
         return url;
     }
+
+
+    // Setters
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public void setBookimageURL(String bookimageURL) {
+        this.bookimageURL = bookimageURL;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "ISBN='" + ISBN + '\'' +
+                ", bookimageURL='" + bookimageURL + '\'' +
+                '}';
+    }
 }
+
+

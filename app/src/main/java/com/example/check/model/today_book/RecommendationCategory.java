@@ -1,4 +1,3 @@
-// RecommendationCategory.java
 package com.example.check.model.today_book;
 
 import java.util.List;
@@ -7,8 +6,7 @@ public class RecommendationCategory {
     private String recommendationTitle;
     private List<Book> books;
 
-    // Getter and setter methods
-
+    // Getters and setters
     public String getRecommendationTitle() {
         return recommendationTitle;
     }
@@ -23,5 +21,13 @@ public class RecommendationCategory {
 
     public void setBooks(List<Book> books) {
         this.books = books;
+    }
+
+    @Override
+    public String toString() {
+        return "RecommendationCategory{" +
+                "type='" + recommendationTitle + '\'' +
+                ", books=" + books +
+                '}';
     }
 }

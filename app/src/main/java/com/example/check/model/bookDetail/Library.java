@@ -1,40 +1,49 @@
 package com.example.check.model.bookDetail;
 
-
 public class Library {
-    String libname;
-    String libaddr;
-    double latitude;
-    double longitude;
-    Integer distance;  // Integer를 사용하여 null 값 처리
-
-    public Library(String libname, String libaddr, double latitude, double longitude, Integer distance) {
-        this.libname = libname;
-        this.libaddr = libaddr;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.distance = distance;
-    }
+    private String libname;
+    private String libaddr;
+    private double latitude;
+    private double longitude;
+    private Integer distance;
 
     public String getLibname() {
         return libname;
+    }
+
+    public void setLibname(String libname) {
+        this.libname = libname;
     }
 
     public String getLibaddr() {
         return libaddr;
     }
 
+    public void setLibaddr(String libaddr) {
+        this.libaddr = libaddr;
+    }
+
     public double getLatitude() {
         return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
     public double getLongitude() {
         return longitude;
     }
 
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
     public Integer getDistance() {
         return distance;
     }
 
-    // getters and setters
+    public void setDistance(Integer distance) {
+        this.distance = distance;
+    }
 }

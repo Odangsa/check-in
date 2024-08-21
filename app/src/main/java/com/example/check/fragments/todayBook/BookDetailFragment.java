@@ -22,10 +22,6 @@ import com.example.check.model.bookDetail.Library;
 
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 public class BookDetailFragment extends Fragment {
     private static final String TAG = "BookDetailFragment";
     private static final String ARG_ISBN = "isbn";
@@ -78,23 +74,7 @@ public class BookDetailFragment extends Fragment {
         librariesContainer = view.findViewById(R.id.librariesContainer);
     }
 
-    private void loadBookDetail(String isbn) {
-        apiService.getBookDetail(isbn).enqueue(new Callback<BookDetail>() {
-            @Override
-            public void onResponse(Call<BookDetail> call, Response<BookDetail> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    displayBookDetail(response.body());
-                } else {
-                    showErrorMessage("책 정보를 불러오는데 실패했습니다.");
-                }
-            }
 
-            @Override
-            public void onFailure(Call<BookDetail> call, Throwable t) {
-                showErrorMessage("네트워크 오류: " + t.getMessage());
-            }
-        });
-    }
 
     private void displayBookDetail(BookDetail bookDetail) {
         Glide.with(this)

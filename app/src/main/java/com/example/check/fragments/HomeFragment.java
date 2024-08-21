@@ -159,7 +159,6 @@ public class HomeFragment extends Fragment {
         // 최근 도서관 데이터 로드 테스트
         String recentLibrariesJson = loadJSONFromRaw(R.raw.lib);
         if (recentLibrariesJson != null) {
-            Log.d(TAG, "Recent libraries loaded successfully: " + recentLibrariesJson);
         } else {
             Log.e(TAG, "Failed to load recent libraries JSON");
         }
@@ -167,7 +166,6 @@ public class HomeFragment extends Fragment {
         // 추천 도서 데이터 로드 테스트
         String recommendedBooksJson = loadJSONFromRaw(R.raw.recommendation_book_two);
         if (recommendedBooksJson != null) {
-            Log.d(TAG, "Recommended books loaded successfully: " + recommendedBooksJson);
         } else {
             Log.e(TAG, "Failed to load recommended books JSON");
         }

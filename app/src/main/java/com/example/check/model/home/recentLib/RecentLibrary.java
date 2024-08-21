@@ -1,20 +1,22 @@
 package com.example.check.model.home.recentLib;
 
-
 public class RecentLibrary {
     private String library;
-    private int visitCount;
-
-    public RecentLibrary(String library, int visitCount) {
-        this.library = library;
-        this.visitCount = visitCount;
-    }
+    private int visit_count;
 
     public String getLibrary() {
         return library;
     }
 
+    public void setLibrary(String library) {
+        this.library = library;
+    }
+
     public int getVisitCount() {
-        return visitCount;
+        return visit_count;
+    }
+
+    public void setVisitCount(int visit_count) {
+        this.visit_count = visit_count;
     }
 }

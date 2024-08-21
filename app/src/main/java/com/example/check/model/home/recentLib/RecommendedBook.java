@@ -7,6 +7,8 @@ public class RecommendedBook {
     private String topic;
     private String bookimageURL;
 
+
+
     public RecommendedBook(String ISBN, String bookname, String authors, String topic, String bookimageURL) {
         this.ISBN = ISBN;
         this.bookname = bookname;
@@ -34,4 +36,17 @@ public class RecommendedBook {
     public String getBookimageURL() {
         return bookimageURL;
     }
+
+    @Override
+    public String toString() {
+        return "RecommendedBook{" +
+                "ISBN='" + ISBN + '\'' +
+                ", bookname='" + bookname + '\'' +
+                ", authors='" + authors + '\'' +
+                ", topic='" + topic + '\'' +
+                ", bookimageURL='" + bookimageURL + '\'' +
+                '}';
+    }
+
 }
+
