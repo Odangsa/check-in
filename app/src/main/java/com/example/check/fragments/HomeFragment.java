@@ -9,21 +9,31 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.fragment.app.Fragment;
+
 import androidx.appcompat.widget.SearchView;
+import androidx.fragment.app.Fragment;
+
 import com.bumptech.glide.Glide;
+import com.example.check.MainActivity;
 import com.example.check.R;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
+import com.example.check.api.ApiClient;
+import com.example.check.api.ApiService;
+import com.example.check.model.home.RecentLibrary;
+import com.example.check.model.home.RecommendedBook;
+import com.example.check.model.home.RecommendedBooksWrapper;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
 
     private static final String TAG = "HomeFragment";
     private LinearLayout recentLibrariesContainer;
     private LinearLayout recommendedBooksContainer;
+    private ApiService apiService;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,6 +42,8 @@ public class HomeFragment extends Fragment {
 
         recentLibrariesContainer = view.findViewById(R.id.recent_libraries_container);
         recommendedBooksContainer = view.findViewById(R.id.recommended_books_container);
+
+        apiService = ApiClient.getClient().create(ApiService.class);
 
         loadRecentLibraries();
         loadRecommendedBooks();
@@ -50,53 +62,55 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        // 테스트 메서드 호출
-        testDataLoading();
-
         return view;
     }
 
     private void loadRecentLibraries() {
-        Log.d(TAG, "Loading recent libraries");
-        try {
-            String jsonString = loadJSONFromRaw(R.raw.lib);
-            JSONObject jsonObject = new JSONObject(jsonString);
-            JSONArray jsonArray = jsonObject.getJSONArray("recent_libraries");
-
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject libraryObject = jsonArray.getJSONObject(i);
-                String name = libraryObject.getString("library");
-                int visitCount = libraryObject.getInt("visit_count");
-
-                addLibraryView(name, visitCount);
+        apiService.getRecentLibraries(MainActivity.userId).enqueue(new Callback<List<RecentLibrary>>() {
+            @Override
+            public void onResponse(Call<List<RecentLibrary>> call, Response<List<RecentLibrary>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    List<RecentLibrary> libraries = response.body();
+                    for (RecentLibrary library : libraries) {
+                        addLibraryView(library.getLibrary(), library.getVisitCount());
+                    }
+                    Log.d(TAG, "Recent libraries loaded successfully");
+                } else {
+                    Log.e(TAG, "Failed to fetch recent libraries: " + response.code());
+                    showToast("최근 도서관 데이터를 가져오는데 실패했습니다.");
+                }
             }
-            Log.d(TAG, "Recent libraries loaded successfully");
-        } catch (JSONException e) {
-            Log.e(TAG, "Error parsing recent libraries JSON", e);
-            showToast("최근 도서관 데이터 파싱 중 오류가 발생했습니다.");
-        }
+
+            @Override
+            public void onFailure(Call<List<RecentLibrary>> call, Throwable t) {
+                Log.e(TAG, "Error fetching recent libraries", t);
+                showToast("네트워크 오류가 발생했습니다.");
+            }
+        });
     }
 
     private void loadRecommendedBooks() {
-        Log.d(TAG, "Loading recommended books");
-        try {
-            String jsonString = loadJSONFromRaw(R.raw.recommendation_book_two);
-            JSONObject jsonObject = new JSONObject(jsonString);
-            JSONArray jsonArray = jsonObject.getJSONArray("books");
-
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject bookObject = jsonArray.getJSONObject(i);
-                String bookname = bookObject.getString("bookname");
-                String authors = bookObject.getString("authors");
-                String bookimageURL = bookObject.getString("bookimageURL");
-
-                addBookView(bookname, authors, bookimageURL);
+        apiService.getRecommendedBooks().enqueue(new Callback<RecommendedBooksWrapper>() {
+            @Override
+            public void onResponse(Call<RecommendedBooksWrapper> call, Response<RecommendedBooksWrapper> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    List<RecommendedBook> books = response.body().getBooks();
+                    for (RecommendedBook book : books) {
+                        addBookView(book.getBookname(), book.getAuthors(), book.getBookimageURL());
+                    }
+                    Log.d(TAG, "Recommended books loaded successfully");
+                } else {
+                    Log.e(TAG, "Failed to fetch recommended books: " + response.code());
+                    showToast("추천 도서 데이터를 가져오는데 실패했습니다.");
+                }
             }
-            Log.d(TAG, "Recommended books loaded successfully");
-        } catch (JSONException e) {
-            Log.e(TAG, "Error parsing recommended books JSON", e);
-            showToast("추천 도서 데이터 파싱 중 오류가 발생했습니다.");
-        }
+
+            @Override
+            public void onFailure(Call<RecommendedBooksWrapper> call, Throwable t) {
+                Log.e(TAG, "Error fetching recommended books", t);
+                showToast("네트워크 오류가 발생했습니다.");
+            }
+        });
     }
 
     private void addLibraryView(String name, int visitCount) {
@@ -134,41 +148,9 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    private String loadJSONFromRaw(int resourceId) {
-        try {
-            InputStream is = getResources().openRawResource(resourceId);
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            return new String(buffer, StandardCharsets.UTF_8);
-        } catch (Exception e) {
-            Log.e(TAG, "Error loading JSON from raw resource", e);
-            return null;
-        }
-    }
-
     private void performSearch(String query) {
         // TODO: Implement search functionality
         Log.d(TAG, "Performing search with query: " + query);
-    }
-
-    private void testDataLoading() {
-        Log.d(TAG, "Starting data loading test");
-
-        // 최근 도서관 데이터 로드 테스트
-        String recentLibrariesJson = loadJSONFromRaw(R.raw.lib);
-        if (recentLibrariesJson != null) {
-        } else {
-            Log.e(TAG, "Failed to load recent libraries JSON");
-        }
-
-        // 추천 도서 데이터 로드 테스트
-        String recommendedBooksJson = loadJSONFromRaw(R.raw.recommendation_book_two);
-        if (recommendedBooksJson != null) {
-        } else {
-            Log.e(TAG, "Failed to load recommended books JSON");
-        }
     }
 
     private void showToast(String message) {

@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.check.R;
-import com.example.check.model.home.recentLib.RecentLibrary;
+import com.example.check.model.home.RecentLibrary;
 import java.util.List;
 
 public class RecentLibraryAdapter extends RecyclerView.Adapter<RecentLibraryAdapter.ViewHolder> {

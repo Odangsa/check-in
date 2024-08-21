@@ -1,4 +1,4 @@
-package com.example.check.model.home.recentLib;
+package com.example.check.model.home;
 
 public class RecommendedBook {
     private String ISBN;

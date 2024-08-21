@@ -89,83 +89,106 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fetchAllApiData() {
-        fetchTodayBooks();
-        fetchRecommendedBooks();
-        fetchRecentLibraries();
-        fetchBookDetails("1231231241214");
+//        fetchTodayBooks();
+//        fetchRecommendedBooks();
+//        fetchRecentLibraries();
+//        fetchBookDetails("1231231241214");
         fetchStampBoard();
     }
 
-    private void fetchBookDetails(String isbn) {
-        apiService.getBookDetails(isbn).enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    try {
-                        String jsonResponse = response.body().string();
-                        Log.d(TAG, "Book Details Raw Response:\n" + formatJson(jsonResponse));
-                        // 여기에서 JSON 응답을 파싱하고 UI를 업데이트하는 로직을 추가할 수 있습니다.
-                    } catch (IOException e) {
-                        Log.e(TAG, "Error reading Book Details response", e);
-                    }
-                } else {
-                    Log.e(TAG, "Failed to fetch Book Details: " + response.code());
-                }
-            }
+//    private void fetchBookDetails(String isbn) {
+//        apiService.getBookDetails(isbn).enqueue(new Callback<ResponseBody>() {
+//            @Override
+//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//                if (response.isSuccessful() && response.body() != null) {
+//                    try {
+//                        String jsonResponse = response.body().string();
+//                        Log.d(TAG, "Book Details Raw Response:\n" + formatJson(jsonResponse));
+//                        // 여기에서 JSON 응답을 파싱하고 UI를 업데이트하는 로직을 추가할 수 있습니다.
+//                    } catch (IOException e) {
+//                        Log.e(TAG, "Error reading Book Details response", e);
+//                    }
+//                } else {
+//                    Log.e(TAG, "Failed to fetch Book Details: " + response.code());
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ResponseBody> call, Throwable t) {
+//                Log.e(TAG, "Error fetching Book Details", t);
+//            }
+//        });
+//    }
 
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Log.e(TAG, "Error fetching Book Details", t);
-            }
-        });
-    }
+//    private void fetchTodayBooks() {
+//        apiService.getTodayBooks().enqueue(new Callback<ResponseBody>() {
+//            @Override
+//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//                if (response.isSuccessful() && response.body() != null) {
+//                    try {
+//                        String jsonResponse = response.body().string();
+//                        Log.d(TAG, "Today Books Raw Response:\n" + formatJson(jsonResponse));
+//                        // JSON 파싱 및 처리 로직은 여기에 추가
+//                    } catch (IOException e) {
+//                        Log.e(TAG, "Error reading Today Books response", e);
+//                    }
+//                } else {
+//                    Log.e(TAG, "Failed to fetch Today Books: " + response.code());
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ResponseBody> call, Throwable t) {
+//                Log.e(TAG, "Error fetching Today Books", t);
+//            }
+//        });
+//    }
 
-    private void fetchTodayBooks() {
-        apiService.getTodayBooks().enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    try {
-                        String jsonResponse = response.body().string();
-                        Log.d(TAG, "Today Books Raw Response:\n" + formatJson(jsonResponse));
-                        // JSON 파싱 및 처리 로직은 여기에 추가
-                    } catch (IOException e) {
-                        Log.e(TAG, "Error reading Today Books response", e);
-                    }
-                } else {
-                    Log.e(TAG, "Failed to fetch Today Books: " + response.code());
-                }
-            }
+//    private void fetchRecommendedBooks() {
+//        apiService.getRecommendedBooks().enqueue(new Callback<ResponseBody>() {
+//            @Override
+//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//                if (response.isSuccessful() && response.body() != null) {
+//                    try {
+//                        String jsonResponse = response.body().string();
+//                        Log.d(TAG, "Recommended Books Raw Response:\n" + formatJson(jsonResponse));
+//                    } catch (IOException e) {
+//                        Log.e(TAG, "Error reading Recommended Books response", e);
+//                    }
+//                } else {
+//                    Log.e(TAG, "Failed to fetch Recommended Books: " + response.code());
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ResponseBody> call, Throwable t) {
+//                Log.e(TAG, "Error fetching Recommended Books", t);
+//            }
+//        });
+//    }
 
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Log.e(TAG, "Error fetching Today Books", t);
-            }
-        });
-    }
-
-    private void fetchRecommendedBooks() {
-        apiService.getRecommendedBooks().enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    try {
-                        String jsonResponse = response.body().string();
-                        Log.d(TAG, "Recommended Books Raw Response:\n" + formatJson(jsonResponse));
-                    } catch (IOException e) {
-                        Log.e(TAG, "Error reading Recommended Books response", e);
-                    }
-                } else {
-                    Log.e(TAG, "Failed to fetch Recommended Books: " + response.code());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Log.e(TAG, "Error fetching Recommended Books", t);
-            }
-        });
-    }
+//    private void fetchRecentLibraries() {
+//        apiService.getRecentLibraries(userId).enqueue(new Callback<ResponseBody>() {
+//            @Override
+//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//                if (response.isSuccessful() && response.body() != null) {
+//                    try {
+//                        String jsonResponse = response.body().string();
+//                        Log.d(TAG, "Recent Libraries Raw Response:\n" + formatJson(jsonResponse));
+//                    } catch (IOException e) {
+//                        Log.e(TAG, "Error reading Recent Libraries response", e);
+//                    }
+//                } else {
+//                    Log.e(TAG, "Failed to fetch Recent Libraries: " + response.code());
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ResponseBody> call, Throwable t) {
+//                Log.e(TAG, "Error fetching Recent Libraries", t);
+//            }
+//        });
+//    }
 
     private void fetchStampBoard() {
         apiService.getStampBoard(userId).enqueue(new Callback<ResponseBody>() {
@@ -191,53 +214,30 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void fetchRecentLibraries() {
-        apiService.getRecentLibraries(userId).enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    try {
-                        String jsonResponse = response.body().string();
-                        Log.d(TAG, "Recent Libraries Raw Response:\n" + formatJson(jsonResponse));
-                    } catch (IOException e) {
-                        Log.e(TAG, "Error reading Recent Libraries response", e);
-                    }
-                } else {
-                    Log.e(TAG, "Failed to fetch Recent Libraries: " + response.code());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Log.e(TAG, "Error fetching Recent Libraries", t);
-            }
-        });
-    }
-
     // 새로운 메소드: 도장 인증
-    private void verifyStamp(String verificationCode, String date) {
-        apiService.verifyStamp(userId, verificationCode, date).enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    try {
-                        String jsonResponse = response.body().string();
-                        Log.d(TAG, "Stamp Verification Response:\n" + formatJson(jsonResponse));
-                        // 여기에서 jsonResponse를 파싱하고 UI를 업데이트하는 로직을 추가할 수 있습니다.
-                    } catch (IOException e) {
-                        Log.e(TAG, "Error reading Stamp Verification response", e);
-                    }
-                } else {
-                    Log.e(TAG, "Failed to verify stamp: " + response.code());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Log.e(TAG, "Error verifying stamp", t);
-            }
-        });
-    }
+//    private void verifyStamp(String verificationCode, String date) {
+//        apiService.verifyStamp(userId, verificationCode, date).enqueue(new Callback<ResponseBody>() {
+//            @Override
+//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//                if (response.isSuccessful() && response.body() != null) {
+//                    try {
+//                        String jsonResponse = response.body().string();
+//                        Log.d(TAG, "Stamp Verification Response:\n" + formatJson(jsonResponse));
+//                        // 여기에서 jsonResponse를 파싱하고 UI를 업데이트하는 로직을 추가할 수 있습니다.
+//                    } catch (IOException e) {
+//                        Log.e(TAG, "Error reading Stamp Verification response", e);
+//                    }
+//                } else {
+//                    Log.e(TAG, "Failed to verify stamp: " + response.code());
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ResponseBody> call, Throwable t) {
+//                Log.e(TAG, "Error verifying stamp", t);
+//            }
+//        });
+//    }
 
     private String formatJson(String jsonStr) {
         try {

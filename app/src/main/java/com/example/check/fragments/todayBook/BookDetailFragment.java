@@ -16,11 +16,16 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.example.check.R;
+import com.example.check.api.ApiClient;
 import com.example.check.api.ApiService;
 import com.example.check.model.bookDetail.BookDetail;
 import com.example.check.model.bookDetail.Library;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BookDetailFragment extends Fragment {
     private static final String TAG = "BookDetailFragment";
@@ -43,8 +48,8 @@ public class BookDetailFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        apiService = ApiClient.getClient().create(ApiService.class);
     }
-
 
     @Nullable
     @Override
@@ -59,9 +64,14 @@ public class BookDetailFragment extends Fragment {
         initializeViews(view);
 
         String isbn = getArguments() != null ? getArguments().getString(ARG_ISBN) : null;
-
-
+        if (isbn != null) {
+            loadBookDetails(isbn);
+        } else {
+            showErrorMessage("ISBN이 제공되지 않았습니다.");
+        }
     }
+
+
 
 
     private void initializeViews(View view) {
@@ -75,6 +85,24 @@ public class BookDetailFragment extends Fragment {
     }
 
 
+
+    private void loadBookDetails(String isbn) {
+        apiService.getBookDetails(isbn).enqueue(new Callback<BookDetail>() {
+            @Override
+            public void onResponse(Call<BookDetail> call, Response<BookDetail> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    displayBookDetail(response.body());
+                } else {
+                    showErrorMessage("책 정보를 가져오는데 실패했습니다.");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<BookDetail> call, Throwable t) {
+                showErrorMessage("네트워크 오류가 발생했습니다.");
+            }
+        });
+    }
 
     private void displayBookDetail(BookDetail bookDetail) {
         Glide.with(this)

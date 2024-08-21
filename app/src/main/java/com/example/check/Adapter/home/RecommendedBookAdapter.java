@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.check.R;
-import com.example.check.model.home.recentLib.RecommendedBook;
+import com.example.check.model.home.RecommendedBook;
 import java.util.List;
 
 public class RecommendedBookAdapter extends RecyclerView.Adapter<RecommendedBookAdapter.ViewHolder> {
