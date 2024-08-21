@@ -1,6 +1,6 @@
 package com.example.check.api;
 
-import com.example.check.model.bookDetail.BookDetail;
+import com.example.check.model.bookDetail.BookDetailModel;
 import com.example.check.model.home.RecentLibrary;
 import com.example.check.model.home.RecommendedBooksWrapper;
 import com.example.check.model.today_book.RecommendationsWrapper;
@@ -16,7 +16,7 @@ import retrofit2.http.Query;
 public interface ApiService {
 
     @GET("api/book_details/{isbn}")
-    Call<BookDetail> getBookDetails(@Path("isbn") String isbn);
+    Call<BookDetailModel> getBookDetails(@Path("isbn") String isbn);
 
     @GET("api/recommendations_today_book")
     Call<List<RecommendationsWrapper>> getTodayBooks();

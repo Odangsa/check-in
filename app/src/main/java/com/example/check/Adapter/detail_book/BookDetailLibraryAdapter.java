@@ -9,16 +9,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.check.R;
-import com.example.check.model.bookDetail.Library;
+import com.example.check.model.bookDetail.LibraryModel;
 
 import java.util.List;
 
-
 public class BookDetailLibraryAdapter extends RecyclerView.Adapter<BookDetailLibraryAdapter.LibraryViewHolder> {
 
-    private List<Library> libraries;
+    private List<LibraryModel> libraries;
 
-    public BookDetailLibraryAdapter(List<Library> libraries) {
+    public BookDetailLibraryAdapter(List<LibraryModel> libraries) {
         this.libraries = libraries;
     }
 
@@ -31,10 +30,8 @@ public class BookDetailLibraryAdapter extends RecyclerView.Adapter<BookDetailLib
 
     @Override
     public void onBindViewHolder(@NonNull LibraryViewHolder holder, int position) {
-        Library library = libraries.get(position);
-        holder.libNameTextView.setText(library.getLibname());
-        holder.libAddressTextView.setText(library.getLibaddr());
-        holder.distanceTextView.setText(library.getDistance() != null ? library.getDistance() + "km" : "거리 정보 없음");
+        LibraryModel library = libraries.get(position);
+        holder.bind(library);
     }
 
     @Override
@@ -44,14 +41,22 @@ public class BookDetailLibraryAdapter extends RecyclerView.Adapter<BookDetailLib
 
     static class LibraryViewHolder extends RecyclerView.ViewHolder {
         TextView libNameTextView;
-        TextView libAddressTextView;
         TextView distanceTextView;
 
         LibraryViewHolder(@NonNull View itemView) {
             super(itemView);
             libNameTextView = itemView.findViewById(R.id.libNameTextView);
-            libAddressTextView = itemView.findViewById(R.id.libAddressTextView);
             distanceTextView = itemView.findViewById(R.id.distanceTextView);
+        }
+
+        void bind(LibraryModel library) {
+            libNameTextView.setText(library.getLibname());
+            String distance = library.getDistance();
+            if (!"None".equals(distance)) {
+                distanceTextView.setText(String.format("%s km", distance));
+            } else {
+                distanceTextView.setText("거리 정보 없음");
+            }
         }
     }
 }

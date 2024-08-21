@@ -1,12 +1,13 @@
 package com.example.check.model.bookDetail;
 
-public class Library {
+public class LibraryModel {
     private String libname;
     private String libaddr;
     private double latitude;
     private double longitude;
-    private Integer distance;
+    private String distance;
 
+    // Getters and Setters
     public String getLibname() {
         return libname;
     }
@@ -39,11 +40,11 @@ public class Library {
         this.longitude = longitude;
     }
 
-    public Integer getDistance() {
+    public String getDistance() {
         return distance;
     }
 
-    public void setDistance(Integer distance) {
+    public void setDistance(String distance) {
         this.distance = distance;
     }
 }

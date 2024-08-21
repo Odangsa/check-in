@@ -1,4 +1,4 @@
-package com.example.check.fragments.todayBook;
+package com.example.check.fragments;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -6,22 +6,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.check.Adapter.detail_book.BookDetailLibraryAdapter;
 import com.example.check.R;
 import com.example.check.api.ApiClient;
 import com.example.check.api.ApiService;
-import com.example.check.model.bookDetail.BookDetail;
-import com.example.check.model.bookDetail.Library;
-
-import java.util.List;
+import com.example.check.model.bookDetail.BookDetailModel;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,9 +32,11 @@ public class BookDetailFragment extends Fragment {
 
     private ImageView bookImageView;
     private TextView bookNameTextView, authorTextView, publisherTextView, publishYearTextView, descriptionTextView;
-    private LinearLayout librariesContainer;
+    private RecyclerView librariesRecyclerView;
+    private BookDetailLibraryAdapter libraryAdapter;
 
     private ApiService apiService;
+    private String isbn;
 
     public static BookDetailFragment newInstance(String isbn) {
         BookDetailFragment fragment = new BookDetailFragment();
@@ -49,30 +50,28 @@ public class BookDetailFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         apiService = ApiClient.getClient().create(ApiService.class);
+        if (getArguments() != null) {
+            isbn = getArguments().getString(ARG_ISBN);
+        }
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_book_detail, container, false);
+        View view = inflater.inflate(R.layout.fragment_book_detail, container, false);
+        initializeViews(view);
+        return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        initializeViews(view);
-
-        String isbn = getArguments() != null ? getArguments().getString(ARG_ISBN) : null;
         if (isbn != null) {
             loadBookDetails(isbn);
         } else {
-            showErrorMessage("ISBN이 제공되지 않았습니다.");
+            showToast("ISBN이 제공되지 않았습니다.");
         }
     }
-
-
-
 
     private void initializeViews(View view) {
         bookImageView = view.findViewById(R.id.bookImageView);
@@ -81,66 +80,62 @@ public class BookDetailFragment extends Fragment {
         publisherTextView = view.findViewById(R.id.publisherTextView);
         publishYearTextView = view.findViewById(R.id.publishYearTextView);
         descriptionTextView = view.findViewById(R.id.descriptionTextView);
-        librariesContainer = view.findViewById(R.id.librariesContainer);
+        librariesRecyclerView = view.findViewById(R.id.librariesRecyclerView);
+
+        if (librariesRecyclerView != null) {
+            librariesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        }
     }
 
-
-
     private void loadBookDetails(String isbn) {
-        apiService.getBookDetails(isbn).enqueue(new Callback<BookDetail>() {
+        apiService.getBookDetails(isbn).enqueue(new Callback<BookDetailModel>() {
             @Override
-            public void onResponse(Call<BookDetail> call, Response<BookDetail> response) {
+            public void onResponse(Call<BookDetailModel> call, Response<BookDetailModel> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     displayBookDetail(response.body());
                 } else {
-                    showErrorMessage("책 정보를 가져오는데 실패했습니다.");
+                    Log.e(TAG, "Failed to fetch book details: " + response.code());
+                    showToast("책 정보를 가져오는데 실패했습니다.");
                 }
             }
 
             @Override
-            public void onFailure(Call<BookDetail> call, Throwable t) {
-                showErrorMessage("네트워크 오류가 발생했습니다.");
+            public void onFailure(Call<BookDetailModel> call, Throwable t) {
+                Log.e(TAG, "Error fetching book details", t);
+                showToast("네트워크 오류가 발생했습니다.");
             }
         });
     }
 
-    private void displayBookDetail(BookDetail bookDetail) {
-        Glide.with(this)
-                .load(bookDetail.getBookimageURL())
-                .placeholder(R.drawable.placeholder_image)
-                .error(R.drawable.placeholder_image)
-                .into(bookImageView);
+    private void displayBookDetail(BookDetailModel bookDetail) {
+        if (getView() == null) {
+            Log.e(TAG, "Fragment view is null");
+            return;
+        }
 
-        bookNameTextView.setText(bookDetail.getBookname());
-        authorTextView.setText("▸ 저자 : " + bookDetail.getAuthors());
-        publisherTextView.setText("▸ 출판 : " + bookDetail.getPublisher());
-        publishYearTextView.setText("▸ 발행 : " + bookDetail.getPublishyear());
-        descriptionTextView.setText(bookDetail.getDescription());
+        if (bookImageView != null) {
+            Glide.with(this)
+                    .load(bookDetail.getBookimageURL())
+                    .placeholder(R.drawable.placeholder_image)
+                    .error(R.drawable.placeholder_image)
+                    .into(bookImageView);
+        }
 
-        displayLibraries(bookDetail.getLibs());
-    }
+        if (bookNameTextView != null) bookNameTextView.setText(bookDetail.getBookname());
+        if (authorTextView != null) authorTextView.setText("▸ 저자 : " + bookDetail.getAuthors());
+        if (publisherTextView != null) publisherTextView.setText("▸ 출판 : " + bookDetail.getPublisher());
+        if (publishYearTextView != null) publishYearTextView.setText("▸ 발행 : " + bookDetail.getPublishyear());
+        if (descriptionTextView != null) descriptionTextView.setText(bookDetail.getDescription());
 
-    private void displayLibraries(List<Library> libraries) {
-        librariesContainer.removeAllViews();
-        for (Library library : libraries) {
-            View libraryView = getLayoutInflater().inflate(R.layout.item_library, librariesContainer, false);
-
-            TextView libNameTextView = libraryView.findViewById(R.id.libNameTextView);
-            TextView distanceTextView = libraryView.findViewById(R.id.distanceTextView);
-
-            libNameTextView.setText(library.getLibname());
-
-            Integer distance = library.getDistance();
-            String distanceText = distance != null ?
-                    String.format("%.1f km", distance / 1000.0) : "거리 정보 없음";
-            distanceTextView.setText(distanceText);
-
-            librariesContainer.addView(libraryView);
+        if (librariesRecyclerView != null && bookDetail.getLibs() != null) {
+            libraryAdapter = new BookDetailLibraryAdapter(bookDetail.getLibs());
+            librariesRecyclerView.setAdapter(libraryAdapter);
         }
     }
 
-    private void showErrorMessage(String message) {
-        Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
-        Log.e(TAG, "Error: " + message);
+    private void showToast(String message) {
+        if (getContext() != null) {
+            Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+        }
     }
 }

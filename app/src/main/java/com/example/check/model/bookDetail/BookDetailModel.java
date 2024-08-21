@@ -2,21 +2,22 @@ package com.example.check.model.bookDetail;
 
 import java.util.List;
 
-public class BookDetail {
-    private long ISBN;
+public class BookDetailModel {
+    private String ISBN;
     private String bookname;
     private String authors;
     private String publisher;
     private String publishyear;
     private String bookimageURL;
     private String description;
-    private List<Library> libs;
+    private List<LibraryModel> libs;
 
-    public long getISBN() {
+    // Getters and Setters
+    public String getISBN() {
         return ISBN;
     }
 
-    public void setISBN(long ISBN) {
+    public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
 
@@ -68,11 +69,12 @@ public class BookDetail {
         this.description = description;
     }
 
-    public List<Library> getLibs() {
+    public List<LibraryModel> getLibs() {
         return libs;
     }
 
-    public void setLibs(List<Library> libs) {
+    public void setLibs(List<LibraryModel> libs) {
         this.libs = libs;
     }
 }
+
