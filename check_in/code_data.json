@@ -1,0 +1,10208 @@
+[
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "2.28도서관",
+      "code": "0000"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "U보라작은도서관",
+      "code": "0001"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "가락몰도서관",
+      "code": "0002"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "가산도서관",
+      "code": "0003"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "가수원도서관",
+      "code": "0004"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "가슴따뜻한작은도서관",
+      "code": "0005"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "가오도서관",
+      "code": "0006"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "가온누리작은도서관",
+      "code": "0007"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "가온도서관",
+      "code": "0008"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "가창면 참꽃 작은도서관",
+      "code": "0009"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "가평군 설악도서관",
+      "code": "0010"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "가평군 조종도서관",
+      "code": "0011"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "가평군 청평도서관",
+      "code": "0012"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "가평군 한석봉도서관",
+      "code": "0013"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "갈마도서관",
+      "code": "0014"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "갈산도서관",
+      "code": "0015"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "갈현1동문화의집",
+      "code": "0016"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "감곡도서관",
+      "code": "0017"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강남구립논현도서관",
+      "code": "0018"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강남구립대치도서관",
+      "code": "0019"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강남구립도곡정보문화도서관",
+      "code": "0020"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강남구립못골도서관",
+      "code": "0021"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강남구립못골한옥어린이도서관",
+      "code": "0022"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강남구립역삼도서관",
+      "code": "0023"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강남구립역삼푸른솔도서관",
+      "code": "0024"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강남구립열린도서관",
+      "code": "0025"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강남구립일원라온영어도서관",
+      "code": "0026"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강남구립정다운도서관",
+      "code": "0027"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강남구립즐거운도서관",
+      "code": "0028"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강남구립청담도서관",
+      "code": "0029"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강남구립행복한도서관",
+      "code": "0030"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강동구립강일도서관",
+      "code": "0031"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강동구립둔촌도서관",
+      "code": "0032"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강동구립성내도서관",
+      "code": "0033"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강동구립암사도서관",
+      "code": "0034"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강동구립천호도서관",
+      "code": "0035"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강동구립해공도서관",
+      "code": "0036"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강북문화정보도서관",
+      "code": "0037"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강북청소년문화정보도서관",
+      "code": "0038"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강서구립가양도서관",
+      "code": "0039"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강서구립곰달래도서관",
+      "code": "0040"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강서구립길꽃어린이도서관",
+      "code": "0041"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강서구립꿈꾸는어린이도서관",
+      "code": "0042"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강서구립등빛도서관",
+      "code": "0043"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강서구립우장산숲속도서관",
+      "code": "0044"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강서구립푸른들청소년도서관",
+      "code": "0045"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강서영어도서관",
+      "code": "0046"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 강릉교육문화관",
+      "code": "0047"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 고성교육도서관",
+      "code": "0048"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 동해교육도서관",
+      "code": "0049"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 명주교육도서관",
+      "code": "0050"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 문막교육도서관",
+      "code": "0051"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 삼척교육문화관",
+      "code": "0052"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 속초교육도서관",
+      "code": "0053"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 양구교육도서관",
+      "code": "0054"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 양양교육도서관",
+      "code": "0055"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 영월교육도서관",
+      "code": "0056"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 원주교육문화관",
+      "code": "0057"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 인제교육도서관",
+      "code": "0058"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 정선교육도서관",
+      "code": "0059"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 철원교육도서관",
+      "code": "0060"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 춘성교육도서관",
+      "code": "0061"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 춘천교육문화관",
+      "code": "0062"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 태백교육도서관",
+      "code": "0063"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 평창교육도서관",
+      "code": "0064"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 홍천교육도서관",
+      "code": "0065"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 화천교육도서관",
+      "code": "0066"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청 횡성교육도서관",
+      "code": "0067"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강원특별자치도교육청속초교육문화관",
+      "code": "0068"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강진군도서관",
+      "code": "0069"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "강촌공원작은도서관",
+      "code": "0070"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "개봉도서관",
+      "code": "0071"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "개울건강도서관",
+      "code": "0072"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "개포4동작은도서관",
+      "code": "0073"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "거마도서관",
+      "code": "0074"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "거제시립수양도서관",
+      "code": "0075"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "거제시립아주도서관",
+      "code": "0076"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "거제시립옥포도서관",
+      "code": "0077"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "거제시립장승포도서관",
+      "code": "0078"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "거제시립장평도서관",
+      "code": "0079"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "거제시립하청도서관",
+      "code": "0080"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "거창군립한마음도서관",
+      "code": "0081"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "검산작은도서관",
+      "code": "0082"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경기과천교육도서관",
+      "code": "0083"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경기광주교육도서관",
+      "code": "0084"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경기김포교육도서관",
+      "code": "0085"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경기성남교육도서관",
+      "code": "0086"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경기여주가남교육도서관",
+      "code": "0087"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경기의정부교육도서관",
+      "code": "0088"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경기중앙교육도서관",
+      "code": "0089"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경기평생교육학습관",
+      "code": "0090"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경기평택교육도서관",
+      "code": "0091"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경기포천교육도서관",
+      "code": "0092"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경기화성교육도서관",
+      "code": "0093"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경남대표도서관",
+      "code": "0094"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경북도서관",
+      "code": "0095"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경산시립도서관",
+      "code": "0096"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경산시립장산도서관",
+      "code": "0097"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 거제도서관",
+      "code": "0098"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 거창도서관",
+      "code": "0099"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 고성도서관",
+      "code": "0100"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 김해도서관",
+      "code": "0101"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 김해지혜의바다도서관",
+      "code": "0102"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 남지도서관",
+      "code": "0103"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 남해도서관",
+      "code": "0104"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 마산도서관",
+      "code": "0105"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 마산지혜의바다도서관",
+      "code": "0106"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 밀양도서관",
+      "code": "0107"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 사천도서관",
+      "code": "0108"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 산청도서관",
+      "code": "0109"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 산청지리산도서관",
+      "code": "0110"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 삼천포도서관",
+      "code": "0111"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 양산도서관",
+      "code": "0112"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 의령도서관",
+      "code": "0113"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 진동도서관",
+      "code": "0114"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 진양도서관",
+      "code": "0115"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 진영도서관",
+      "code": "0116"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 창녕도서관",
+      "code": "0117"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 창원도서관",
+      "code": "0118"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 통영도서관",
+      "code": "0119"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 하남도서관",
+      "code": "0120"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 하동도서관",
+      "code": "0121"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 함안도서관",
+      "code": "0122"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 함양도서관",
+      "code": "0123"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상남도교육청 합천도서관",
+      "code": "0124"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 고령도서관",
+      "code": "0125"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 구미도서관",
+      "code": "0126"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 금호도서관",
+      "code": "0127"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 봉화도서관",
+      "code": "0128"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 상주도서관",
+      "code": "0129"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 상주도서관 화령분관",
+      "code": "0130"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 성주도서관",
+      "code": "0131"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 안동도서관",
+      "code": "0132"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 안동도서관 용상분관",
+      "code": "0133"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 안동도서관 풍산분관",
+      "code": "0134"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 영덕도서관",
+      "code": "0135"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 영양도서관",
+      "code": "0136"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 영일도서관",
+      "code": "0137"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 영주선비도서관",
+      "code": "0138"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 영주선비도서관 풍기분관",
+      "code": "0139"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 예천도서관",
+      "code": "0140"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 외동도서관",
+      "code": "0141"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 울릉도서관",
+      "code": "0142"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 울진도서관",
+      "code": "0143"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 의성도서관",
+      "code": "0144"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 점촌도서관",
+      "code": "0145"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 점촌도서관 가은분관",
+      "code": "0146"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 청도도서관",
+      "code": "0147"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 청송도서관",
+      "code": "0148"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청 칠곡도서관",
+      "code": "0149"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청문화원 종합정보자료실",
+      "code": "0150"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청연수원 도서관",
+      "code": "0151"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경상북도교육청정보센터",
+      "code": "0152"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경주시립감포도서관",
+      "code": "0153"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경주시립단석도서관",
+      "code": "0154"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경주시립도서관",
+      "code": "0155"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경주시립송화도서관",
+      "code": "0156"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경주시립중앙도서관",
+      "code": "0157"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "경주시립칠평도서관",
+      "code": "0158"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고대웃음꽃 작은도서관",
+      "code": "0159"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고맙습니다 하난곡작은도서관",
+      "code": "0160"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고북작은도서관",
+      "code": "0161"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고암작은도서관",
+      "code": "0162"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립가좌도서관",
+      "code": "0163"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립대화도서관",
+      "code": "0164"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립덕이도서관",
+      "code": "0165"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립마두도서관",
+      "code": "0166"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립백석도서관",
+      "code": "0167"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립별꿈도서관",
+      "code": "0168"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립삼송도서관",
+      "code": "0169"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립식사도서관",
+      "code": "0170"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립신원도서관",
+      "code": "0171"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립아람누리도서관",
+      "code": "0172"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립원당도서관",
+      "code": "0173"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립일산도서관",
+      "code": "0174"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립주엽어린이도서관",
+      "code": "0175"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립풍동도서관",
+      "code": "0176"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립한뫼도서관",
+      "code": "0177"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립행신도서관",
+      "code": "0178"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립행신어린이도서관",
+      "code": "0179"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립화정도서관",
+      "code": "0180"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양시립화정어린이도서관",
+      "code": "0181"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고양작은도서관",
+      "code": "0182"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고운남측도서관",
+      "code": "0183"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고운동도서관",
+      "code": "0184"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고촌도서관",
+      "code": "0185"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고현초꿈키움도서관",
+      "code": "0186"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고흥군립남부도서관",
+      "code": "0187"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고흥군립북부도서관",
+      "code": "0188"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "고흥군립중앙도서관",
+      "code": "0189"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "공릉행복도서관",
+      "code": "0190"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "공주기적의도서관",
+      "code": "0191"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "공주시 웅진도서관",
+      "code": "0192"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "과천시정보과학도서관",
+      "code": "0193"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "관산작은도서관",
+      "code": "0194"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "관악산詩도서관",
+      "code": "0195"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "관악중앙도서관",
+      "code": "0196"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "관평도서관",
+      "code": "0197"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광남작은도서관",
+      "code": "0198"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광명시광명도서관",
+      "code": "0199"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광명시소하도서관",
+      "code": "0200"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광명시연서도서관",
+      "code": "0201"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광명시철산도서관",
+      "code": "0202"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광명시충현도서관",
+      "code": "0203"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광명시하안도서관",
+      "code": "0204"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광산구립신가도서관",
+      "code": "0205"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광산구립운남어린이도서관",
+      "code": "0206"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광산구립이야기꽃도서관",
+      "code": "0207"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광산구립장덕도서관",
+      "code": "0208"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광산구립첨단도서관",
+      "code": "0209"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광양용강도서관",
+      "code": "0210"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광양중마도서관",
+      "code": "0211"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광양중앙도서관",
+      "code": "0212"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광양희망도서관",
+      "code": "0213"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주 북구 양산도서관",
+      "code": "0214"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주 북구 운암도서관",
+      "code": "0215"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주 북구 일곡도서관",
+      "code": "0216"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주 북구 중흥도서관",
+      "code": "0217"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주 서구 공공도서관",
+      "code": "0218"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주 서구 상록도서관",
+      "code": "0219"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주 서구 어린이생태학습도서관",
+      "code": "0220"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주광역시립무등도서관",
+      "code": "0221"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주광역시립사직도서관",
+      "code": "0222"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주광역시립산수도서관",
+      "code": "0223"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주남구문화정보도서관",
+      "code": "0224"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주남구청소년도서관",
+      "code": "0225"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주남구푸른길도서관",
+      "code": "0226"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주송정다가치문화도서관",
+      "code": "0227"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주시립곤지암도서관",
+      "code": "0228"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주시립능평도서관",
+      "code": "0229"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주시립오포도서관",
+      "code": "0230"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주시립중앙도서관",
+      "code": "0231"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주시립초월도서관",
+      "code": "0232"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주중앙도서관",
+      "code": "0233"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주중앙도서관 분관 최상준도서관",
+      "code": "0234"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주학생교육문화회관",
+      "code": "0235"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광주학생독립운동기념회관",
+      "code": "0236"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광진정보도서관",
+      "code": "0237"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "광천공공도서관",
+      "code": "0238"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "괴산교육도서관",
+      "code": "0239"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "교동골작은도서관",
+      "code": "0240"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구갈희망누리도서관",
+      "code": "0241"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구래작은도서관",
+      "code": "0242"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구례군 매천도서관",
+      "code": "0243"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구로기적의도서관",
+      "code": "0244"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구로꿈나무어린이도서관",
+      "code": "0245"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구룡포 미르아라작은도서관",
+      "code": "0246"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구리시 교문방정환도서관",
+      "code": "0247"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구리시 인창도서관",
+      "code": "0248"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구리시 토평도서관",
+      "code": "0249"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구립구산동도서관마을",
+      "code": "0250"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구립내를건너서숲으로도서관",
+      "code": "0251"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구립상림도서관",
+      "code": "0252"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구립은뜨락도서관",
+      "code": "0253"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구립은평뉴타운도서관",
+      "code": "0254"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구립응암정보도서관",
+      "code": "0255"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구립증산정보도서관",
+      "code": "0256"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구미시립봉곡도서관",
+      "code": "0257"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구미시립상모정수도서관",
+      "code": "0258"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구미시립선산도서관",
+      "code": "0259"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구미시립양포도서관",
+      "code": "0260"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구미시립인동도서관",
+      "code": "0261"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구미시립중앙도서관",
+      "code": "0262"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구성도서관",
+      "code": "0263"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구암도서관",
+      "code": "0264"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구의제3동도서관",
+      "code": "0265"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구즉도서관",
+      "code": "0266"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "구지면 작은도서관",
+      "code": "0267"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "국립세종도서관",
+      "code": "0268"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "국사봉숲속작은도서관",
+      "code": "0269"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "군산시립금강도서관",
+      "code": "0270"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "군산시립늘푸른도서관",
+      "code": "0271"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "군산시립도서관",
+      "code": "0272"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "군산시립산들도서관",
+      "code": "0273"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "군산시립설림도서관",
+      "code": "0274"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "군산시립임피채만식도서관",
+      "code": "0275"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "군자동도서관",
+      "code": "0276"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "군포시중앙도서관",
+      "code": "0277"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "궁동어린이도서관",
+      "code": "0278"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "극동푸른작은도서관",
+      "code": "0279"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "근남작은도서관",
+      "code": "0280"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "근로종합복지회관작은도서관",
+      "code": "0281"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "글마루작은도서관",
+      "code": "0282"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "글마루한옥어린이도서관",
+      "code": "0283"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "글밭작은도서관",
+      "code": "0284"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "글빛도서관",
+      "code": "0285"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "글빛정보도서관",
+      "code": "0286"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "글혜윰작은도서관",
+      "code": "0287"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "금산기적의도서관",
+      "code": "0288"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "금산인삼고을도서관",
+      "code": "0289"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "금산작은도서관",
+      "code": "0290"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "금왕교육도서관",
+      "code": "0291"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "금천구립가산도서관",
+      "code": "0292"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "금천구립금나래도서관",
+      "code": "0293"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "금천구립독산도서관",
+      "code": "0294"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "금천구립시흥도서관",
+      "code": "0295"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "금촌무지개작은도서관",
+      "code": "0296"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "금호평생교육관",
+      "code": "0297"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "기계면 버드내작은도서관",
+      "code": "0298"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "기성작은도서관",
+      "code": "0299"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "기흥도서관",
+      "code": "0300"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "길보작은도서관",
+      "code": "0301"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "김근태기념도서관",
+      "code": "0302"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "김영삼도서관",
+      "code": "0303"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "김제교육문화회관",
+      "code": "0304"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "김제교육문화회관 금산분관",
+      "code": "0305"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "김제금구도서관",
+      "code": "0306"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "김제만경도서관",
+      "code": "0307"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "김제시립도서관",
+      "code": "0308"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "김해글로벗도서관",
+      "code": "0309"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "김해기적의도서관",
+      "code": "0310"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "김해율하도서관",
+      "code": "0311"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "김해청소년문화의집",
+      "code": "0312"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "까망돌도서관",
+      "code": "0313"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "꽃바위작은도서관",
+      "code": "0314"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "꿈꾸는새싹작은도서관",
+      "code": "0315"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "꿈꾸는작은도서관",
+      "code": "0316"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "꿈나래어린이영어도서관",
+      "code": "0317"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "꿈날자문고 도서관",
+      "code": "0318"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "꿈마을도서관",
+      "code": "0319"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "꿈을이루는작은도서관",
+      "code": "0320"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "꿈이랑도서관",
+      "code": "0321"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "꿈이있는작은도서관",
+      "code": "0322"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "꿈틀 작은도서관",
+      "code": "0323"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "낙성대공원도서관",
+      "code": "0324"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남가좌새롬어린이도서관",
+      "code": "0325"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남동논현도서관",
+      "code": "0326"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남목도서관",
+      "code": "0327"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남목작은도서관",
+      "code": "0328"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남사도서관",
+      "code": "0329"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남산4동 작은도서관",
+      "code": "0330"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남산타운 어린이도서관",
+      "code": "0331"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남양주시 별내도서관",
+      "code": "0332"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남양주시 별빛도서관",
+      "code": "0333"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남양주시 오남도서관",
+      "code": "0334"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남양주시 와부도서관",
+      "code": "0335"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남양주시 이석영뉴미디어도서관",
+      "code": "0336"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남양주시 정약용도서관",
+      "code": "0337"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남양주시 진건도서관",
+      "code": "0338"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남양주시 진접도서관",
+      "code": "0339"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남양주시 진접푸른숲도서관",
+      "code": "0340"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남양주시 퇴계원도서관",
+      "code": "0341"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남양주시 평내도서관",
+      "code": "0342"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남양주시 호평도서관",
+      "code": "0343"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남양주시 화도도서관",
+      "code": "0344"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남영동 작은도서관",
+      "code": "0345"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남원시립도서관",
+      "code": "0346"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남원시어린이청소년도서관",
+      "code": "0347"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남한산성작은도서관",
+      "code": "0348"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "남해화전도서관",
+      "code": "0349"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "내손책고운도서관",
+      "code": "0350"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "내외작은도서관",
+      "code": "0351"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "내유작은도서관",
+      "code": "0352"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "노원동 작은도서관",
+      "code": "0353"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "노원어린이도서관",
+      "code": "0354"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "노원중앙도서관",
+      "code": "0355"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "노원행복 작은도서관",
+      "code": "0356"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "노은도서관",
+      "code": "0357"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "녹번만화도서관",
+      "code": "0358"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "논골작은도서관",
+      "code": "0359"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "논공읍 작은도서관",
+      "code": "0360"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "논산강경도서관",
+      "code": "0361"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "논산연무도서관",
+      "code": "0362"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "논산열린도서관",
+      "code": "0363"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "논현문화마루도서관(분관)",
+      "code": "0364"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "누리봄작은도서관",
+      "code": "0365"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "느티나무도서관",
+      "code": "0366"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "늘푸른 도서관",
+      "code": "0367"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "늘푸른소나무작은도서관",
+      "code": "0368"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "늘푸른열린작은도서관",
+      "code": "0369"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "다문화작은도서관",
+      "code": "0370"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "다사읍 서재 작은도서관",
+      "code": "0371"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "다사읍 작은도서관",
+      "code": "0372"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "다산도서관",
+      "code": "0373"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "다산성곽도서관",
+      "code": "0374"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "다울림작은도서관",
+      "code": "0375"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "다울작은도서관",
+      "code": "0376"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "다정동도서관",
+      "code": "0377"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "단양교육도서관",
+      "code": "0378"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "단양군립매포도서관",
+      "code": "0379"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "단양군립올누림도서관",
+      "code": "0380"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "달빛마루도서관",
+      "code": "0381"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "달서구립가족문화도서관",
+      "code": "0382"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "달서구립달서영어도서관",
+      "code": "0383"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "달서구립도원도서관",
+      "code": "0384"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "달서구립본리도서관",
+      "code": "0385"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "달서구립성서도서관",
+      "code": "0386"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "달서구립어린이도서관",
+      "code": "0387"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "달서아트센터 도서관",
+      "code": "0388"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "달성군립도서관",
+      "code": "0389"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "달성군청 도서관",
+      "code": "0390"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "달성군청소년센터 작은도서관",
+      "code": "0391"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "담작은도서관",
+      "code": "0392"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "답십리1동 아름드리 작은도서관",
+      "code": "0393"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "답십리2동 민들레 작은도서관",
+      "code": "0394"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "당곡작은도서관",
+      "code": "0395"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "당진시립송악도서관",
+      "code": "0396"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "당진시립중앙도서관",
+      "code": "0397"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "당진시립합덕도서관",
+      "code": "0398"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대곶작은도서관",
+      "code": "0399"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구 동구 신천도서관",
+      "code": "0400"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구 동구 안심도서관",
+      "code": "0401"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구 북구 구수산도서관",
+      "code": "0402"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구 북구 대현도서관",
+      "code": "0403"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구 북구 영어 작은도서관",
+      "code": "0404"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구 북구 태전도서관",
+      "code": "0405"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구 서구 비산도서관",
+      "code": "0406"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구 서구 비원도서관",
+      "code": "0407"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구 서구 어린이도서관",
+      "code": "0408"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구 서구 영어도서관",
+      "code": "0409"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구 서구 원고개도서관",
+      "code": "0410"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구 중구 영어도서관",
+      "code": "0411"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구 중구청 교양정보실",
+      "code": "0412"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구2.28기념학생도서관",
+      "code": "0413"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구광역시교육청삼국유사군위도서관",
+      "code": "0414"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구광역시립남부도서관",
+      "code": "0415"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구광역시립달성도서관",
+      "code": "0416"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구광역시립동부도서관",
+      "code": "0417"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구광역시립두류도서관",
+      "code": "0418"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구광역시립북부도서관",
+      "code": "0419"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구광역시립서부도서관",
+      "code": "0420"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대구광역시립수성도서관",
+      "code": "0421"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대덕작은도서관",
+      "code": "0422"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대동푸른뜰작은도서관",
+      "code": "0423"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대동한마음작은도서관",
+      "code": "0424"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대림도서관",
+      "code": "0425"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대명어울림도서관",
+      "code": "0426"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대방어린이도서관",
+      "code": "0427"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대봉2동 작은도서관",
+      "code": "0428"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대산도서관",
+      "code": "0429"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대소도서관",
+      "code": "0430"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대송면 큰솔작은도서관",
+      "code": "0431"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대신동 작은도서관",
+      "code": "0432"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대월작은도서관",
+      "code": "0433"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대전 서구 어린이도서관",
+      "code": "0434"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대전학생교육문화원",
+      "code": "0435"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대조꿈나무어린이도서관",
+      "code": "0436"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대주작은도서관",
+      "code": "0437"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대치1동작은도서관",
+      "code": "0438"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대평동도서관",
+      "code": "0439"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대포천작은도서관",
+      "code": "0440"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "대호지책나래 작은도서관",
+      "code": "0441"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "덕산작은도서관",
+      "code": "0442"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "도곡2동작은도서관",
+      "code": "0443"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "도담동도서관",
+      "code": "0444"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "도란도란작은도서관",
+      "code": "0445"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "도봉1동 공립 작은도서관",
+      "code": "0446"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "도봉2동 공립 작은도서관",
+      "code": "0447"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "도봉구립무수골도서관",
+      "code": "0448"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "도봉구립학마을도서관",
+      "code": "0449"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "도봉구청 행복작은도서관",
+      "code": "0450"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "도봉기적의도서관",
+      "code": "0451"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "도봉문화정보도서관",
+      "code": "0452"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "도봉아이나라도서관",
+      "code": "0453"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "도척작은도서관",
+      "code": "0454"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "도평동 작은도서관",
+      "code": "0455"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "돌마리도서관",
+      "code": "0456"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "동대문구 장안 벚꽃길 작은도서관",
+      "code": "0457"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "동대문구답십리도서관",
+      "code": "0458"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "동대문구정보화도서관",
+      "code": "0459"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "동대문책마당도서관",
+      "code": "0460"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "동두천꿈나무정보도서관",
+      "code": "0461"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "동두천시립도서관",
+      "code": "0462"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "동문작은도서관",
+      "code": "0463"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "동백도서관",
+      "code": "0464"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "동인느티나무 도서관",
+      "code": "0465"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "동작샘터도서관",
+      "code": "0466"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "동작영어마루도서관",
+      "code": "0467"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "동촌역사 작은도서관",
+      "code": "0468"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "동해시립발한도서관",
+      "code": "0469"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "동해시립북삼도서관",
+      "code": "0470"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "두호동 두무치작은도서관",
+      "code": "0471"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "두호동 책이랑바다랑작은도서관",
+      "code": "0472"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "둔덕청마꽃들작은도서관",
+      "code": "0473"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "둔산도서관",
+      "code": "0474"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "둘리도서관",
+      "code": "0475"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "등대작은도서관",
+      "code": "0476"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "떡갈나무숲작은도서관",
+      "code": "0477"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "뜨란채작은도서관",
+      "code": "0478"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "리첼작은도서관",
+      "code": "0479"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "마산도서관",
+      "code": "0480"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "마상공원작은도서관",
+      "code": "0481"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "마전도서관",
+      "code": "0482"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "마포서강도서관",
+      "code": "0483"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "마포소금나루도서관",
+      "code": "0484"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "마포어린이영어도서관",
+      "code": "0485"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "마포중앙도서관",
+      "code": "0486"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "마포푸르메어린이도서관",
+      "code": "0487"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "매봉작은도서관",
+      "code": "0488"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "매화작은도서관",
+      "code": "0489"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "맹동혁신도서관",
+      "code": "0490"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "면암중앙도서관",
+      "code": "0491"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "모가작은도서관",
+      "code": "0492"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "모당공원작은도서관",
+      "code": "0493"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "모현도서관",
+      "code": "0494"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "목마교육도서관",
+      "code": "0495"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "목포시립도서관",
+      "code": "0496"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "목포어린이도서관",
+      "code": "0497"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "목포영어도서관",
+      "code": "0498"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "무등실작은도서관",
+      "code": "0499"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "무릉작은도서관",
+      "code": "0500"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "무주형설지공도서관",
+      "code": "0501"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "무지개도서관",
+      "code": "0502"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "무지개도서관",
+      "code": "0503"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "무지개작은도서관",
+      "code": "0504"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "문래도서관",
+      "code": "0505"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "문화촌작은도서관",
+      "code": "0506"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "물구나무작은도서관",
+      "code": "0507"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "미감도서관",
+      "code": "0508"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "미아문화정보도서관",
+      "code": "0509"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "미원교육도서관",
+      "code": "0510"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "미추홀도서관",
+      "code": "0511"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "민들레홀씨작은도서관",
+      "code": "0512"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "밀양시립도서관",
+      "code": "0513"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "밀양시립영어도서관",
+      "code": "0514"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "반곡동도서관",
+      "code": "0515"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "반야월 작은도서관",
+      "code": "0516"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "반포1동 작은도서관",
+      "code": "0517"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "반포2동 작은도서관",
+      "code": "0518"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "반포3동 작은도서관",
+      "code": "0519"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "반포4동 작은도서관",
+      "code": "0520"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "반포본동 작은도서관",
+      "code": "0521"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "방배1동 작은도서관",
+      "code": "0522"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "방배2동 책사랑방",
+      "code": "0523"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "방배4동 작은도서관",
+      "code": "0524"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "방배도서관",
+      "code": "0525"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "방배본동 작은도서관",
+      "code": "0526"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "방아다리문학도서관",
+      "code": "0527"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "방촌동 작은도서관",
+      "code": "0528"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "방촌어린이 작은도서관",
+      "code": "0529"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "방학1동 공립 작은도서관",
+      "code": "0530"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "방학2동 공립 작은도서관",
+      "code": "0531"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "방학3동 공립 작은도서관",
+      "code": "0532"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "방학동육아종합지원센터",
+      "code": "0533"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "배봉산 숲속도서관",
+      "code": "0534"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "백사작은도서관",
+      "code": "0535"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "별밭 작은도서관",
+      "code": "0536"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "보라도서관",
+      "code": "0537"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "보람동도서관",
+      "code": "0538"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "보은교육도서관",
+      "code": "0539"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "복사골작은도서관",
+      "code": "0540"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "복사꽃필무렵작은도서관",
+      "code": "0541"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부곡글고운도서관",
+      "code": "0542"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 강서기적의도서관",
+      "code": "0543"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 강서도서관",
+      "code": "0544"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 고촌어울림도서관",
+      "code": "0545"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 교리도서관",
+      "code": "0546"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 금곡도서관",
+      "code": "0547"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 금샘도서관",
+      "code": "0548"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 금정도서관",
+      "code": "0549"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 기장도서관",
+      "code": "0550"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 기장디지털도서관",
+      "code": "0551"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 남구도서관",
+      "code": "0552"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 내리새라도서관",
+      "code": "0553"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 다대도서관",
+      "code": "0554"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 대라다목적도서관",
+      "code": "0555"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 동구도서관",
+      "code": "0556"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 동구어린이영어도서관",
+      "code": "0557"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 동래읍성도서관",
+      "code": "0558"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 만덕도서관",
+      "code": "0559"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 망미도서관",
+      "code": "0560"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 반여도서관",
+      "code": "0561"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 부산진구어린이청소년도서관",
+      "code": "0562"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 분포도서관",
+      "code": "0563"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 사상도서관",
+      "code": "0564"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 수영구도서관",
+      "code": "0565"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 수영구어린이도서관",
+      "code": "0566"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 안락누리도서관",
+      "code": "0567"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 연제도서관",
+      "code": "0568"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 영도도서관",
+      "code": "0569"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 영도도서관 남항분관",
+      "code": "0570"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 재송어린이도서관",
+      "code": "0571"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 정관도서관",
+      "code": "0572"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 정관어린이도서관",
+      "code": "0573"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 지사도서관",
+      "code": "0574"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 해운대인문학도서관",
+      "code": "0575"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시 화명도서관",
+      "code": "0576"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시립구덕도서관",
+      "code": "0577"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시립구포도서관",
+      "code": "0578"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시립명장도서관",
+      "code": "0579"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시립반송도서관",
+      "code": "0580"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시립부전도서관",
+      "code": "0581"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시립사하도서관",
+      "code": "0582"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시립서동도서관",
+      "code": "0583"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시립시민도서관",
+      "code": "0584"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시립연산도서관",
+      "code": "0585"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시립중앙도서관",
+      "code": "0586"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시립중앙도서관 수정분관",
+      "code": "0587"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시립해운대도서관",
+      "code": "0588"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산광역시립해운대도서관 우동분관",
+      "code": "0589"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산도서관",
+      "code": "0590"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부산영어도서관",
+      "code": "0591"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부석작은도서관",
+      "code": "0592"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부천시립꿈빛도서관",
+      "code": "0593"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부천시립꿈여울도서관",
+      "code": "0594"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부천시립도당도서관",
+      "code": "0595"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부천시립동화도서관",
+      "code": "0596"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부천시립북부도서관",
+      "code": "0597"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부천시립상동도서관",
+      "code": "0598"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부천시립송내도서관",
+      "code": "0599"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부천시립심곡도서관",
+      "code": "0600"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부천시립역곡도서관",
+      "code": "0601"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부천시립오정도서관",
+      "code": "0602"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부천시립원미도서관",
+      "code": "0603"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부천시립책마루도서관",
+      "code": "0604"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부천시립한울빛도서관",
+      "code": "0605"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부천행정정보도서관 시정담벼락",
+      "code": "0606"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부평구립갈산도서관",
+      "code": "0607"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부평구립부개도서관",
+      "code": "0608"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부평구립부개어린이도서관",
+      "code": "0609"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부평구립삼산도서관",
+      "code": "0610"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부평구립청천도서관",
+      "code": "0611"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "부평기적의도서관",
+      "code": "0612"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "북내작은도서관",
+      "code": "0613"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "북서울중학교",
+      "code": "0614"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "북아현마을 북카페",
+      "code": "0615"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "북울진도서관",
+      "code": "0616"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "분성IPARK작은도서관",
+      "code": "0617"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "불광천작은도서관",
+      "code": "0618"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "불로어울림 작은도서관",
+      "code": "0619"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "불암도서관",
+      "code": "0620"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "불암동작은도서관",
+      "code": "0621"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "사2동 꿈을키우는도서관",
+      "code": "0622"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "사3동작은도서관",
+      "code": "0623"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "사당솔밭도서관",
+      "code": "0624"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "사랑나무가족도서관",
+      "code": "0625"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "사리현작은도서관",
+      "code": "0626"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "사북공공도서관",
+      "code": "0627"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "산격1동 작은도서관",
+      "code": "0628"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "산북작은도서관",
+      "code": "0629"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "산성어린이도서관",
+      "code": "0630"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "삼각산어린이도서관",
+      "code": "0631"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "삼계로얄작은도서관",
+      "code": "0632"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "삼계푸르지오작은도서관",
+      "code": "0633"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "삼덕마루 작은도서관",
+      "code": "0634"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "삼성도서관",
+      "code": "0635"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "삼성도서관",
+      "code": "0636"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "삼송작은도서관",
+      "code": "0637"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "삽교공공도서관",
+      "code": "0638"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "상계도서관",
+      "code": "0639"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "상대동 큰섬마을작은도서관",
+      "code": "0640"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "상동어울마당작은도서관",
+      "code": "0641"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "상동역칙칙폭폭도서관",
+      "code": "0642"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "상리작은도서관",
+      "code": "0643"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "상현도서관",
+      "code": "0644"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "새롬동도서관",
+      "code": "0645"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "새마을작은도서관",
+      "code": "0646"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "새싹작은도서관",
+      "code": "0647"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "생각이크는작은도서관",
+      "code": "0648"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "생거진천혁신도시도서관",
+      "code": "0649"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서경로꿈마루도서관",
+      "code": "0650"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서귀포기적의도서관",
+      "code": "0651"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서대문구립이진아기념도서관",
+      "code": "0652"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서변동 작은도서관",
+      "code": "0653"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서빙고동 작은도서관",
+      "code": "0654"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서산시립도서관",
+      "code": "0655"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울도서관",
+      "code": "0656"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청강남도서관",
+      "code": "0657"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청강동도서관",
+      "code": "0658"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청강서도서관",
+      "code": "0659"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청개포도서관",
+      "code": "0660"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청고덕평생학습관",
+      "code": "0661"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청고척도서관",
+      "code": "0662"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청구로도서관",
+      "code": "0663"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청남산도서관",
+      "code": "0664"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청노원평생학습관",
+      "code": "0665"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청도봉도서관",
+      "code": "0666"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청동대문도서관",
+      "code": "0667"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청동작도서관",
+      "code": "0668"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청마포평생학습관",
+      "code": "0669"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청마포평생학습관아현분관",
+      "code": "0670"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청서대문도서관",
+      "code": "0671"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청서울시립어린이도서관",
+      "code": "0672"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청송파도서관",
+      "code": "0673"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청양천도서관",
+      "code": "0674"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청영등포평생학습관",
+      "code": "0675"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청용산도서관",
+      "code": "0676"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청정독도서관",
+      "code": "0677"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서울특별시교육청종로도서관",
+      "code": "0678"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서이도서관",
+      "code": "0679"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서정작은도서관",
+      "code": "0680"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서창도서관",
+      "code": "0681"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서초1동 작은도서관",
+      "code": "0682"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서초3동 작은도서관",
+      "code": "0683"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서초4동 작은도서관",
+      "code": "0684"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서초구립내곡도서관",
+      "code": "0685"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서초구립반포도서관",
+      "code": "0686"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서초구립양재도서관",
+      "code": "0687"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서초그림책도서관",
+      "code": "0688"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "서초청소년도서관",
+      "code": "0689"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "석관동미리내도서관",
+      "code": "0690"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "석문생각나무 작은도서관",
+      "code": "0691"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "석봉마을작은도서관",
+      "code": "0692"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "석수골작은도서관",
+      "code": "0693"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "선단도서관",
+      "code": "0694"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "선부3동선녀마을작은도서관",
+      "code": "0695"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "선유도서관",
+      "code": "0696"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "설성작은도서관",
+      "code": "0697"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성남시 구미도서관",
+      "code": "0698"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성남시 논골도서관",
+      "code": "0699"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성남시 무지개도서관",
+      "code": "0700"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성남시 복정도서관",
+      "code": "0701"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성남시 분당도서관",
+      "code": "0702"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성남시 서현도서관",
+      "code": "0703"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성남시 수정도서관",
+      "code": "0704"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성남시 운중도서관",
+      "code": "0705"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성남시 위례도서관",
+      "code": "0706"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성남시 중앙도서관",
+      "code": "0707"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성남시 중원도서관",
+      "code": "0708"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성남시 중원어린이도서관",
+      "code": "0709"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성남시 판교도서관",
+      "code": "0710"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성남시 판교어린이도서관",
+      "code": "0711"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성남시 해오름도서관",
+      "code": "0712"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성남작은도서관",
+      "code": "0713"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성동구립 금호도서관",
+      "code": "0714"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성동구립 매봉산 숲속도서관",
+      "code": "0715"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성동구립 무지개도서관",
+      "code": "0716"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성동구립 성수도서관",
+      "code": "0717"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성동구립 용답도서관",
+      "code": "0718"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성동구립 청계도서관",
+      "code": "0719"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성동구립도서관",
+      "code": "0720"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성메작은도서관",
+      "code": "0721"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성북길빛도서관",
+      "code": "0722"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성북정보도서관",
+      "code": "0723"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성산글마루작은도서관",
+      "code": "0724"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "성현동작은도서관",
+      "code": "0725"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "세곡도서관",
+      "code": "0726"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "세곡마루도서관",
+      "code": "0727"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "세교쌍용예가 시민개방도서관",
+      "code": "0728"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "세종시립도서관",
+      "code": "0729"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "세종평생교육학습관",
+      "code": "0730"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "소나무언덕1호작은도서관",
+      "code": "0731"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "소나무언덕2호작은도서관",
+      "code": "0732"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "소나무언덕3호작은도서관",
+      "code": "0733"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "소나무언덕4호작은도서관",
+      "code": "0734"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "소나무언덕잠실본동도서관",
+      "code": "0735"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "소담동도서관",
+      "code": "0736"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "소래도서관",
+      "code": "0737"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "소리작은도서관",
+      "code": "0738"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "소새울가족작은도서관",
+      "code": "0739"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "소흘도서관",
+      "code": "0740"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "속초시립도서관",
+      "code": "0741"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "손기정 문화도서관",
+      "code": "0742"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "손기정 어린이도서관",
+      "code": "0743"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "솔샘문화정보도서관",
+      "code": "0744"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "송도국제기구도서관",
+      "code": "0745"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "송도동 솔향작은도서관",
+      "code": "0746"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "송산개미 작은도서관",
+      "code": "0747"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "송악샘터 작은도서관",
+      "code": "0748"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "송악해나루 작은도서관",
+      "code": "0749"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "송중문화정보도서관",
+      "code": "0750"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "송촌도서관",
+      "code": "0751"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "송탄작은도서관",
+      "code": "0752"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "송파글마루도서관",
+      "code": "0753"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "송파어린이도서관",
+      "code": "0754"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "송파어린이영어작은도서관",
+      "code": "0755"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "송파위례도서관",
+      "code": "0756"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수서동작은도서관",
+      "code": "0757"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수성구립고산도서관",
+      "code": "0758"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수성구립무학숲도서관",
+      "code": "0759"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수성구립물망이도서관",
+      "code": "0760"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수성구립범어도서관",
+      "code": "0761"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수성구립사월역작은도서관",
+      "code": "0762"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수성구립용학도서관",
+      "code": "0763"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수성구립책숲길도서관",
+      "code": "0764"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수성구립파동도서관",
+      "code": "0765"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립광교푸른숲도서관",
+      "code": "0766"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립광교홍재도서관",
+      "code": "0767"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립대추골도서관",
+      "code": "0768"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립망포글빛도서관",
+      "code": "0769"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립매여울도서관",
+      "code": "0770"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립반달어린이도서관",
+      "code": "0771"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립버드내도서관",
+      "code": "0772"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립북수원지식정보도서관",
+      "code": "0773"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립서수원지식정보도서관",
+      "code": "0774"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립선경도서관",
+      "code": "0775"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립영통도서관",
+      "code": "0776"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립일월도서관",
+      "code": "0777"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립중앙도서관",
+      "code": "0778"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립창룡도서관",
+      "code": "0779"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립태장마루도서관",
+      "code": "0780"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립한림도서관",
+      "code": "0781"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립한아름도서관",
+      "code": "0782"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립호매실도서관",
+      "code": "0783"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립화서다산도서관",
+      "code": "0784"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수원시립희망샘도서관",
+      "code": "0785"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수유문화정보도서관",
+      "code": "0786"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "수지도서관",
+      "code": "0787"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "순성반딧불이 작은도서관",
+      "code": "0788"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "순지작은도서관",
+      "code": "0789"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "순창군립도서관",
+      "code": "0790"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "순천기적의도서관",
+      "code": "0791"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "순천시립그림책도서관",
+      "code": "0792"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "순천시립삼산도서관",
+      "code": "0793"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "순천시립신대도서관",
+      "code": "0794"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "순천시립연향도서관",
+      "code": "0795"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "순천시립조례호수도서관",
+      "code": "0796"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "숲속작은도서관",
+      "code": "0797"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "시온고등학교 열린작은도서관",
+      "code": "0798"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "시청작은도서관",
+      "code": "0799"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "시흥시 군자도서관",
+      "code": "0800"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "시흥시 능곡도서관",
+      "code": "0801"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "시흥시 대야도서관",
+      "code": "0802"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "시흥시 매화도서관",
+      "code": "0803"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "시흥시 목감도서관",
+      "code": "0804"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "시흥시 배곧도서관",
+      "code": "0805"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "시흥시 소래빛도서관",
+      "code": "0806"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "시흥시 신천도서관",
+      "code": "0807"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "시흥시 월곶도서관",
+      "code": "0808"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "시흥시 장곡도서관",
+      "code": "0809"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "시흥시 정왕어린이도서관",
+      "code": "0810"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "시흥시 중앙도서관",
+      "code": "0811"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신광면 비학산작은도서관",
+      "code": "0812"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신길샛별도서관",
+      "code": "0813"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신당누리도서관",
+      "code": "0814"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신도림어린이영어작은도서관",
+      "code": "0815"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신둔작은도서관",
+      "code": "0816"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신사동작은도서관",
+      "code": "0817"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신사어린이도서관",
+      "code": "0818"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신서작은도서관",
+      "code": "0819"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신안군립도서관",
+      "code": "0820"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신암2동 작은도서관",
+      "code": "0821"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신암3동 작은도서관",
+      "code": "0822"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신암5동 작은도서관",
+      "code": "0823"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신월음악도서관",
+      "code": "0824"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신중동역칙칙폭폭도서관",
+      "code": "0825"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신천3동 작은도서관",
+      "code": "0826"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신탄진도서관",
+      "code": "0827"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신평책다솜 작은도서관",
+      "code": "0828"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신호작은도서관 아이들꿈자람터",
+      "code": "0829"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "신흥어울마당작은도서관",
+      "code": "0830"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "쌍문1동 공립 작은도서관",
+      "code": "0831"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "쌍문2동 공립 작은도서관",
+      "code": "0832"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "쌍문3동 공립 작은도서관",
+      "code": "0833"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "쌍문4동 공립 작은도서관",
+      "code": "0834"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "쌍문채움도서관",
+      "code": "0835"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "아름동도서관",
+      "code": "0836"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "아름드리작은도서관",
+      "code": "0837"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "아름드리작은도서관",
+      "code": "0838"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "아름드리작은도서관",
+      "code": "0839"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "아리랑도서관",
+      "code": "0840"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "아리랑어린이도서관",
+      "code": "0841"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "아산시 꿈샘어린이청소년도서관",
+      "code": "0842"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "아산시 둔포도서관",
+      "code": "0843"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "아산시 배방도서관",
+      "code": "0844"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "아산시 중앙도서관",
+      "code": "0845"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "아산시 탕정온샘도서관",
+      "code": "0846"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "아이꿈 작은도서관",
+      "code": "0847"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "아이누리작은도서관",
+      "code": "0848"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "아차산숲속도서관",
+      "code": "0849"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안동시립어린이도서관",
+      "code": "0850"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안동시립웅부도서관",
+      "code": "0851"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안동시립중앙도서관",
+      "code": "0852"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안산도서관",
+      "code": "0853"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안산시 감골도서관",
+      "code": "0854"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안산시 관산도서관",
+      "code": "0855"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안산시 단원어린이도서관",
+      "code": "0856"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안산시 대부도서관",
+      "code": "0857"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안산시 미디어도서관",
+      "code": "0858"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안산시 반월도서관",
+      "code": "0859"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안산시 본오도서관",
+      "code": "0860"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안산시 부곡도서관",
+      "code": "0861"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안산시 상록어린이도서관",
+      "code": "0862"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안산시 선부도서관",
+      "code": "0863"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안산시 성포도서관",
+      "code": "0864"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안산시 수암도서관",
+      "code": "0865"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안산시 원고잔도서관",
+      "code": "0866"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안산시 중앙도서관",
+      "code": "0867"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안산시평생학습관작은도서관",
+      "code": "0868"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안성대림동산작은도서관",
+      "code": "0869"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안성부영작은도서관",
+      "code": "0870"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안성삼죽작은도서관",
+      "code": "0871"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안성송정작은도서관",
+      "code": "0872"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안성시 공도도서관",
+      "code": "0873"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안성시 보개도서관",
+      "code": "0874"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안성시 아양도서관",
+      "code": "0875"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안성시 일죽도서관",
+      "code": "0876"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안성시 중앙도서관",
+      "code": "0877"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안성시 진사도서관",
+      "code": "0878"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안성죽산작은도서관",
+      "code": "0879"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안성태산작은도서관",
+      "code": "0880"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안성풍림작은도서관",
+      "code": "0881"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안양시립관양도서관",
+      "code": "0882"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안양시립만안도서관",
+      "code": "0883"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안양시립박달도서관",
+      "code": "0884"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안양시립벌말도서관",
+      "code": "0885"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안양시립비산도서관",
+      "code": "0886"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안양시립삼덕도서관",
+      "code": "0887"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안양시립석수도서관",
+      "code": "0888"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안양시립어린이도서관",
+      "code": "0889"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안양시립평촌도서관",
+      "code": "0890"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "안양시립호계도서관",
+      "code": "0891"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "알음알음작은도서관",
+      "code": "0892"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "압구정동문고",
+      "code": "0893"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "약대신나는가족도서관",
+      "code": "0894"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "약수도서관",
+      "code": "0895"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "약숫골도서관",
+      "code": "0896"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양곡도서관",
+      "code": "0897"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양산시립 상북도서관",
+      "code": "0898"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양산시립 서창도서관",
+      "code": "0899"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양산시립 영어도서관",
+      "code": "0900"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양산시립 웅상도서관",
+      "code": "0901"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양산시립 윤현진도서관",
+      "code": "0902"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양산시립 중앙도서관",
+      "code": "0903"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양재1동 작은도서관",
+      "code": "0904"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양재2동 작은도서관",
+      "code": "0905"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양정작은도서관(달팽이)",
+      "code": "0906"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양주시립고읍도서관",
+      "code": "0907"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양주시립광적도서관",
+      "code": "0908"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양주시립꿈나무도서관",
+      "code": "0909"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양주시립남면도서관",
+      "code": "0910"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양주시립덕계도서관",
+      "code": "0911"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양주시립덕정도서관",
+      "code": "0912"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양주시립옥정호수도서관",
+      "code": "0913"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양주희망도서관",
+      "code": "0914"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양지해밀도서관",
+      "code": "0915"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양천중앙도서관",
+      "code": "0916"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양평군 양동도서관",
+      "code": "0917"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양평군 양서친환경도서관",
+      "code": "0918"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양평군 어린이도서관",
+      "code": "0919"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양평군 용문도서관",
+      "code": "0920"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양평군 지평도서관",
+      "code": "0921"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양평도서관",
+      "code": "0922"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "양학동 부학작은도서관",
+      "code": "0923"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "어울림도서관",
+      "code": "0924"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "여수시립돌산도서관",
+      "code": "0925"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "여수시립소라도서관",
+      "code": "0926"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "여수시립쌍봉도서관",
+      "code": "0927"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "여수시립율촌도서관",
+      "code": "0928"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "여수시립이순신도서관",
+      "code": "0929"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "여수시립현암도서관",
+      "code": "0930"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "여수시립환경도서관",
+      "code": "0931"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "여의샛강도서관",
+      "code": "0932"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "여주시립대신도서관",
+      "code": "0933"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "여주시립세종도서관",
+      "code": "0934"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "여주시립여주도서관",
+      "code": "0935"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "여주시립점동도서관",
+      "code": "0936"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "역마루작은도서관",
+      "code": "0937"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "역삼2동작은도서관",
+      "code": "0938"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "연일읍 미르작은도서관",
+      "code": "0939"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "연천군중앙도서관",
+      "code": "0940"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "연천도서관",
+      "code": "0941"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "영동교육도서관",
+      "code": "0942"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "영북도서관",
+      "code": "0943"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "영어특성화도서관",
+      "code": "0944"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "영종하늘도서관",
+      "code": "0945"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "영중꿈나무도서관",
+      "code": "0946"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "영천시립도서관",
+      "code": "0947"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "예산군립도서관",
+      "code": "0948"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "오산시 꿈두레도서관",
+      "code": "0949"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "오산시 소리울도서관",
+      "code": "0950"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "오산시 양산도서관",
+      "code": "0951"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "오산시 중앙도서관",
+      "code": "0952"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "오산시 청학도서관",
+      "code": "0953"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "오산시 초평도서관",
+      "code": "0954"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "오산시 햇살마루도서관",
+      "code": "0955"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "오전빛고운도서관",
+      "code": "0956"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "오천읍 해와달작은도서관",
+      "code": "0957"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "오포작은도서관",
+      "code": "0958"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "옥과공공도서관",
+      "code": "0959"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "옥천교육도서관",
+      "code": "0960"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "옥천군민도서관",
+      "code": "0961"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "옥포읍 작은도서관",
+      "code": "0962"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "옥포작은도서관",
+      "code": "0963"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "온누리도서관",
+      "code": "0964"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "온정작은도서관",
+      "code": "0965"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "와동별빛누리작은도서관",
+      "code": "0966"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "완주군립고산도서관",
+      "code": "0967"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "완주군립둔산영어도서관",
+      "code": "0968"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "완주군립삼례도서관",
+      "code": "0969"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "완주군립중앙도서관",
+      "code": "0970"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "완주군립콩쥐팥쥐도서관",
+      "code": "0971"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "외포바다마을작은도서관",
+      "code": "0972"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "용강동작은도서관",
+      "code": "0973"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "용꿈꾸는작은도서관",
+      "code": "0974"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "용두어린이영어도서관",
+      "code": "0975"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "용산1동 작은도서관",
+      "code": "0976"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "용산꿈나무도서관",
+      "code": "0977"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "용암어린이영어도서관",
+      "code": "0978"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "용운도서관",
+      "code": "0979"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "용인중앙도서관",
+      "code": "0980"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "용흥동 솔개재작은도서관",
+      "code": "0981"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "우리작은도서관",
+      "code": "0982"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "운산작은도서관",
+      "code": "0983"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "운양작은도서관",
+      "code": "0984"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "울산 남구 도산도서관",
+      "code": "0985"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "울산 남구 신복도서관",
+      "code": "0986"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "울산 남구 옥현어린이도서관",
+      "code": "0987"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "울산 남구 월봉도서관",
+      "code": "0988"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "울산 북구 기적의도서관",
+      "code": "0989"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "울산 북구 농소1동도서관",
+      "code": "0990"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "울산 북구 농소3동도서관",
+      "code": "0991"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "울산 북구 매곡도서관",
+      "code": "0992"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "울산 북구 명촌어린이도서관",
+      "code": "0993"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "울산 북구 염포양정도서관",
+      "code": "0994"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "울산 북구 중앙도서관",
+      "code": "0995"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "울산남부도서관",
+      "code": "0996"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "울산도서관",
+      "code": "0997"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "울산동부도서관",
+      "code": "0998"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "울주도서관",
+      "code": "0999"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "울진남부도서관",
+      "code": "1000"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "울진작은도서관",
+      "code": "1001"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "원당꿈초롱 작은도서관",
+      "code": "1002"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "원동작은도서관",
+      "code": "1003"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "원신흥도서관",
+      "code": "1004"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "원주시립미리내도서관",
+      "code": "1005"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "원주시립중앙도서관",
+      "code": "1006"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "원주시립태장도서관",
+      "code": "1007"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "원평으뜸작은도서관",
+      "code": "1008"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "원효로제2동 작은도서관",
+      "code": "1009"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "월계도서관",
+      "code": "1010"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "월계어린이도서관",
+      "code": "1011"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "월곡꿈그림도서관",
+      "code": "1012"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "월산주공작은도서관",
+      "code": "1013"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "월평도서관",
+      "code": "1014"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "유가읍 작은도서관",
+      "code": "1015"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "유성도서관",
+      "code": "1016"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "유성도서관 엑스포분관",
+      "code": "1017"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "유토피아작은도서관",
+      "code": "1018"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "율면작은도서관",
+      "code": "1019"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "율하5주민 작은도서관",
+      "code": "1020"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "율하e편한작은도서관",
+      "code": "1021"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "은천동작은도서관",
+      "code": "1022"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "은평구립도서관",
+      "code": "1023"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "은평구행정자료실",
+      "code": "1024"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "은평어린이영어도서관",
+      "code": "1025"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "은평작은도서관",
+      "code": "1026"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "음성교육도서관",
+      "code": "1027"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "응암1동문화의집문고",
+      "code": "1028"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "의성군립도서관",
+      "code": "1029"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "의왕시글로벌도서관",
+      "code": "1030"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "의왕시내손도서관",
+      "code": "1031"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "의왕시중앙도서관",
+      "code": "1032"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "의왕시포일어울림도서관",
+      "code": "1033"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "의정부가재울도서관",
+      "code": "1034"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "의정부과학도서관",
+      "code": "1035"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "의정부미술도서관",
+      "code": "1036"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "의정부영어도서관",
+      "code": "1037"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "의정부음악도서관",
+      "code": "1038"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "의정부정보도서관",
+      "code": "1039"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "이곡2동 작은도서관",
+      "code": "1040"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "이도작은도서관",
+      "code": "1041"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "이동꿈틀도서관",
+      "code": "1042"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "이문1동 꿈꾸는 작은도서관",
+      "code": "1043"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "이문2동 작은도서관",
+      "code": "1044"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "이문어린이도서관",
+      "code": "1045"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "이문체육문화센터 어린이도서관",
+      "code": "1046"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "이안나누리작은도서관",
+      "code": "1047"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "이천시립도서관",
+      "code": "1048"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "이천시립마장도서관",
+      "code": "1049"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "이천시립어린이도서관",
+      "code": "1050"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "이천시립청미도서관",
+      "code": "1051"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "이천시립효양도서관",
+      "code": "1052"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "이천어울림도서관",
+      "code": "1053"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "이촌2동 작은도서관",
+      "code": "1054"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "이팝꽃향기작은도서관",
+      "code": "1055"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "익산교육문화회관",
+      "code": "1056"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "익산시립금마도서관",
+      "code": "1057"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "익산시립마동도서관",
+      "code": "1058"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "익산시립모현도서관",
+      "code": "1059"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "익산시립부송도서관",
+      "code": "1060"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "익산시립영등도서관",
+      "code": "1061"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "익산시립유천도서관",
+      "code": "1062"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "익산시립황등도서관",
+      "code": "1063"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인지작은도서관",
+      "code": "1064"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천 서구 검단도서관",
+      "code": "1065"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천 서구 검암도서관",
+      "code": "1066"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천 서구 석남도서관",
+      "code": "1067"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천 서구 신석도서관",
+      "code": "1068"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천 서구 심곡도서관",
+      "code": "1069"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천광역시 꿈벗도서관",
+      "code": "1070"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천광역시 수봉도서관",
+      "code": "1071"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천광역시 영종도서관",
+      "code": "1072"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천광역시 율목도서관",
+      "code": "1073"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천광역시교육청계양도서관",
+      "code": "1074"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천광역시교육청부평도서관",
+      "code": "1075"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천광역시교육청북구도서관",
+      "code": "1076"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천광역시교육청서구도서관",
+      "code": "1077"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천광역시교육청연수도서관",
+      "code": "1078"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천광역시교육청주안도서관",
+      "code": "1079"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천광역시교육청중앙도서관",
+      "code": "1080"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천광역시교육청평생학습관",
+      "code": "1081"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "인천광역시교육청화도진도서관",
+      "code": "1082"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "일동도서관",
+      "code": "1083"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "일동한신꿈나무작은도서관",
+      "code": "1084"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "일원1동작은도서관",
+      "code": "1085"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "일원2동문고",
+      "code": "1086"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "일원본동작은도서관",
+      "code": "1087"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "자양도서관",
+      "code": "1088"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "자양제4동도서관",
+      "code": "1089"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "자양한강도서관",
+      "code": "1090"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "작은도서관 꿈꾸는책마을",
+      "code": "1091"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "잠원도서관",
+      "code": "1092"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장기도서관",
+      "code": "1093"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장기동 작은도서관",
+      "code": "1094"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장량동 꿈마루작은도서관",
+      "code": "1095"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장량동 다솜작은도서관",
+      "code": "1096"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장량동 바람숲작은도서관",
+      "code": "1097"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장량동 참사랑작은도서관",
+      "code": "1098"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장량동 해뜰참작은도서관",
+      "code": "1099"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장량동 햇살작은도서관",
+      "code": "1100"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장안 가온누리 작은도서관",
+      "code": "1101"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장안1동 작은도서관",
+      "code": "1102"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장안꿈마루어린이 작은도서관",
+      "code": "1103"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장안마루 작은도서관",
+      "code": "1104"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장안어린이도서관",
+      "code": "1105"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장위행복누림도서관",
+      "code": "1106"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장유대우작은도서관",
+      "code": "1107"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장유도서관",
+      "code": "1108"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장충동 작은도서관",
+      "code": "1109"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장항공공도서관",
+      "code": "1110"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "장흥작은도서관",
+      "code": "1111"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전곡마을 작은도서관",
+      "code": "1112"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전농2동 뜨락 작은도서관",
+      "code": "1113"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청고흥평생교육관",
+      "code": "1114"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청곡성교육문화회관",
+      "code": "1115"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청광양도서관",
+      "code": "1116"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청광양평생교육관",
+      "code": "1117"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청구례도서관",
+      "code": "1118"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청나주도서관",
+      "code": "1119"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청남평도서관",
+      "code": "1120"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청담양도서관",
+      "code": "1121"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청목포도서관",
+      "code": "1122"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청무안도서관",
+      "code": "1123"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청벌교도서관",
+      "code": "1124"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청보성도서관",
+      "code": "1125"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청영광도서관",
+      "code": "1126"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청영암도서관",
+      "code": "1127"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청장성도서관",
+      "code": "1128"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청장흥도서관",
+      "code": "1129"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청진도도서관",
+      "code": "1130"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청학생교육문화회관",
+      "code": "1131"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청함평도서관",
+      "code": "1132"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청해남도서관",
+      "code": "1133"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도교육청화순도서관",
+      "code": "1134"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라남도립도서관",
+      "code": "1135"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라북도교육청고창도서관",
+      "code": "1136"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라북도교육청무주도서관",
+      "code": "1137"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라북도교육청순창도서관",
+      "code": "1138"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라북도교육청완주도서관",
+      "code": "1139"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라북도교육청임실도서관",
+      "code": "1140"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전라북도교육청장수도서관",
+      "code": "1141"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전북도청도서관",
+      "code": "1142"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전북특별자치도교육청 군산학생교육문화관",
+      "code": "1143"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전북특별자치도교육청 군산학생교육문화관 대야분관",
+      "code": "1144"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전북특별자치도교육청 남원학생교육문화관",
+      "code": "1145"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전북특별자치도교육청 남원학생교육문화관 운봉분관",
+      "code": "1146"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전북특별자치도교육청 부안학생교육문화관",
+      "code": "1147"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전북특별자치도교육청 익산학생교육문화관 함열분관",
+      "code": "1148"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전북특별자치도교육청 전주학생교육문화관",
+      "code": "1149"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전북특별자치도교육청 진안도서관",
+      "code": "1150"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전주시립건지도서관",
+      "code": "1151"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전주시립금암도서관",
+      "code": "1152"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전주시립도서관 꽃심",
+      "code": "1153"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전주시립삼천도서관",
+      "code": "1154"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전주시립서신도서관",
+      "code": "1155"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전주시립송천도서관",
+      "code": "1156"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전주시립아중도서관",
+      "code": "1157"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전주시립완산도서관",
+      "code": "1158"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전주시립인후도서관",
+      "code": "1159"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전주시립쪽구름도서관",
+      "code": "1160"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전주시립평화도서관",
+      "code": "1161"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전주시립효자도서관",
+      "code": "1162"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "전하작은도서관",
+      "code": "1163"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "정릉도서관",
+      "code": "1164"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "정읍학생복지회관",
+      "code": "1165"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "제주 동부도서관",
+      "code": "1166"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "제주 삼매봉도서관",
+      "code": "1167"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "제주 서부도서관",
+      "code": "1168"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "제주 성산일출도서관",
+      "code": "1169"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "제주 안덕산방도서관",
+      "code": "1170"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "제주 애월도서관",
+      "code": "1171"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "제주 우당도서관",
+      "code": "1172"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "제주 조천읍도서관",
+      "code": "1173"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "제주 중앙도서관",
+      "code": "1174"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "제주 탐라도서관",
+      "code": "1175"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "제주 표선도서관",
+      "code": "1176"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "제주 한경도서관",
+      "code": "1177"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "제주기적의도서관",
+      "code": "1178"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "제천기적의도서관",
+      "code": "1179"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "제천시립도서관",
+      "code": "1180"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "제천학생회관",
+      "code": "1181"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "젤미작은도서관",
+      "code": "1182"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "조원도서관",
+      "code": "1183"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "종암동새날도서관",
+      "code": "1184"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "종촌동도서관",
+      "code": "1185"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "주촌디딤돌작은도서관",
+      "code": "1186"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "죽도동 맑은물작은도서관",
+      "code": "1187"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "죽도동 청암작은도서관",
+      "code": "1188"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "죽산작은도서관",
+      "code": "1189"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "죽장면 참느리작은도서관",
+      "code": "1190"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "죽전도서관",
+      "code": "1191"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "죽전동 작은도서관",
+      "code": "1192"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "중곡문화체육센터도서관",
+      "code": "1193"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "중랑구립면목정보도서관",
+      "code": "1194"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "중랑구립상봉도서관",
+      "code": "1195"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "중랑구립양원숲속도서관",
+      "code": "1196"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "중랑구립정보도서관",
+      "code": "1197"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "중랑숲어린이도서관",
+      "code": "1198"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "중봉도서관",
+      "code": "1199"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "중원교육도서관",
+      "code": "1200"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "중화어린이도서관",
+      "code": "1201"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "중흥샘이깊은작은도서관",
+      "code": "1202"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "증평교육도서관",
+      "code": "1203"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "증평군립도서관",
+      "code": "1204"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "증포송정작은도서관",
+      "code": "1205"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "지저동 작은도서관",
+      "code": "1206"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "지혜의등대 작은도서관",
+      "code": "1207"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "진례작은도서관",
+      "code": "1208"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "진말책향기작은도서관",
+      "code": "1209"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "진산도서관",
+      "code": "1210"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "진영한빛도서관",
+      "code": "1211"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "진잠도서관",
+      "code": "1212"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "진주시립도동어린이도서관",
+      "code": "1213"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "진주시립비봉어린이도서관",
+      "code": "1214"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "진주시립서부도서관",
+      "code": "1215"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "진주시립어린이전문도서관",
+      "code": "1216"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "진주시립연암도서관",
+      "code": "1217"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "진천교육도서관",
+      "code": "1218"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "진천군립광혜원도서관",
+      "code": "1219"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "진천군립도서관",
+      "code": "1220"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "참새미작은도서관",
+      "code": "1221"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "창1동 공립 작은도서관",
+      "code": "1222"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "창2동 공립 작은도서관",
+      "code": "1223"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "창3동 공립 작은도서관",
+      "code": "1224"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "창4동 공립 작은도서관",
+      "code": "1225"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "창5동 공립 작은도서관",
+      "code": "1226"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "창동육아종합지원센터",
+      "code": "1227"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "책가방작은도서관",
+      "code": "1228"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "책고래작은도서관",
+      "code": "1229"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "책놀이터작은도서관",
+      "code": "1230"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "책누리작은도서관",
+      "code": "1231"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "책마루작은도서관",
+      "code": "1232"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "책사랑작은도서관",
+      "code": "1233"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "천안시도솔도서관",
+      "code": "1234"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "천안시두정도서관",
+      "code": "1235"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "천안시성거도서관",
+      "code": "1236"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "천안시신방도서관",
+      "code": "1237"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "천안시쌍용도서관",
+      "code": "1238"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "천안시아우내도서관",
+      "code": "1239"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "천안시중앙도서관",
+      "code": "1240"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "천안시청수도서관",
+      "code": "1241"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "천안아산상생협력센터도서관",
+      "code": "1242"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청계숲고운도서관",
+      "code": "1243"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청계참고운도서관",
+      "code": "1244"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청덕도서관",
+      "code": "1245"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청라국제도서관",
+      "code": "1246"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청라호수도서관",
+      "code": "1247"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청림동 찬내작은도서관",
+      "code": "1248"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청림동 푸른숲작은도서관",
+      "code": "1249"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청산작은도서관",
+      "code": "1250"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청소년 푸르미르 작은도서관",
+      "code": "1251"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청수도서관",
+      "code": "1252"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청주가로수도서관",
+      "code": "1253"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청주강내도서관",
+      "code": "1254"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청주금빛도서관",
+      "code": "1255"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청주기적의도서관",
+      "code": "1256"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청주내수도서관",
+      "code": "1257"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청주상당도서관",
+      "code": "1258"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청주서원도서관",
+      "code": "1259"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청주시립도서관",
+      "code": "1260"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청주신율봉어린이도서관",
+      "code": "1261"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청주오송도서관",
+      "code": "1262"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청주오창도서관",
+      "code": "1263"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청주오창호수도서관",
+      "code": "1264"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청주옥산도서관",
+      "code": "1265"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청주청원도서관",
+      "code": "1266"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청주흥덕도서관",
+      "code": "1267"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청파도서관",
+      "code": "1268"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청파어린이영어도서관",
+      "code": "1269"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청하면 해아작은도서관",
+      "code": "1270"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "청하사랑작은도서관",
+      "code": "1271"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "초록우산 도서관",
+      "code": "1272"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "추부도서관",
+      "code": "1273"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "춘천시립남산도서관",
+      "code": "1274"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "춘천시립도서관",
+      "code": "1275"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "춘천시립동내도서관",
+      "code": "1276"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "춘천시립서면도서관",
+      "code": "1277"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "춘천시립소양도서관",
+      "code": "1278"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "춘천시립신사우도서관",
+      "code": "1279"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "춘천시립청소년도서관",
+      "code": "1280"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충남도서관",
+      "code": "1281"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도공주교육지원청 공주도서관",
+      "code": "1282"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도공주교육지원청 유구도서관",
+      "code": "1283"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도교육청 남부평생교육원",
+      "code": "1284"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도교육청 서부평생교육원",
+      "code": "1285"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도교육청 평생교육원",
+      "code": "1286"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도교육청 학생교육문화원",
+      "code": "1287"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도금산교육지원청 금산도서관",
+      "code": "1288"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도당진교육지원청 당진도서관",
+      "code": "1289"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도보령교육지원청 보령도서관",
+      "code": "1290"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도보령교육지원청 웅천도서관",
+      "code": "1291"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도부여교육지원청 부여도서관",
+      "code": "1292"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도서산교육지원청 해미도서관",
+      "code": "1293"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도서천교육지원청 서천도서관",
+      "code": "1294"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도아산교육지원청 아산도서관",
+      "code": "1295"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도예산교육지원청 예산도서관",
+      "code": "1296"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도천안교육지원청 성환도서관",
+      "code": "1297"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도청양교육지원청 청양도서관",
+      "code": "1298"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도태안교육지원청 태안도서관",
+      "code": "1299"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청남도홍성교육지원청 홍성도서관",
+      "code": "1300"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청북도교육도서관",
+      "code": "1301"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청북도교육문화원",
+      "code": "1302"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "충청북도중원교육문화원",
+      "code": "1303"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "칠곡군립도서관",
+      "code": "1304"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "칠곡군립북삼도서관",
+      "code": "1305"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "칠곡군립석적도서관",
+      "code": "1306"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "칠암도서관",
+      "code": "1307"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "침산1동 작은도서관",
+      "code": "1308"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "캐슬작은도서관",
+      "code": "1309"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "태백시립도서관",
+      "code": "1310"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "태백시립산소드림도서관",
+      "code": "1311"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "태안군립중앙도서관",
+      "code": "1312"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "통영시립도서관",
+      "code": "1313"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "통영시립욕지도서관",
+      "code": "1314"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "통영시립충무도서관",
+      "code": "1315"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "통진도서관",
+      "code": "1316"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "퇴촌작은도서관",
+      "code": "1317"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "파랑새작은도서관",
+      "code": "1318"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "파주시립가람도서관",
+      "code": "1319"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "파주시립교하도서관",
+      "code": "1320"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "파주시립금촌3동솔빛도서관",
+      "code": "1321"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "파주시립금촌도서관",
+      "code": "1322"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "파주시립문산도서관",
+      "code": "1323"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "파주시립물푸레도서관",
+      "code": "1324"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "파주시립법원도서관",
+      "code": "1325"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "파주시립적성도서관",
+      "code": "1326"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "파주시립조리도서관",
+      "code": "1327"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "파주시립중앙도서관",
+      "code": "1328"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "파주시립탄현도서관",
+      "code": "1329"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "파주시립한빛도서관",
+      "code": "1330"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "파주시립해솔도서관",
+      "code": "1331"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "파주시립행복어린이도서관",
+      "code": "1332"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "판암도서관",
+      "code": "1333"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "판타스틱큐브도서관",
+      "code": "1334"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "팔판빛오름작은도서관",
+      "code": "1335"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "팔판작은도서관",
+      "code": "1336"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "평생학습북카페작은도서관",
+      "code": "1337"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "평창군립대관령도서관",
+      "code": "1338"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "평창군립대화도서관",
+      "code": "1339"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "평창군립봉평도서관",
+      "code": "1340"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "평창군립진부도서관",
+      "code": "1341"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "평택시립배다리도서관",
+      "code": "1342"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "평택시립비전도서관",
+      "code": "1343"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "평택시립세교도서관",
+      "code": "1344"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "평택시립안중도서관",
+      "code": "1345"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "평택시립오성도서관",
+      "code": "1346"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "평택시립장당도서관",
+      "code": "1347"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "평택시립지산초록도서관",
+      "code": "1348"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "평택시립진위도서관",
+      "code": "1349"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "평택시립청북도서관",
+      "code": "1350"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "평택시립팽성도서관",
+      "code": "1351"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "평해작은도서관",
+      "code": "1352"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "포곡도서관",
+      "code": "1353"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "포승작은도서관",
+      "code": "1354"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "포항시립대잠도서관",
+      "code": "1355"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "포항시립동해석곡도서관",
+      "code": "1356"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "포항시립어린이영어도서관",
+      "code": "1357"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "포항시립영암도서관",
+      "code": "1358"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "포항시립포은오천도서관",
+      "code": "1359"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "포항시립포은중앙도서관",
+      "code": "1360"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "푸른숲작은도서관",
+      "code": "1361"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "푸른작은도서관",
+      "code": "1362"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "풀이음작은도서관",
+      "code": "1363"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "풍덕글마루작은도서관",
+      "code": "1364"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "풍무도서관",
+      "code": "1365"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "하계어린이도서관",
+      "code": "1366"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "하남시 나룰도서관",
+      "code": "1367"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "하남시 덕풍도서관",
+      "code": "1368"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "하남시 디지털도서관",
+      "code": "1369"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "하남시 미사도서관",
+      "code": "1370"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "하남시 세미도서관",
+      "code": "1371"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "하남시 위례도서관",
+      "code": "1372"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "하남시 일가도서관",
+      "code": "1373"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "하늘도서관",
+      "code": "1374"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "하늘빛작은도서관",
+      "code": "1375"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "하늘샘작은도서관",
+      "code": "1376"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "하빈면 작은도서관",
+      "code": "1377"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "학마을작은도서관",
+      "code": "1378"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "학산 작은도서관",
+      "code": "1379"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "한강공원부키 도서관",
+      "code": "1380"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "한강로동 작은도서관",
+      "code": "1381"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "한국작은도서관",
+      "code": "1382"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "한남동 작은도서관",
+      "code": "1383"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "한내지혜의숲도서관",
+      "code": "1384"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "한라도서관",
+      "code": "1385"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "한림미래작은도서관",
+      "code": "1386"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "한밭도서관",
+      "code": "1387"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "한솔동도서관",
+      "code": "1388"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "한신책사랑작은도서관",
+      "code": "1389"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "함안군립칠원도서관",
+      "code": "1390"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "해남군립도서관",
+      "code": "1391"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "해다올 작은도서관",
+      "code": "1392"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "해도동 바다섬작은도서관",
+      "code": "1393"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "해룡농어촌도서관",
+      "code": "1394"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "해맞이역사도서관",
+      "code": "1395"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "해밀도서관",
+      "code": "1396"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "해밀동도서관",
+      "code": "1397"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "해안동 작은도서관",
+      "code": "1398"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "해오름도서관",
+      "code": "1399"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "해오름작은도서관",
+      "code": "1400"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "해평누리작은도서관",
+      "code": "1401"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "햇살이가득한작은도서관",
+      "code": "1402"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "햇살작은도서관",
+      "code": "1403"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "햇살작은도서관",
+      "code": "1404"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "행복 작은도서관",
+      "code": "1405"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "행복작은도서관",
+      "code": "1406"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "행복한작은도서관",
+      "code": "1407"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "행정정보문고센터",
+      "code": "1408"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "향기나무도서관",
+      "code": "1409"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "호법작은도서관",
+      "code": "1410"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "호수공원작은도서관",
+      "code": "1411"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "홍도도서관",
+      "code": "1412"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "홍산공공도서관",
+      "code": "1413"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "홍은도담도서관",
+      "code": "1414"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화랑도서관",
+      "code": "1415"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립남양도서관",
+      "code": "1416"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립노을빛도서관",
+      "code": "1417"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립동탄다원이음터도서관",
+      "code": "1418"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립동탄목동이음터도서관",
+      "code": "1419"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립동탄복합문화센터도서관",
+      "code": "1420"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립동탄중앙이음터도서관",
+      "code": "1421"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립두빛나래어린이도서관",
+      "code": "1422"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립둥지나래어린이도서관",
+      "code": "1423"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립병점도서관",
+      "code": "1424"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립봉담도서관",
+      "code": "1425"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립삼괴도서관",
+      "code": "1426"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립서연이음터도서관",
+      "code": "1427"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립송린이음터도서관",
+      "code": "1428"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립송산도서관",
+      "code": "1429"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립왕배푸른숲도서관",
+      "code": "1430"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립정남도서관",
+      "code": "1431"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립진안도서관",
+      "code": "1432"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화성시립태안도서관",
+      "code": "1433"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화원읍 작은도서관",
+      "code": "1434"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화전작은도서관",
+      "code": "1435"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화정글샘도서관",
+      "code": "1436"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "화정작은도서관",
+      "code": "1437"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "환여동 해맞이꿈터작은도서관",
+      "code": "1438"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "환여동 환호어린이작은도서관",
+      "code": "1439"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "활천행복작은도서관",
+      "code": "1440"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "회나무 작은도서관",
+      "code": "1441"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "효경골마을문고",
+      "code": "1442"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "효곡동 그린숲작은도서관",
+      "code": "1443"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "효곡동 열린작은도서관",
+      "code": "1444"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "효곡동 행복작은도서관",
+      "code": "1445"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "효목1동 작은도서관",
+      "code": "1446"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "효목2동 작은도서관",
+      "code": "1447"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "효창동 작은도서관",
+      "code": "1448"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "후암동 작은도서관 북앤캠프",
+      "code": "1449"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "휘경1동 새싹마루 작은도서관",
+      "code": "1450"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "휘경2동 꿈빛누리 작은도서관",
+      "code": "1451"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "휘경어린이도서관",
+      "code": "1452"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "흥덕도서관",
+      "code": "1453"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "흥해읍 내맏이작은도서관",
+      "code": "1454"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "흥해읍 어리골작은도서관",
+      "code": "1455"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "흥해읍 참새미작은도서관",
+      "code": "1456"
+    }
+  },
+  {
+    "model": "user.libcode",
+    "fields": {
+      "libraryname": "희망남포작은도서관",
+      "code": "1457"
+    }
+  }
+]
