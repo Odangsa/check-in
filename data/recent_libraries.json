@@ -1,0 +1,17 @@
+{
+  "userid": 2,
+  "recent_libraries": [
+    {
+      "library": "중구도서관",
+      "visit_count": 5
+    },
+    {
+      "library": "종로도서관",
+      "visit_count": 4
+    },
+    {
+      "library": "용산도서관",
+      "visit_count": 4
+    }
+  ]
+}

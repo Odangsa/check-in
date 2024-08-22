@@ -1,0 +1,39 @@
+{
+  "ISBN": 9781509885398,
+  "bookname": "Dinosaur Roar! 25th Anniversary Edition (Paperback)",
+  "authors": "헨리에타 스틱랜드 (지은이), 폴 스틱랜드 (그림)",
+  "publisher": "Pan MacMillan",
+  "publishyear": "2018",
+  "bookimageURL": "https://bookthumb-phinf.pstatic.net/cover/141/087/14108776.jpg?type=m1&udate=20181023",
+  "description": "으르렁 우는 공룡, 찍찍 우는 공룡, 사나운 공룡, 온순한 공룡, 날쌘 공룡, 느린 공룡, 친절한 공룡, 심술꾸러기 공룡, 올라앉은 공룡, 밑에 깔린 공룡, 힘 없는 공룡, 힘센 공룡, 등이 뽀족한 공룡, 울퉁불퉁한 공룡, 게걸스럽게 먹는 공룡, 조금씩 씹어먹는 공룡, 우적우적 씹어먹는 공룡, 오도독 씹어먹는 공룡 등...",
+  "libs": [
+    {
+      "libname": "금천구립도서관",
+      "libaddr": "dsafda",
+      "latitude": 100,
+      "longitude": 200,
+      "distance": 11
+    },
+    {
+      "libname": "숭실대도서관",
+      "libaddr": "dsafda",
+      "latitude": 100,
+      "longitude": 200,
+      "distance": 12
+    },
+    {
+      "libname": "서울대도서관",
+      "libaddr": "dsafda",
+      "latitude": 100,
+      "longitude": 200,
+      "distance": 13
+    },
+    {
+      "libname": "서울대도서관",
+      "libaddr": "dsafda",
+      "latitude": 100,
+      "longitude": 200,
+      "distance": null
+    }
+  ]
+}
