@@ -1,0 +1,17 @@
+{"books": [
+  {
+    "ISBN":9788972756194,
+    "bookname":"나미야 잡화점의 기적 :히가시노 게이고 장편소설",
+    "authors":"지은이: 히가시노 게이고 ;옮긴이: 양윤옥",
+    "topic":"문학 > 일본문학 > 소설",
+    "bookimageURL":"http://image.aladin.co.kr/product/15848/6/cover/k622533431_1.jpg"
+  },
+  {
+    "ISBN":9788936433673,
+    "bookname":"엄마를 부탁해 :신경숙 장편소설",
+    "authors":"지은이: 신경숙",
+    "topic":"문학 > 한국문학 > 소설",
+    "bookimageURL":"http://image.aladin.co.kr/product/272/78/cover/8936433679_2.jpg"
+  }
+]
+}

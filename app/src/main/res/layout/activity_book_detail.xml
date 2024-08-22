@@ -97,8 +97,8 @@
                     android:textSize="14dp"
                     android:textColor="@color/black"
                     android:gravity="center_vertical"/>
-"
-                </LinearLayout>
+                "
+            </LinearLayout>
         </LinearLayout>
 
         <TextView
