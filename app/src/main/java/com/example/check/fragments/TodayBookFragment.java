@@ -17,6 +17,7 @@ import com.example.check.Adapter.today_book.RecommendationAdapter;
 import com.example.check.R;
 import com.example.check.api.ApiClient;
 import com.example.check.api.ApiService;
+import com.example.check.fragments.todayBook.BookDetailFragment;
 import com.example.check.model.today_book.Book;
 import com.example.check.model.today_book.RecommendationCategory;
 import com.example.check.model.today_book.RecommendationsWrapper;
@@ -85,7 +86,7 @@ public class TodayBookFragment extends Fragment implements RecommendationAdapter
     }
 
     private void navigateToBookDetail(String isbn) {
-        com.example.check.fragments.BookDetailFragment fragment = com.example.check.fragments.BookDetailFragment.newInstance(isbn);
+        BookDetailFragment fragment = BookDetailFragment.newInstance(isbn);
         getParentFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, fragment)

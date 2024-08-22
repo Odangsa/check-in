@@ -6,13 +6,18 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.example.check.model.bookDetail.LibraryModel;
+
+import java.util.List;
 
 public class LocationUtil {
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1000;
     private FusedLocationProviderClient fusedLocationClient;
+    private Context context;
 
     public interface LocationCallback {
         void onLocationResult(Location location);
@@ -20,16 +25,36 @@ public class LocationUtil {
     }
 
     public LocationUtil(Context context) {
+        this.context = context;
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(context);
     }
 
     public void getCurrentLocation(Activity activity, LocationCallback callback) {
-        if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE);
+        if (!hasLocationPermission()) {
+            requestLocationPermission(activity);
             callback.onLocationError("위치 권한이 필요합니다.");
             return;
         }
 
+        try {
+            getLocationWithPermission(activity, callback);
+        } catch (SecurityException e) {
+            callback.onLocationError("위치 권한이 거부되었습니다: " + e.getMessage());
+        }
+    }
+
+    private boolean hasLocationPermission() {
+        return ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED;
+    }
+
+    private void requestLocationPermission(Activity activity) {
+        ActivityCompat.requestPermissions(activity,
+                new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                LOCATION_PERMISSION_REQUEST_CODE);
+    }
+
+    private void getLocationWithPermission(Activity activity, LocationCallback callback) throws SecurityException {
         fusedLocationClient.getLastLocation()
                 .addOnSuccessListener(activity, new OnSuccessListener<Location>() {
                     @Override
@@ -47,11 +72,19 @@ public class LocationUtil {
     public static void handlePermissionResult(int requestCode, String[] permissions, int[] grantResults, LocationCallback callback) {
         if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // 권한이 승인되었을 때 위치 조회 재시도
-                // 이 메서드를 호출한 액티비티나 프래그먼트에서 getCurrentLocation을 다시 호출해야 합니다.
+                callback.onLocationResult(null);  // null을 전달하여 위치 조회를 다시 시도하도록 함
             } else {
                 callback.onLocationError("위치 권한이 거부되었습니다.");
             }
+        }
+    }
+
+    public static void updateLibrariesWithCurrentLocation(Location currentLocation, List<LibraryModel> libraries) {
+        for (LibraryModel library : libraries) {
+            float[] results = new float[1];
+            Location.distanceBetween(currentLocation.getLatitude(), currentLocation.getLongitude(),
+                    library.getLatitude(), library.getLongitude(), results);
+            library.setDistance(String.format("%.2f", results[0] / 1000)); // km로 변환
         }
     }
 }

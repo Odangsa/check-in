@@ -13,7 +13,6 @@
         android:layout_weight="1"
         android:scaleType="centerCrop" />
 
-
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="89dp"
@@ -42,11 +41,14 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/btn_book_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="4dp"
         android:gravity="center_vertical|right"
         android:text="상세보기 >"
         android:textColor="@color/gray_dark"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        android:clickable="true"
+        android:focusable="true" />
 </LinearLayout>

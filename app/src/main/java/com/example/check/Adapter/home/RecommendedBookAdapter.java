@@ -1,6 +1,5 @@
 package com.example.check.Adapter.home;
 
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +13,15 @@ import java.util.List;
 
 public class RecommendedBookAdapter extends RecyclerView.Adapter<RecommendedBookAdapter.ViewHolder> {
     private List<RecommendedBook> books;
+    private OnItemClickListener listener;
 
-    public RecommendedBookAdapter(List<RecommendedBook> books) {
+    public interface OnItemClickListener {
+        void onItemClick(RecommendedBook book);
+    }
+
+    public RecommendedBookAdapter(List<RecommendedBook> books, OnItemClickListener listener) {
         this.books = books;
+        this.listener = listener;
     }
 
     @Override
@@ -31,6 +36,12 @@ public class RecommendedBookAdapter extends RecyclerView.Adapter<RecommendedBook
         holder.bookName.setText(book.getBookname());
         holder.author.setText("▸ 저자: " + book.getAuthors());
         Glide.with(holder.itemView.getContext()).load(book.getBookimageURL()).into(holder.bookImage);
+
+        holder.btnBookDetail.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(book);
+            }
+        });
     }
 
     @Override
@@ -42,12 +53,14 @@ public class RecommendedBookAdapter extends RecyclerView.Adapter<RecommendedBook
         ImageView bookImage;
         TextView bookName;
         TextView author;
+        TextView btnBookDetail;
 
         public ViewHolder(View itemView) {
             super(itemView);
             bookImage = itemView.findViewById(R.id.book_image);
             bookName = itemView.findViewById(R.id.book_name);
             author = itemView.findViewById(R.id.book_author);
+            btnBookDetail = itemView.findViewById(R.id.btn_book_detail);
         }
     }
 }

@@ -21,6 +21,7 @@ import com.example.check.api.ApiService;
 import com.example.check.model.home.RecentLibrary;
 import com.example.check.model.home.RecommendedBook;
 import com.example.check.model.home.RecommendedBooksWrapper;
+import com.example.check.fragments.todayBook.BookDetailFragment;
 
 import java.util.List;
 
@@ -96,7 +97,7 @@ public class HomeFragment extends Fragment {
                 if (response.isSuccessful() && response.body() != null) {
                     List<RecommendedBook> books = response.body().getBooks();
                     for (RecommendedBook book : books) {
-                        addBookView(book.getBookname(), book.getAuthors(), book.getBookimageURL());
+                        addBookView(book);
                     }
                     Log.d(TAG, "Recommended books loaded successfully");
                 } else {
@@ -127,16 +128,25 @@ public class HomeFragment extends Fragment {
         recentLibrariesContainer.addView(libraryView);
     }
 
-    private void addBookView(String bookname, String authors, String bookimageURL) {
+    private void addBookView(RecommendedBook book) {
         View bookView = getLayoutInflater().inflate(R.layout.item_recommended_book, recommendedBooksContainer, false);
 
         ImageView bookImage = bookView.findViewById(R.id.book_image);
         TextView bookNameView = bookView.findViewById(R.id.book_name);
         TextView authorView = bookView.findViewById(R.id.book_author);
+        TextView detailView = bookView.findViewById(R.id.btn_book_detail);
 
-        Glide.with(this).load(bookimageURL).into(bookImage);
-        bookNameView.setText(bookname);
-        authorView.setText("▸ 저자: " + authors);
+        Glide.with(this).load(book.getBookimageURL()).into(bookImage);
+        bookNameView.setText(book.getBookname());
+        authorView.setText("▸ 저자: " + book.getAuthors());
+
+        detailView.setOnClickListener(v -> {
+            BookDetailFragment detailFragment = BookDetailFragment.newInstance(book.getISBN());
+            getParentFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, detailFragment)
+                    .addToBackStack(null)
+                    .commit();
+        });
 
         recommendedBooksContainer.addView(bookView);
 
