@@ -51,11 +51,13 @@ public class BookDetailLibraryAdapter extends RecyclerView.Adapter<BookDetailLib
 
         void bind(LibraryModel library) {
             libNameTextView.setText(library.getLibname());
+
             String distance = library.getDistance();
-            if (!"None".equals(distance)) {
+            if (distance != null && !distance.equals("None")) {
+                distanceTextView.setVisibility(View.VISIBLE);
                 distanceTextView.setText(String.format("%s km", distance));
             } else {
-                distanceTextView.setText("거리 정보 없음");
+                distanceTextView.setVisibility(View.GONE);
             }
         }
     }

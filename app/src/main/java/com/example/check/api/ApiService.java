@@ -15,6 +15,7 @@ import retrofit2.http.Query;
 
 public interface ApiService {
 
+    // 상세화면 받아야할 데이터들 위치정보와 ISBN 정보를 넘겨야함
     @GET("api/book_details/{isbn}")
     Call<BookDetailModel> getBookDetails(@Path("isbn") String isbn);
 

@@ -80,6 +80,9 @@ public class BookDetailFragment extends Fragment {
         publisherTextView = view.findViewById(R.id.publisherTextView);
         publishYearTextView = view.findViewById(R.id.publishYearTextView);
         descriptionTextView = view.findViewById(R.id.descriptionTextView);
+        if (descriptionTextView == null) {
+            Log.e(TAG, "descriptionTextView를 찾을 수 없습니다. layout 파일을 확인해 주세요.");
+        }
         librariesRecyclerView = view.findViewById(R.id.librariesRecyclerView);
 
         if (librariesRecyclerView != null) {
@@ -92,6 +95,7 @@ public class BookDetailFragment extends Fragment {
             @Override
             public void onResponse(Call<BookDetailModel> call, Response<BookDetailModel> response) {
                 if (response.isSuccessful() && response.body() != null) {
+                    Log.d(TAG, "Server response: " + response.body().toString());
                     displayBookDetail(response.body());
                 } else {
                     Log.e(TAG, "Failed to fetch book details: " + response.code());
@@ -125,7 +129,21 @@ public class BookDetailFragment extends Fragment {
         if (authorTextView != null) authorTextView.setText("▸ 저자 : " + bookDetail.getAuthors());
         if (publisherTextView != null) publisherTextView.setText("▸ 출판 : " + bookDetail.getPublisher());
         if (publishYearTextView != null) publishYearTextView.setText("▸ 발행 : " + bookDetail.getPublishyear());
-        if (descriptionTextView != null) descriptionTextView.setText(bookDetail.getDescription());
+
+        // Description 처리
+        if (descriptionTextView != null) {
+            String description = bookDetail.getDescription();
+            if (description != null && !description.isEmpty()) {
+                descriptionTextView.setText(description);
+                descriptionTextView.setVisibility(View.VISIBLE);
+                Log.d(TAG, "Description set: " + description);
+            } else {
+                Log.w(TAG, "Description is null or empty");
+                descriptionTextView.setVisibility(View.GONE);
+            }
+        } else {
+            Log.e(TAG, "descriptionTextView is null");
+        }
 
         if (librariesRecyclerView != null && bookDetail.getLibs() != null) {
             libraryAdapter = new BookDetailLibraryAdapter(bookDetail.getLibs());
