@@ -80,9 +80,6 @@ public class BookDetailFragment extends Fragment {
         publisherTextView = view.findViewById(R.id.publisherTextView);
         publishYearTextView = view.findViewById(R.id.publishYearTextView);
         descriptionTextView = view.findViewById(R.id.descriptionTextView);
-        if (descriptionTextView == null) {
-            Log.e(TAG, "descriptionTextView를 찾을 수 없습니다. layout 파일을 확인해 주세요.");
-        }
         librariesRecyclerView = view.findViewById(R.id.librariesRecyclerView);
 
         if (librariesRecyclerView != null) {

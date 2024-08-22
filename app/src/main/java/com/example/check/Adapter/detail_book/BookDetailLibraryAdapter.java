@@ -17,6 +17,10 @@ public class BookDetailLibraryAdapter extends RecyclerView.Adapter<BookDetailLib
 
     private List<LibraryModel> libraries;
 
+    public List<LibraryModel> getLibraries() {
+        return libraries;
+    }
+
     public BookDetailLibraryAdapter(List<LibraryModel> libraries) {
         this.libraries = libraries;
     }
