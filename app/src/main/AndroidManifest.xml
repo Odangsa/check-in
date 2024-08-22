@@ -30,22 +30,12 @@
             </intent-filter>
         </activity>
 
+
         <activity
             android:name=".Main2_stamp"
             android:exported="true" />
-        <activity
-            android:name=".bookbti_3"
-            android:exported="true" />
-        <activity
-            android:name=".bookbti_2"
-            android:exported="true" />
-        <activity
-            android:name=".bookbti_1"
-            android:exported="true" />
 
-        <meta-data
-            android:name="com.kakao.vectormap.APP_KEY"
-            android:value="125a750250f0d2368be4baefe6c8b349"/>
+
     </application>
 
 

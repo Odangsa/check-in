@@ -10,12 +10,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.check.Utils.LocationUtil;
 import com.example.check.api.ApiClient;
 import com.example.check.api.ApiService;
 import com.example.check.fragments.BBTIFragment;
 import com.example.check.fragments.HomeFragment;
 import com.example.check.fragments.TodayBookFragment;
+import com.example.check.map.LibraryMapFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.kakao.vectormap.KakaoMapSdk;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String userId = "123456789";
     private static final String TAG = "MainActivity";
     private ApiService apiService;
+    private LocationUtil locationUtil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        KakaoMapSdk.init(this, "768f4a0e53607a3a3be9e0348e0a3ee2");
         // API 서비스 초기화
         apiService = ApiClient.getClient().create(ApiService.class);
 
@@ -76,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
                 selectedFragment = new BBTIFragment();
             } else if (itemId == R.id.navigation_today_book) {
                 selectedFragment = new TodayBookFragment();
+            } else if (itemId == R.id.navigation_person) {
+                selectedFragment = new LibraryMapFragment();
             }
 
             if (selectedFragment != null) {

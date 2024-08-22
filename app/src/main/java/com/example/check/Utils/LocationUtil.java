@@ -5,12 +5,15 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.util.Log;
+
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import com.example.check.model.bookDetail.LibraryModel;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.example.check.model.bookDetail.LibraryModel;
 
 import java.util.List;
 
@@ -18,6 +21,7 @@ public class LocationUtil {
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1000;
     private FusedLocationProviderClient fusedLocationClient;
     private Context context;
+    private static final String TAG = "LocationUtil"; // 로그 태그 추가
 
     public interface LocationCallback {
         void onLocationResult(Location location);
@@ -60,13 +64,20 @@ public class LocationUtil {
                     @Override
                     public void onSuccess(Location location) {
                         if (location != null) {
+                            // 위치 조회 성공 로그 추가
+                            Log.d(TAG, "Current Location: Latitude = " + location.getLatitude()
+                                    + ", Longitude = " + location.getLongitude());
                             callback.onLocationResult(location);
                         } else {
+                            Log.e(TAG, "Location is null");
                             callback.onLocationError("위치를 가져올 수 없습니다.");
                         }
                     }
                 })
-                .addOnFailureListener(activity, e -> callback.onLocationError("위치 조회 실패: " + e.getMessage()));
+                .addOnFailureListener(activity, e -> {
+                    Log.e(TAG, "Location query failed: " + e.getMessage());
+                    callback.onLocationError("위치 조회 실패: " + e.getMessage());
+                });
     }
 
     public static void handlePermissionResult(int requestCode, String[] permissions, int[] grantResults, LocationCallback callback) {
