@@ -14,6 +14,8 @@ import os
 import json
 from django.core.exceptions import ImproperlyConfigured
 from pathlib import Path
+import pymysql
+pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,6 +40,10 @@ with open(secret_file) as f:
     KAKAO_REST_TOKEN = get_secret('KAKAO_REST_TOKEN')
     KAKAO_MOBILITY_TOKEN = get_secret('KAKAO_MOBILITY_TOKEN')
     LIB_AUTH_TOKEN = get_secret('LIB_AUTH_TOKEN')
+    END_POINT = get_secret('END_POINT')
+    USER = get_secret('USER')
+    PASSWORD = get_secret('PASSWORD')
+    DB = get_secret('DB')
 
 SECRET_KEY = 'django-insecure-#)mr_a#@9&_jy)s#axdyeusrcc=5$z^wo!g1&58-65yue6hzkw'
 
@@ -58,6 +64,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user'
 ]
+
+TIME_ZONE = 'Asia/Seoul'
+USE_TZ = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -97,6 +106,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'aws': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'book_info_db',
+        'USER': 'odangsa',
+        'PASSWORD': PASSWORD,
+        'HOST': 'book-info-db.cf226g4uq9m4.ap-northeast-2.rds.amazonaws.com',
+        'PORT': '3306'
     }
 }
 
