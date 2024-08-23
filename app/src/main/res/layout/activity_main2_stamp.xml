@@ -10,6 +10,7 @@
     android:background="@color/white">
 
     <ImageButton
+        android:id="@+id/backButton"
         android:layout_width="80dp"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -17,6 +18,7 @@
         android:background="@color/transparent"/>
 
     <TextView
+        android:id="@+id/currentTransportationTextView"
         android:layout_width="100dp"
         android:layout_height="0dp"
         android:layout_weight="0.5"
@@ -32,146 +34,28 @@
         android:drawableLeft="@drawable/icon_bike"/>
 
     <!-- 도장판 -->
-    <!-- todo : 배경 이미지 변경 -->
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="6.5"
-        android:background="@drawable/img_stamp_background"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="vertical"
-        android:weightSum="6">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="5"
-            android:gravity="center">
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/background_stamp"
-                android:src="@drawable/img_seoul_library"
-                android:scaleType="fitXY"
-                android:padding="10dp"/>
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.3"/>
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.8"
-                android:src="@drawable/icon_arrow_forward"/>
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.3"/>
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/background_stamp"
-                android:src="@drawable/img_ssu_library"
-                android:scaleType="fitXY"
-                android:padding="10dp"/>
-        </LinearLayout>
+        android:layout_marginBottom="10dp">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5"
-            android:paddingLeft="150dp"
-            android:src="@drawable/icon_arrow_down_left"/>
+            android:layout_height="match_parent"
+            android:src="@drawable/img_stamp_background"
+            android:scaleType="fitXY"/>
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/stampRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="5"
-            android:gravity="center">
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/background_stamp"
-                android:src="@drawable/img_cn_library"
-                android:scaleType="fitXY"
-                android:padding="10dp"/>
-        </LinearLayout>
+            android:layout_height="match_parent"
+            android:padding="16dp"/>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5"
-            android:paddingRight="100dp"
-            android:src="@drawable/icon_arrow_down_left"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="5"
-            android:gravity="center">
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/background_stamp"
-                android:src="@drawable/img_seoul_library"
-                android:scaleType="fitXY"
-                android:padding="10dp"/>
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.5"/>
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.8"
-                android:src="@drawable/icon_arrow_forward"/>
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.5"/>
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/background_stamp"
-                android:src="@drawable/img_ssu_library"
-                android:scaleType="fitXY"
-                android:padding="10dp"/>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5"
-            android:paddingLeft="150dp"
-            android:src="@drawable/icon_arrow_down_left"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="5"
-            android:gravity="center">
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/background_stamp"
-                android:src="@drawable/icon_add"
-                android:scaleType="fitXY"
-                android:padding="10dp"/>
-        </LinearLayout>
-
-
-    </LinearLayout>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -183,6 +67,7 @@
         android:layout_marginRight="25dp">
 
         <TextView
+            android:id="@+id/walkButton"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -191,12 +76,12 @@
             android:textColor="@color/navy"
             android:textStyle="bold"
             android:gravity="center_vertical"
-            android:layout_gravity="right"
             android:paddingLeft="10dp"
             android:background="@drawable/background_gray_stroke"
             android:drawableLeft="@drawable/icon_walk"/>
 
         <TextView
+            android:id="@+id/busButton"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -205,13 +90,13 @@
             android:textColor="@color/navy"
             android:textStyle="bold"
             android:gravity="center_vertical"
-            android:layout_gravity="right"
             android:paddingLeft="10dp"
             android:layout_marginLeft="10dp"
             android:background="@drawable/background_gray_stroke"
             android:drawableLeft="@drawable/icon_bus"/>
 
         <ImageButton
+            android:id="@+id/nextButton"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -225,6 +110,6 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"></View>
+        android:layout_weight="1"/>
 
 </LinearLayout>

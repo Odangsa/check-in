@@ -18,7 +18,5 @@ public class Transportation {
         return visited_libraries;
     }
 
-    public void setVisited_libraries(List<String> visited_libraries) {
-        this.visited_libraries = visited_libraries;
-    }
+
 }

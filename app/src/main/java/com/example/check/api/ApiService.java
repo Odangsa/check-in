@@ -3,6 +3,7 @@ package com.example.check.api;
 import com.example.check.model.bookDetail.BookDetailModel;
 import com.example.check.model.home.RecentLibrary;
 import com.example.check.model.home.RecommendedBooksWrapper;
+import com.example.check.model.stampboard.StampBoard;
 import com.example.check.model.today_book.RecommendationsWrapper;
 
 import java.util.List;
@@ -14,6 +15,11 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiService {
+
+
+    @GET("/api/stamp_board")
+    Call<StampBoard> getStampBoard(@Query("userId") int userId);
+
 
     @GET("api/book_details/{isbn}")
     Call<BookDetailModel> getBookDetails(
@@ -48,20 +54,5 @@ public interface ApiService {
             @Query("date") String date
     );
 
-
-
-
-//    @GET("api/book_details/{isbn}")
-//    Call<ResponseBody> getBookDetails(@Path("isbn") String isbn);
-
-//    @GET("api/recommendations_today_book")
-//    Call<ResponseBody> getTodayBooks();
-
-    // 썡 객체로 받기 - 이건 뷰에 띄우기 어렵다고 한다
-//    @GET("api/recommendation_book_two")
-//    Call<ResponseBody> getRecommendedBooks();
-
-    //    @GET("api/recent_libraries/{userId}")
-//    Call<ResponseBody> getRecentLibraries(@Path("userId") String userId);
 
 }

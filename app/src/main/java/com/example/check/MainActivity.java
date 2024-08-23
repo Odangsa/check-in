@@ -15,8 +15,8 @@ import com.example.check.api.ApiClient;
 import com.example.check.api.ApiService;
 import com.example.check.fragments.BBTIFragment;
 import com.example.check.fragments.HomeFragment;
+import com.example.check.fragments.StampMap.StampFragment;
 import com.example.check.fragments.TodayBookFragment;
-import com.example.check.map.LibraryMapFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.kakao.vectormap.KakaoMapSdk;
 
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             } else if (itemId == R.id.navigation_today_book) {
                 selectedFragment = new TodayBookFragment();
             } else if (itemId == R.id.navigation_person) {
-                selectedFragment = new LibraryMapFragment();
+                selectedFragment = new StampFragment();
             }
 
             if (selectedFragment != null) {
