@@ -1,88 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/startView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="10"
     android:background="@color/white">
 
-    <!-- 앱로고, 폰트 변경 -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center|left"
-        android:text="책크인"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:textColor="@color/navy"
-        android:drawableLeft="@drawable/icon_bookmark_checked"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="20dp"/>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="5"
-        android:src="@drawable/img_bookbti_main"
-        android:scaleType="centerCrop"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="10dp"/>
-
+    <!-- Start View -->
     <LinearLayout
+        android:id="@+id/startView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="1">
+        android:weightSum="10">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.6"
-            android:text="나의 북BTI는?"
-            android:textSize="35dp"
+            android:layout_weight="1"
+            android:gravity="center|left"
+            android:text="책크인"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/navy"
+            android:drawableLeft="@drawable/icon_bookmark_checked"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:src="@drawable/img_bookbti_main"
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.6"
+                android:text="나의 북BTI는?"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:textColor="@color/navy"
+                android:layout_marginLeft="25dp"
+                android:gravity="bottom"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:text="북BTI를 기반으로 한 책 추천 서비스"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/gray"
+                android:layout_marginLeft="25dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="25dp"
+            android:layout_weight="0.5"
+            android:text="시작하기 →"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"/>
+    </LinearLayout>
+
+    <!-- Question View -->
+    <LinearLayout
+        android:id="@+id/questionView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="책크인"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/navy"
+            android:drawableLeft="@drawable/icon_bookmark_checked"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"/>
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"
+            android:background="@android:color/transparent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_margin="25dp">
+
+            <TextView
+                android:id="@+id/questionNumberTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_one"
+                android:drawablePadding="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/navy"/>
+
+            <TextView
+                android:id="@+id/questionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="33sp"
+                android:textStyle="bold"
+                android:textColor="@color/navy"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/option1Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="15dp"
+                android:textSize="20sp"
+                android:textColor="@color/navy"
+                android:background="@drawable/btn_round_gray_stroke"/>
+
+            <Button
+                android:id="@+id/option2Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="15dp"
+                android:textSize="20sp"
+                android:textColor="@color/navy"
+                android:background="@drawable/btn_round_gray_stroke"/>
+
+            <ImageButton
+                android:id="@+id/nextButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/icon_next"
+                android:background="@android:color/transparent"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Result View -->
+    <LinearLayout
+        android:id="@+id/resultView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="책크인"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/navy"
+            android:drawableLeft="@drawable/icon_bookmark_checked"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="당신의 북BTI는"
+            android:textSize="25sp"
+            android:textColor="@color/navy"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/resultTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="@color/navy"
             android:layout_marginLeft="25dp"
-            android:gravity="bottom"/>
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:id="@+id/resultImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop"/>
 
         <TextView
+            android:id="@+id/resultDescription1TextView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.4"
-            android:text="북BTI를 기반으로 한 책 추천 서비스"
-            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/navy"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/resultDescription2TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/navy"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/recommendButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="나에게 맞는 책 추천 받기"
+            android:textColor="@color/white"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/gray"
-            android:layout_marginLeft="25dp"/>
-
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="30dp"/>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="25dp"
-        android:layout_weight="0.5"
-        android:text="시작하기 →"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:textStyle="bold"/>
-
-    <!-- navbar로 변경 예정 -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
-</LinearLayout>
+</FrameLayout>

@@ -1,9 +1,6 @@
 package com.example.check.fragments;
 
-import static android.content.ContentValues.TAG;
-
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,56 +22,73 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
+import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class BBTIFragment extends Fragment {
 
+    private static final String TAG = "BBTIFragment";
+    private View rootView;
     private View startView;
     private View questionView;
     private View resultView;
     private TextView questionTextView;
+    private TextView questionNumberTextView;
     private Button option1Button, option2Button;
     private ImageButton nextButton;
     private JSONObject questionsJson;
     private int currentQuestionIndex = 0;
     private Map<String, Integer> scores = new HashMap<>();
     private ApiService apiService;
+    private JSONArray currentQuestionSet;
+    private String currentCategory;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        startView = inflater.inflate(R.layout.fragment_bbti, container, false);
-        questionView = inflater.inflate(R.layout.fragment_bookbti_question, container, false);
-        resultView = inflater.inflate(R.layout.fragment_bookbti_result, container, false);
+        rootView = inflater.inflate(R.layout.fragment_bbti, container, false);
 
-        Button startButton = startView.findViewById(R.id.startButton);
-        startButton.setOnClickListener(v -> startBBTITest());
+        startView = rootView.findViewById(R.id.startView);
+        questionView = rootView.findViewById(R.id.questionView);
+        resultView = rootView.findViewById(R.id.resultView);
 
-        questionTextView = questionView.findViewById(R.id.questionTextView);
-        option1Button = questionView.findViewById(R.id.option1Button);
-        option2Button = questionView.findViewById(R.id.option2Button);
-        nextButton = questionView.findViewById(R.id.nextButton);
+        Button startButton = rootView.findViewById(R.id.startButton);
+        if (startButton != null) {
+            startButton.setOnClickListener(v -> startBBTITest());
+        } else {
+            Log.e(TAG, "Start button not found in layout");
+        }
 
-        option1Button.setOnClickListener(v -> selectOption(0));
-        option2Button.setOnClickListener(v -> selectOption(1));
-        nextButton.setOnClickListener(v -> onNextButtonClick());
+        questionTextView = rootView.findViewById(R.id.questionTextView);
+        questionNumberTextView = rootView.findViewById(R.id.questionNumberTextView);
+        option1Button = rootView.findViewById(R.id.option1Button);
+        option2Button = rootView.findViewById(R.id.option2Button);
+        nextButton = rootView.findViewById(R.id.nextButton);
+
+        if (option1Button != null) option1Button.setOnClickListener(v -> selectOption(0));
+        if (option2Button != null) option2Button.setOnClickListener(v -> selectOption(1));
+        if (nextButton != null) nextButton.setOnClickListener(v -> onNextButtonClick());
 
         loadQuestions();
         apiService = ApiClient.getClient().create(ApiService.class);
 
-        return startView;
+        return rootView;
     }
 
     private void startBBTITest() {
-        ViewGroup parent = (ViewGroup) startView.getParent();
-        parent.removeView(startView);
-        parent.addView(questionView);
-        displayQuestion();
+        if (startView != null && questionView != null) {
+            startView.setVisibility(View.GONE);
+            questionView.setVisibility(View.VISIBLE);
+            currentQuestionSet = getMainQuestions();
+            currentQuestionIndex = 0;
+            displayQuestion();
+        } else {
+            Log.e(TAG, "startView or questionView is null");
+        }
     }
 
     private void loadQuestions() {
@@ -92,31 +107,30 @@ public class BBTIFragment extends Fragment {
         }
     }
 
-    private void onNextButtonClick() {
+    private JSONArray getMainQuestions() {
         try {
-            updateScore();
-            currentQuestionIndex++;
-            JSONArray questions = questionsJson.getJSONArray("questions");
-            if (currentQuestionIndex < questions.length()) {
-                displayQuestion();
-            } else {
-                showResults();
-            }
+            return questionsJson.getJSONArray("questions");
         } catch (JSONException e) {
-            Log.e(TAG, "Error in onNextButtonClick: " + e.getMessage());
+            Log.e(TAG, "Error getting main questions: " + e.getMessage());
+            return new JSONArray();
         }
     }
 
     private void displayQuestion() {
         try {
-            JSONArray questions = questionsJson.getJSONArray("questions");
-            if (currentQuestionIndex < questions.length()) {
-                JSONObject question = questions.getJSONObject(currentQuestionIndex);
-                questionTextView.setText(question.getString("text"));
+            if (currentQuestionIndex < currentQuestionSet.length()) {
+                JSONObject question = currentQuestionSet.getJSONObject(currentQuestionIndex);
+                if (questionTextView != null) questionTextView.setText(question.getString("text"));
+                if (questionNumberTextView != null) questionNumberTextView.setText(String.format("%d", question.getInt("id")));
                 JSONArray options = question.getJSONArray("options");
-                option1Button.setText(options.getJSONObject(0).getString("text"));
-                option2Button.setText(options.getJSONObject(1).getString("text"));
-                nextButton.setVisibility(View.INVISIBLE);
+                if (option1Button != null) option1Button.setText(options.getJSONObject(0).getString("text"));
+                if (option2Button != null) option2Button.setText(options.getJSONObject(1).getString("text"));
+                if (nextButton != null) nextButton.setVisibility(View.INVISIBLE);
+                currentCategory = question.getString("category");
+
+                // Reset button states
+                option1Button.setSelected(false);
+                option2Button.setSelected(false);
             } else {
                 showResults();
             }
@@ -126,15 +140,39 @@ public class BBTIFragment extends Fragment {
     }
 
     private void selectOption(int optionIndex) {
-        option1Button.setSelected(optionIndex == 0);
-        option2Button.setSelected(optionIndex == 1);
-        nextButton.setVisibility(View.VISIBLE);
+        if (option1Button != null && option2Button != null) {
+            option1Button.setSelected(optionIndex == 0);
+            option2Button.setSelected(optionIndex == 1);
+            if (nextButton != null) nextButton.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void onNextButtonClick() {
+        try {
+            updateScore();
+            currentQuestionIndex++;
+            if (currentQuestionIndex < currentQuestionSet.length()) {
+                displayQuestion();
+            } else if (currentCategory.equals("FN")) {
+                String fnResult = scores.getOrDefault("FN", 0) > 0 ? "F" : "N";
+                currentQuestionSet = getBranchedQuestions(fnResult);
+                currentQuestionIndex = 0;
+                displayQuestion();
+            } else {
+                showResults();
+            }
+        } catch (JSONException e) {
+            Log.e(TAG, "Error in onNextButtonClick: " + e.getMessage());
+        }
+    }
+
+    private JSONArray getBranchedQuestions(String branch) throws JSONException {
+        return questionsJson.getJSONObject("branchedQuestions").getJSONArray(branch);
     }
 
     private void updateScore() {
         try {
-            JSONArray questions = questionsJson.getJSONArray("questions");
-            JSONObject question = questions.getJSONObject(currentQuestionIndex);
+            JSONObject question = currentQuestionSet.getJSONObject(currentQuestionIndex);
             String category = question.getString("category");
             String value = option1Button.isSelected() ?
                     question.getJSONArray("options").getJSONObject(0).getString("value") :
@@ -146,19 +184,15 @@ public class BBTIFragment extends Fragment {
     }
 
     private void showResults() {
-        ViewGroup parent = (ViewGroup) questionView.getParent();
-        parent.removeView(questionView);
-        parent.addView(resultView);
-
-        String bbtiType = calculateBBTIType();
-        sendResultsToServer(bbtiType);
-
-        TextView resultTitleTextView = resultView.findViewById(R.id.resultTitleTextView);
-        ImageView resultImageView = resultView.findViewById(R.id.resultImageView);
-        TextView resultDescription1TextView = resultView.findViewById(R.id.resultDescription1TextView);
-        TextView resultDescription2TextView = resultView.findViewById(R.id.resultDescription2TextView);
-
-        setResultDetails(bbtiType, resultTitleTextView, resultImageView, resultDescription1TextView, resultDescription2TextView);
+        if (questionView != null && resultView != null) {
+            questionView.setVisibility(View.GONE);
+            resultView.setVisibility(View.VISIBLE);
+            String bbtiType = calculateBBTIType();
+            sendResultsToServer(bbtiType);
+            displayResult(bbtiType);
+        } else {
+            Log.e(TAG, "questionView or resultView is null");
+        }
     }
 
     private String calculateBBTIType() {
@@ -168,6 +202,20 @@ public class BBTIFragment extends Fragment {
         bbtiType.append(scores.getOrDefault("FN", 0) > 0 ? "F" : "N");
         bbtiType.append(scores.getOrDefault("RL", 0) > 1 ? "R" : "L");
         return bbtiType.toString();
+    }
+
+    private void displayResult(String bbtiType) {
+        TextView resultTitleTextView = rootView.findViewById(R.id.resultTitleTextView);
+        ImageView resultImageView = rootView.findViewById(R.id.resultImageView);
+        TextView resultDescription1TextView = rootView.findViewById(R.id.resultDescription1TextView);
+        TextView resultDescription2TextView = rootView.findViewById(R.id.resultDescription2TextView);
+
+        if (resultTitleTextView != null && resultImageView != null &&
+                resultDescription1TextView != null && resultDescription2TextView != null) {
+            setResultDetails(bbtiType, resultTitleTextView, resultImageView, resultDescription1TextView, resultDescription2TextView);
+        } else {
+            Log.e(TAG, "One or more result views are null");
+        }
     }
 
     private void setResultDetails(String bbtiType, TextView title, ImageView image, TextView desc1, TextView desc2) {
@@ -186,26 +234,29 @@ public class BBTIFragment extends Fragment {
                 break;
             // Add cases for other BBTI types
             default:
-                // Set default values
+                title.setText("알 수 없는 유형");
+                image.setImageResource(R.drawable.img_bookbti_tmp);
+                desc1.setText("유형을 분석할 수 없습니다.");
+                desc2.setText("다시 테스트를 진행해 주세요.");
         }
     }
 
     private void sendResultsToServer(String bbtiType) {
-        // Implement the logic to send results to server
+        // TODO: Implement the logic to send results to server
         // Example:
         // apiService.sendBBTIResult(MainActivity.userId, bbtiType).enqueue(new Callback<ResponseBody>() {
         //     @Override
         //     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
         //         if (response.isSuccessful()) {
-        //             // Handle successful response
+        //             Log.d(TAG, "BBTI result sent successfully");
         //         } else {
-        //             // Handle error
+        //             Log.e(TAG, "Failed to send BBTI result: " + response.code());
         //         }
         //     }
         //
         //     @Override
         //     public void onFailure(Call<ResponseBody> call, Throwable t) {
-        //         // Handle failure
+        //         Log.e(TAG, "Error sending BBTI result", t);
         //     }
         // });
     }
