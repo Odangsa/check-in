@@ -152,6 +152,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="0.2"
+                android:textSize="20dp"
                 android:textColor="@color/navy"
                 android:textStyle="bold"
                 android:background="@drawable/btn_round_gray_stroke"/>
@@ -161,6 +162,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginTop="10dp"
+                android:textSize="20dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="0.2"
                 android:background="@drawable/btn_round_gray_stroke"
@@ -170,93 +172,100 @@
     </LinearLayout>
 
     <!-- Result View -->
+    <!-- Result View -->
     <LinearLayout
         android:id="@+id/resultView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="10"
         android:background="@color/white"
+        android:padding="25dp"
         android:visibility="gone">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.5"
-            android:gravity="center|left"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:text="책크인"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="@color/navy"
-            android:drawableLeft="@drawable/icon_bookmark_checked"
-            android:drawableRight="@drawable/icon_notifications"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"></TextView>
+            android:drawableStart="@drawable/icon_bookmark_checked"
+            android:drawableEnd="@drawable/icon_notifications"
+            android:drawablePadding="10dp"
+            android:layout_marginBottom="20dp"/>
 
         <ImageView
             android:id="@+id/resultImageView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4"
+            android:layout_weight="5"
             android:src="@drawable/img_bookbti_tmp"
             android:scaleType="centerCrop"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"/>
+            android:layout_marginBottom="20dp"
+            android:adjustViewBounds="true"/>
 
         <TextView
             android:id="@+id/resultTitleTextView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:textSize="23dp"
+            android:layout_height="wrap_content"
             android:textStyle="bold"
+            android:textSize="20sp"
             android:textColor="@color/navy"
-            android:paddingLeft="25dp"
-            android:paddingTop="20dp"/>
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginBottom="20dp"/>
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:weightSum="1"
-            android:orientation="horizontal"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp">
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:layout_weight="0.1"
-                android:src="@drawable/icon_bookmark"/>
-            <TextView
-                android:id="@+id/resultDescription1TextView"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.9"
-                android:textSize="15dp"
-                android:textColor="@color/gray_dark"/>
-        </LinearLayout>
+            android:layout_weight="3">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:weightSum="1"
-            android:orientation="horizontal"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp">
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:layout_weight="0.1"
-                android:src="@drawable/icon_bookmark"/>
-            <TextView
-                android:id="@+id/resultDescription2TextView"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.9"
-                android:textSize="15dp"
-                android:textColor="@color/gray_dark"/>
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/icon_bookmark"/>
+                    <TextView
+                        android:id="@+id/resultDescription1TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/gray_dark"
+                        android:textSize="15sp"
+                        android:layout_marginStart="10dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/icon_bookmark"/>
+                    <TextView
+                        android:id="@+id/resultDescription2TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/gray_dark"
+                        android:textSize="15sp"
+                        android:layout_marginStart="10dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
 
     </LinearLayout>
 </FrameLayout>
