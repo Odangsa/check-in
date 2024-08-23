@@ -91,18 +91,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:weightSum="10"
         android:visibility="gone">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center|left"
             android:text="책크인"
-            android:textSize="30sp"
+            android:textSize="30dp"
             android:textStyle="bold"
             android:textColor="@color/navy"
             android:drawableLeft="@drawable/icon_bookmark_checked"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp" />
 
         <ImageButton
             android:id="@+id/backButton"
@@ -116,9 +119,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_margin="25dp"
+            android:layout_weight="7"
             android:orientation="vertical"
-            android:layout_margin="25dp">
+            android:weightSum="1">
 
             <TextView
                 android:id="@+id/questionNumberTextView"
@@ -132,32 +136,36 @@
             <TextView
                 android:id="@+id/questionTextView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:textSize="33sp"
-                android:textStyle="bold"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:gravity="center_vertical"
+                android:textAlignment="center"
                 android:textColor="@color/navy"
-                android:gravity="center"/>
+                android:textSize="33dp"
+                android:textStyle="bold"
+                tools:ignore="RtlCompat" />
 
             <Button
                 android:id="@+id/option1Button"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:padding="15dp"
-                android:textSize="20sp"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0.2"
                 android:textColor="@color/navy"
+                android:textStyle="bold"
                 android:background="@drawable/btn_round_gray_stroke"/>
 
             <Button
                 android:id="@+id/option2Button"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:padding="15dp"
-                android:textSize="20sp"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0.2"
+                android:background="@drawable/btn_round_gray_stroke"
                 android:textColor="@color/navy"
-                android:background="@drawable/btn_round_gray_stroke"/>
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 
@@ -167,75 +175,88 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:weightSum="10"
+        android:background="@color/white"
         android:visibility="gone">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:gravity="center|left"
             android:text="책크인"
-            android:textSize="30sp"
+            android:textSize="30dp"
             android:textStyle="bold"
             android:textColor="@color/navy"
             android:drawableLeft="@drawable/icon_bookmark_checked"
+            android:drawableRight="@drawable/icon_notifications"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="20dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="당신의 북BTI는"
-            android:textSize="25sp"
-            android:textColor="@color/navy"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="20dp"/>
-
-        <TextView
-            android:id="@+id/resultTitleTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="@color/navy"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginRight="25dp"></TextView>
 
         <ImageView
             android:id="@+id/resultImageView"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="20dp"
-            android:scaleType="centerCrop"/>
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:src="@drawable/img_bookbti_tmp"
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
 
         <TextView
-            android:id="@+id/resultDescription1TextView"
+            android:id="@+id/resultTitleTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="@color/navy"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="20dp"/>
-
-        <TextView
-            android:id="@+id/resultDescription2TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="@color/navy"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="10dp"/>
-
-        <Button
-            android:id="@+id/recommendButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="나에게 맞는 책 추천 받기"
-            android:textColor="@color/white"
-            android:textSize="20sp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="23dp"
             android:textStyle="bold"
+            android:textColor="@color/navy"
+            android:paddingLeft="25dp"
+            android:paddingTop="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="1"
+            android:orientation="horizontal"
             android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginRight="25dp">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="0.1"
+                android:src="@drawable/icon_bookmark"/>
+            <TextView
+                android:id="@+id/resultDescription1TextView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.9"
+                android:textSize="15dp"
+                android:textColor="@color/gray_dark"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="0.1"
+                android:src="@drawable/icon_bookmark"/>
+            <TextView
+                android:id="@+id/resultDescription2TextView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.9"
+                android:textSize="15dp"
+                android:textColor="@color/gray_dark"/>
+        </LinearLayout>
+
     </LinearLayout>
 </FrameLayout>

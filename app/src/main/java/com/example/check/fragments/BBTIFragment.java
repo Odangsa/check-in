@@ -1,20 +1,20 @@
 package com.example.check.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.check.R;
+import com.example.check.Utils.BBTIUtil;
 import com.example.check.api.ApiClient;
 import com.example.check.api.ApiService;
 
@@ -22,10 +22,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.InputStream;
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,34 +39,50 @@ public class BBTIFragment extends Fragment {
     private TextView questionTextView;
     private TextView questionNumberTextView;
     private Button option1Button, option2Button;
-    private ImageButton nextButton;
     private JSONObject questionsJson;
     private int currentQuestionIndex = 0;
     private Map<String, Integer> scores = new HashMap<>();
     private ApiService apiService;
     private JSONArray currentQuestionSet;
+    private JSONArray bbtiResults;
     private String currentCategory;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_bbti, container, false);
+        if (rootView == null) {
+            Log.e(TAG, "Failed to inflate layout");
+            return null;
+        }
 
+        initializeViews();
+        setListeners();
+        loadQuestions();
+        loadBBTIResults();
+        apiService = ApiClient.getClient().create(ApiService.class);
+
+        return rootView;
+    }
+
+    private void initializeViews() {
         startView = rootView.findViewById(R.id.startView);
         questionView = rootView.findViewById(R.id.questionView);
         resultView = rootView.findViewById(R.id.resultView);
+        questionTextView = rootView.findViewById(R.id.questionTextView);
+        questionNumberTextView = rootView.findViewById(R.id.questionNumberTextView);
+        option1Button = rootView.findViewById(R.id.option1Button);
+        option2Button = rootView.findViewById(R.id.option2Button);
 
+    }
+
+    private void setListeners() {
         Button startButton = rootView.findViewById(R.id.startButton);
         if (startButton != null) {
             startButton.setOnClickListener(v -> startBBTITest());
         } else {
             Log.e(TAG, "Start button not found in layout");
         }
-
-        questionTextView = rootView.findViewById(R.id.questionTextView);
-        questionNumberTextView = rootView.findViewById(R.id.questionNumberTextView);
-        option1Button = rootView.findViewById(R.id.option1Button);
-        option2Button = rootView.findViewById(R.id.option2Button);
 
         if (option1Button != null) option1Button.setOnClickListener(v -> {
             selectOption(0);
@@ -76,11 +92,6 @@ public class BBTIFragment extends Fragment {
             selectOption(1);
             onNextButtonClick();
         });
-
-        loadQuestions();
-        apiService = ApiClient.getClient().create(ApiService.class);
-
-        return rootView;
     }
 
     private void startBBTITest() {
@@ -96,8 +107,23 @@ public class BBTIFragment extends Fragment {
     }
 
     private void loadQuestions() {
+        questionsJson = loadJSONFromResource(R.raw.bbti_questions);
+    }
+
+    private void loadBBTIResults() {
+        JSONObject bbtiResultsObj = loadJSONFromResource(R.raw.bbti);
         try {
-            InputStream is = getResources().openRawResource(R.raw.bbti_questions);
+            bbtiResults = bbtiResultsObj.getJSONArray("results");
+            Log.d(TAG, "BBTI Results loaded: " + bbtiResults.toString());
+        } catch (JSONException e) {
+            Log.e(TAG, "Error loading BBTI results: " + e.getMessage());
+            bbtiResults = new JSONArray();
+        }
+    }
+
+    private JSONObject loadJSONFromResource(int resourceId) {
+        try {
+            InputStream is = getResources().openRawResource(resourceId);
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             StringBuilder sb = new StringBuilder();
             String line;
@@ -105,9 +131,10 @@ public class BBTIFragment extends Fragment {
                 sb.append(line);
             }
             reader.close();
-            questionsJson = new JSONObject(sb.toString());
+            return new JSONObject(sb.toString());
         } catch (IOException | JSONException e) {
-            Log.e(TAG, "Error loading questions: " + e.getMessage());
+            Log.e(TAG, "Error loading JSON from resource: " + e.getMessage());
+            return new JSONObject();
         }
     }
 
@@ -124,15 +151,14 @@ public class BBTIFragment extends Fragment {
         try {
             if (currentQuestionIndex < currentQuestionSet.length()) {
                 JSONObject question = currentQuestionSet.getJSONObject(currentQuestionIndex);
-                if (questionTextView != null) questionTextView.setText(question.getString("text"));
-                if (questionNumberTextView != null) questionNumberTextView.setText(String.format("%d", question.getInt("id")));
+                questionTextView.setText(question.getString("text"));
+                questionNumberTextView.setText(String.format("%d", question.getInt("id")));
                 JSONArray options = question.getJSONArray("options");
-                if (option1Button != null) option1Button.setText(options.getJSONObject(0).getString("text"));
-                if (option2Button != null) option2Button.setText(options.getJSONObject(1).getString("text"));
-                if (nextButton != null) nextButton.setVisibility(View.INVISIBLE);
+                option1Button.setText(options.getJSONObject(0).getString("text"));
+                option2Button.setText(options.getJSONObject(1).getString("text"));
+
                 currentCategory = question.getString("category");
 
-                // Reset button states
                 option1Button.setSelected(false);
                 option2Button.setSelected(false);
             } else {
@@ -144,11 +170,9 @@ public class BBTIFragment extends Fragment {
     }
 
     private void selectOption(int optionIndex) {
-        if (option1Button != null && option2Button != null) {
-            option1Button.setSelected(optionIndex == 0);
-            option2Button.setSelected(optionIndex == 1);
-            if (nextButton != null) nextButton.setVisibility(View.VISIBLE);
-        }
+        option1Button.setSelected(optionIndex == 0);
+        option2Button.setSelected(optionIndex == 1);
+
     }
 
     private void onNextButtonClick() {
@@ -177,11 +201,7 @@ public class BBTIFragment extends Fragment {
     private void updateScore() {
         try {
             JSONObject question = currentQuestionSet.getJSONObject(currentQuestionIndex);
-            String category = question.getString("category");
-            String value = option1Button.isSelected() ?
-                    question.getJSONArray("options").getJSONObject(0).getString("value") :
-                    question.getJSONArray("options").getJSONObject(1).getString("value");
-            scores.put(category, scores.getOrDefault(category, 0) + (value.equals(category.substring(0, 1)) ? 1 : 0));
+            BBTIUtil.updateScore(scores, question, option1Button.isSelected());
         } catch (JSONException e) {
             Log.e(TAG, "Error updating score: " + e.getMessage());
         }
@@ -191,7 +211,7 @@ public class BBTIFragment extends Fragment {
         if (questionView != null && resultView != null) {
             questionView.setVisibility(View.GONE);
             resultView.setVisibility(View.VISIBLE);
-            String bbtiType = calculateBBTIType();
+            String bbtiType = BBTIUtil.calculateBBTIType(scores);
             Log.d(TAG, "BBTI Type: " + bbtiType);
             sendResultsToServer(bbtiType);
             displayResult(bbtiType);
@@ -200,69 +220,114 @@ public class BBTIFragment extends Fragment {
         }
     }
 
-    private String calculateBBTIType() {
-        StringBuilder bbtiType = new StringBuilder();
-        bbtiType.append(scores.getOrDefault("AB", 0) > 1 ? "A" : "B");
-        bbtiType.append(scores.getOrDefault("CD", 0) > 1 ? "C" : "D");
-        bbtiType.append(scores.getOrDefault("FN", 0) > 0 ? "F" : "N");
-        bbtiType.append(scores.getOrDefault("RL", 0) > 1 ? "R" : "L");
-        return bbtiType.toString();
-    }
-
     private void displayResult(String bbtiType) {
-        TextView resultTitleTextView = rootView.findViewById(R.id.resultTitleTextView);
-        ImageView resultImageView = rootView.findViewById(R.id.resultImageView);
-        TextView resultDescription1TextView = rootView.findViewById(R.id.resultDescription1TextView);
-        TextView resultDescription2TextView = rootView.findViewById(R.id.resultDescription2TextView);
+        View resultView = rootView.findViewById(R.id.resultView);
+        if (resultView == null) {
+            Log.e(TAG, "resultView is null");
+            return;
+        }
 
-        if (resultTitleTextView != null && resultImageView != null &&
+        ImageView resultImageView = resultView.findViewById(R.id.resultImageView);
+        TextView resultTitleTextView = resultView.findViewById(R.id.resultTitleTextView);
+        TextView resultDescription1TextView = resultView.findViewById(R.id.resultDescription1TextView);
+        TextView resultDescription2TextView = resultView.findViewById(R.id.resultDescription2TextView);
+
+        // Check each view individually
+        if (resultImageView == null) Log.e(TAG, "resultImageView is null");
+        if (resultTitleTextView == null) Log.e(TAG, "resultTitleTextView is null");
+        if (resultDescription1TextView == null) Log.e(TAG, "resultDescription1TextView is null");
+        if (resultDescription2TextView == null) Log.e(TAG, "resultDescription2TextView is null");
+
+        // Proceed only if all views are available
+        if (resultImageView != null && resultTitleTextView != null &&
                 resultDescription1TextView != null && resultDescription2TextView != null) {
-            setResultDetails(bbtiType, resultTitleTextView, resultImageView, resultDescription1TextView, resultDescription2TextView);
+
+            // Make the result view visible
+            resultView.setVisibility(View.VISIBLE);
+
+            JSONObject result = BBTIUtil.findBBTIResult(bbtiResults, bbtiType);
+            if (result != null) {
+                try {
+                    // Set the image
+                    resultImageView.setImageResource(R.drawable.img_bookbti_tmp);
+
+                    // Set the title
+                    String title = "■ " + result.getString("타이틀");
+                    resultTitleTextView.setText(title);
+                    resultTitleTextView.setVisibility(View.VISIBLE);
+
+                    // Set the descriptions
+                    String description = result.getString("설명");
+                    String[] splitDescription = splitDescription(description);
+                    resultDescription1TextView.setText(splitDescription[0]);
+                    resultDescription2TextView.setText(splitDescription[1]);
+
+                    resultDescription1TextView.setVisibility(View.VISIBLE);
+                    resultDescription2TextView.setVisibility(View.VISIBLE);
+
+                    // Log the results for debugging
+                    Log.d(TAG, "BBTI Type: " + bbtiType);
+                    Log.d(TAG, "Title: " + title);
+                    Log.d(TAG, "Description 1: " + splitDescription[0]);
+                    Log.d(TAG, "Description 2: " + splitDescription[1]);
+
+                } catch (JSONException e) {
+                    Log.e(TAG, "Error setting BBTI result: " + e.getMessage());
+                    setErrorResult(resultTitleTextView, resultDescription1TextView, resultDescription2TextView);
+                }
+            } else {
+                Log.e(TAG, "BBTI result not found for type: " + bbtiType);
+                setErrorResult(resultTitleTextView, resultDescription1TextView, resultDescription2TextView);
+            }
         } else {
             Log.e(TAG, "One or more result views are null");
         }
     }
 
-    private void setResultDetails(String bbtiType, TextView title, ImageView image, TextView desc1, TextView desc2) {
-        switch (bbtiType) {
-            case "ACFR":
-                title.setText("귀찮아! 알아서 해줘! 패키지 여행객");
-                image.setImageResource(R.drawable.img_bookbti_tmp);
-                desc1.setText("이 유형은 어쩌구 저쩌구...");
-                desc2.setText("이 유형은 어쩌구 저쩌구...");
-                break;
-            case "ACFL":
-                title.setText("파도와 한몸! 파도 타는 서퍼");
-                image.setImageResource(R.drawable.img_bookbti_tmp);
-                desc1.setText("이 유형은 어쩌구 저쩌구...");
-                desc2.setText("이 유형은 어쩌구 저쩌구...");
-                break;
-            // Add cases for other BBTI types
-            default:
-                title.setText("알 수 없는 유형");
-                image.setImageResource(R.drawable.img_bookbti_tmp);
-                desc1.setText("유형을 분석할 수 없습니다.");
-                desc2.setText("다시 테스트를 진행해 주세요.");
+    private void setErrorResult(TextView title, TextView desc1, TextView desc2) {
+        if (title != null) {
+            title.setText("■ 알 수 없는 유형");
+            title.setVisibility(View.VISIBLE);
         }
+        if (desc1 != null) {
+            desc1.setText("유형을 분석할 수 없습니다.");
+            desc1.setVisibility(View.VISIBLE);
+        }
+        if (desc2 != null) {
+            desc2.setText("다시 테스트를 진행해 주세요.");
+            desc2.setVisibility(View.VISIBLE);
+        }
+
+        Log.e(TAG, "Error result displayed");
     }
+
+    private String[] splitDescription(String description) {
+        String[] result = new String[2];
+        if (description.length() > 100) {
+            int splitIndex = description.lastIndexOf(" ", 100);
+            result[0] = description.substring(0, splitIndex);
+            result[1] = description.substring(splitIndex + 1);
+        } else {
+            result[0] = description;
+            result[1] = "";
+        }
+        return result;
+    }
+
+    // If you have specific images for each BBTI type, you can use this method
+//    private int getImageResourceForType(String bbtiType) {
+//        switch (bbtiType) {
+//            case "ACFR":
+//                return R.drawable.img_acfr;
+//            case "ACFL":
+//                return R.drawable.img_acfl;
+//            // Add cases for other BBTI types
+//            default:
+//                return R.drawable.img_bookbti_tmp;
+//        }
+//    }
 
     private void sendResultsToServer(String bbtiType) {
         // TODO: Implement the logic to send results to server
-        // Example:
-        // apiService.sendBBTIResult(MainActivity.userId, bbtiType).enqueue(new Callback<ResponseBody>() {
-        //     @Override
-        //     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-        //         if (response.isSuccessful()) {
-        //             Log.d(TAG, "BBTI result sent successfully");
-        //         } else {
-        //             Log.e(TAG, "Failed to send BBTI result: " + response.code());
-        //         }
-        //     }
-        //
-        //     @Override
-        //     public void onFailure(Call<ResponseBody> call, Throwable t) {
-        //         Log.e(TAG, "Error sending BBTI result", t);
-        //     }
-        // });
     }
 }
