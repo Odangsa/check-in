@@ -67,11 +67,15 @@ public class BBTIFragment extends Fragment {
         questionNumberTextView = rootView.findViewById(R.id.questionNumberTextView);
         option1Button = rootView.findViewById(R.id.option1Button);
         option2Button = rootView.findViewById(R.id.option2Button);
-        nextButton = rootView.findViewById(R.id.nextButton);
 
-        if (option1Button != null) option1Button.setOnClickListener(v -> selectOption(0));
-        if (option2Button != null) option2Button.setOnClickListener(v -> selectOption(1));
-        if (nextButton != null) nextButton.setOnClickListener(v -> onNextButtonClick());
+        if (option1Button != null) option1Button.setOnClickListener(v -> {
+            selectOption(0);
+            onNextButtonClick();
+        });
+        if (option2Button != null) option2Button.setOnClickListener(v -> {
+            selectOption(1);
+            onNextButtonClick();
+        });
 
         loadQuestions();
         apiService = ApiClient.getClient().create(ApiService.class);
@@ -188,6 +192,7 @@ public class BBTIFragment extends Fragment {
             questionView.setVisibility(View.GONE);
             resultView.setVisibility(View.VISIBLE);
             String bbtiType = calculateBBTIType();
+            Log.d(TAG, "BBTI Type: " + bbtiType);
             sendResultsToServer(bbtiType);
             displayResult(bbtiType);
         } else {

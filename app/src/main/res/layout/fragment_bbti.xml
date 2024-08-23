@@ -158,15 +158,6 @@
                 android:textSize="20sp"
                 android:textColor="@color/navy"
                 android:background="@drawable/btn_round_gray_stroke"/>
-
-            <ImageButton
-                android:id="@+id/nextButton"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/icon_next"
-                android:background="@android:color/transparent"/>
         </LinearLayout>
     </LinearLayout>
 
