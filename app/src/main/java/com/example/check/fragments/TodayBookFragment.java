@@ -48,15 +48,15 @@ public class TodayBookFragment extends Fragment implements RecommendationAdapter
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         apiService = ApiClient.getClient().create(ApiService.class);
-        loadRecommendations();
+        loadRecommendations("123456789");
     }
 
-    private void loadRecommendations() {
-        apiService.getTodayBooks().enqueue(new Callback<List<RecommendationsWrapper>>() {
+    private void loadRecommendations(String userId) {
+        apiService.getTodayBooks(userId).enqueue(new Callback<RecommendationsWrapper>() {
             @Override
-            public void onResponse(Call<List<RecommendationsWrapper>> call, Response<List<RecommendationsWrapper>> response) {
-                if (response.isSuccessful() && response.body() != null && !response.body().isEmpty()) {
-                    List<RecommendationCategory> categories = response.body().get(0).getRecommendations();
+            public void onResponse(Call<RecommendationsWrapper> call, Response<RecommendationsWrapper> response) {
+                if (response.isSuccessful() && response.body() != null && !response.body().getRecommendations().isEmpty()) {
+                    List<RecommendationCategory> categories = response.body().getRecommendations();
                     adapter = new RecommendationAdapter(categories, TodayBookFragment.this);
                     recyclerView.setAdapter(adapter);
                     Log.d(TAG, "Today books loaded successfully");
@@ -67,12 +67,13 @@ public class TodayBookFragment extends Fragment implements RecommendationAdapter
             }
 
             @Override
-            public void onFailure(Call<List<RecommendationsWrapper>> call, Throwable t) {
+            public void onFailure(Call<RecommendationsWrapper> call, Throwable t) {
                 Log.e(TAG, "Error fetching today books", t);
                 showToast("네트워크 오류가 발생했습니다.");
             }
         });
     }
+
 
     @Override
     public void onBookClick(Book book) {

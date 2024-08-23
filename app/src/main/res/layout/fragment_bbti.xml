@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/startView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="10"
     android:background="@color/white">
-
-    <!-- 상단바 추가? -->
 
     <!-- 앱로고, 폰트 변경 -->
     <TextView
@@ -21,7 +20,7 @@
         android:textColor="@color/navy"
         android:drawableLeft="@drawable/icon_bookmark_checked"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="20dp"></TextView>
+        android:layout_marginTop="20dp"/>
 
     <ImageView
         android:layout_width="match_parent"
@@ -31,9 +30,7 @@
         android:scaleType="centerCrop"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:layout_marginTop="10dp"
-        ></ImageView>
-
+        android:layout_marginTop="10dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -51,7 +48,7 @@
             android:textStyle="bold"
             android:textColor="@color/navy"
             android:layout_marginLeft="25dp"
-            android:gravity="bottom"></TextView>
+            android:gravity="bottom"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -61,11 +58,12 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:textColor="@color/gray"
-            android:layout_marginLeft="25dp"></TextView>
+            android:layout_marginLeft="25dp"/>
 
     </LinearLayout>
 
     <Button
+        android:id="@+id/startButton"
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:layout_marginLeft="25dp"
@@ -75,16 +73,16 @@
         android:text="시작하기 →"
         android:textColor="@color/white"
         android:textSize="20dp"
-        android:textStyle="bold"></Button>
+        android:textStyle="bold"/>
 
     <!-- navbar로 변경 예정 -->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"></View>
+        android:layout_weight="0.5"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"></View>
+        android:layout_weight="1"/>
 </LinearLayout>

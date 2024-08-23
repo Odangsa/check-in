@@ -28,7 +28,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class BookDetailFragment extends Fragment {
+public class BookDetailFragment extends Fragment implements LocationUtil.CustomLocationCallback {
     private static final String TAG = "BookDetailFragment";
     private static final String ARG_ISBN = "isbn";
     private LocationUtil locationUtil;
@@ -77,28 +77,28 @@ public class BookDetailFragment extends Fragment {
     }
 
     private void getCurrentLocation() {
-        locationUtil.getCurrentLocation(requireActivity(), new LocationUtil.LocationCallback() {
-            @Override
-            public void onLocationResult(Location location) {
-                if (location != null) {
-                    Log.d(TAG, "현재 위치: 위도 = " + location.getLatitude() + ", 경도 = " + location.getLongitude());
-                    loadBookDetails(isbn, location);
-                    if (libraryAdapter != null && libraryAdapter.getLibraries() != null) {
-                        LocationUtil.updateLibrariesWithCurrentLocation(location, libraryAdapter.getLibraries());
-                        libraryAdapter.notifyDataSetChanged();
-                    }
-                } else {
-                    // 권한이 새로 부여되어 위치 조회를 다시 시도해야 하는 경우
-                    getCurrentLocation();
-                }
-            }
+        locationUtil.getCurrentLocation(requireActivity(), this);
+    }
 
-            @Override
-            public void onLocationError(String error) {
-                Log.e(TAG, "위치 오류: " + error);
-                showToast("위치 정보를 가져올 수 없습니다. " + error);
+    @Override
+    public void onLocationResult(Location location) {
+        if (location != null) {
+            Log.d(TAG, "현재 위치: 위도 = " + location.getLatitude() + ", 경도 = " + location.getLongitude());
+            loadBookDetails(isbn, location);
+            if (libraryAdapter != null && libraryAdapter.getLibraries() != null) {
+                LocationUtil.updateLibrariesWithCurrentLocation(location, libraryAdapter.getLibraries());
+                libraryAdapter.notifyDataSetChanged();
             }
-        });
+        } else {
+            // 권한이 새로 부여되어 위치 조회를 다시 시도해야 하는 경우
+            getCurrentLocation();
+        }
+    }
+
+    @Override
+    public void onLocationError(String error) {
+        Log.e(TAG, "위치 오류: " + error);
+        showToast("위치 정보를 가져올 수 없습니다. " + error);
     }
 
     private void loadBookDetails(String isbn, Location location) {
@@ -192,20 +192,6 @@ public class BookDetailFragment extends Fragment {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        LocationUtil.handlePermissionResult(requestCode, permissions, grantResults, new LocationUtil.LocationCallback() {
-            @Override
-            public void onLocationResult(Location location) {
-                getCurrentLocation();
-            }
-
-            @Override
-            public void onLocationError(String error) {
-                showToast(error);
-                // 권한이 거부된 경우 사용자에게 추가 설명을 제공하거나
-                // 앱의 기능이 제한됨을 알릴 수 있습니다.
-                if (error.contains("권한이 거부되었습니다")) {
-                }
-            }
-        });
+        LocationUtil.handlePermissionResult(requestCode, permissions, grantResults, this);
     }
 }
