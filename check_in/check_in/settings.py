@@ -107,7 +107,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     },
-    'aws': {
+    'aws_db': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'book_info_db',
         'USER': 'odangsa',
@@ -117,6 +117,9 @@ DATABASES = {
     }
 }
 
+DATABASE_ROUTERS = [
+    'check_in.db_router.RecordRouter'
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

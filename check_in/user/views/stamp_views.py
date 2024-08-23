@@ -1,5 +1,5 @@
 from django.views import View
-from user.models import Visit, LibCode
+from user.models import LibCode, Visitlib
 from django.http import JsonResponse
 import datetime, json
 
@@ -9,7 +9,7 @@ class BoardView(View):
     def get(self, request):
         userid = request.GET['userid']
         
-        query_set = Visit.objects.filter(userid=userid).order_by('visitdate').values()
+        query_set = Visitlib.objects.filter(idnum=userid).order_by('visitdate').values()
         
         stamps = []
         
@@ -20,7 +20,7 @@ class BoardView(View):
             visited = []
             for i in range(8):
                 if query_count < len(query_set):
-                    visited.append(query_set[query_count]['libraryname'])
+                    visited.append(query_set[query_count]['visitlib'])
                     query_count += 1
                 else:
                     break
@@ -34,7 +34,7 @@ class BoardView(View):
 
         response = {"userid": userid, "transportation": stamps}
         return JsonResponse(response, status=200)
-    
+
 class RegisterView(View):
     def post(self, request):
         body = json.loads(request.body)
@@ -46,15 +46,17 @@ class RegisterView(View):
         try:
             query = LibCode.objects.get(code=int(code))
         except Exception:
+            print('no code')
             return JsonResponse({"success" : "False", "libraryname" : "None"}, status=200)
 
-        query_set = Visit.objects.filter(userid=userid).filter(visitdate=visitdate).values()
+        query_set = Visitlib.objects.filter(idnum=userid).filter(visitdate=visitdate).values()
         if len(query_set) != 0:
+            print('already visit')
             return JsonResponse({"success" : "False", "libraryname" : "None"}, status=200)
         
-        visit = Visit(userid=userid, visitdate=visitdate, libraryname=query.libraryname)
+        visit = Visitlib.objects.create(idnum=userid, visitdate=visitdate, visitlib=query.libraryname)
         visit.save()
+        
 
         return JsonResponse({"success" : "True", "libraryname" : query.libraryname}, status=200)
-
 
