@@ -5,13 +5,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.check.Adapter.stamp.TransportationAdapter;
@@ -35,38 +36,59 @@ public class StampFragment extends Fragment {
     private TransportationAdapter adapter;
     private TextView currentTransportationTextView;
     private List<Transportation> allTransportations;
+    private ImageButton backButton;
+    private TextView walkButton, busButton;
+    private ImageButton nextButton;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_main2_stamp, container, false);
 
-        stampRecyclerView = view.findViewById(R.id.stampRecyclerView);
-        currentTransportationTextView = view.findViewById(R.id.currentTransportationTextView);
+        initViews(view);
+        setupRecyclerView();
+        setupListeners();
 
-        GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 3);
-        stampRecyclerView.setLayoutManager(layoutManager);
-
-        adapter = new TransportationAdapter(new ArrayList<>());
-        stampRecyclerView.setAdapter(adapter);
-
-        view.findViewById(R.id.backButton).setOnClickListener(v -> {
-            if (getActivity() != null) {
-                getActivity().onBackPressed();
-            }
-        });
-
-        view.findViewById(R.id.walkButton).setOnClickListener(v -> updateTransportationType("뚜벅이"));
-        view.findViewById(R.id.busButton).setOnClickListener(v -> updateTransportationType("버스"));
-
+        allTransportations = new ArrayList<>();
         loadData();
 
         return view;
     }
 
+    private void initViews(View view) {
+        stampRecyclerView = view.findViewById(R.id.stampRecyclerView);
+        currentTransportationTextView = view.findViewById(R.id.currentTransportationTextView);
+        backButton = view.findViewById(R.id.backButton);
+        walkButton = view.findViewById(R.id.walkButton);
+        busButton = view.findViewById(R.id.busButton);
+        nextButton = view.findViewById(R.id.nextButton);
+    }
+
+    private void setupRecyclerView() {
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        stampRecyclerView.setLayoutManager(layoutManager);
+        adapter = new TransportationAdapter(new ArrayList<>());
+        stampRecyclerView.setAdapter(adapter);
+    }
+
+    private void setupListeners() {
+        backButton.setOnClickListener(v -> {
+            if (getActivity() != null) {
+                getActivity().onBackPressed();
+            }
+        });
+
+        walkButton.setOnClickListener(v -> updateTransportationType("뚜벅이"));
+        busButton.setOnClickListener(v -> updateTransportationType("버스"));
+        nextButton.setOnClickListener(v -> {
+            // TODO: Implement next action
+            Toast.makeText(getContext(), "Next button clicked", Toast.LENGTH_SHORT).show();
+        });
+    }
+
     private void loadData() {
         ApiService apiService = ApiClient.getClient().create(ApiService.class);
-        int userId = 2; // 실제 사용자 ID로 교체하거나 SharedPreferences에서 가져오세요
+        int userId = 2; // TODO: Replace with actual user ID or get it from SharedPreferences
 
         apiService.getStampBoard(userId).enqueue(new Callback<StampBoard>() {
             @Override
@@ -74,9 +96,14 @@ public class StampFragment extends Fragment {
                 if (response.isSuccessful() && response.body() != null) {
                     StampBoard stampBoard = response.body();
                     allTransportations = stampBoard.getTransportation();
-                    updateTransportationType(allTransportations.get(0).getType());
+                    if (allTransportations != null && !allTransportations.isEmpty()) {
+                        updateTransportationType(allTransportations.get(0).getType());
+                    } else {
+                        Log.e(TAG, "No transportation data available");
+                        showToast("데이터를 불러올 수 없습니다.");
+                    }
                 } else {
-                    Log.e(TAG, "Failed to load stamp board: " + response.message());
+                    Log.e(TAG, "Error: " + response.message());
                     showToast("스탬프 보드 로딩 실패");
                 }
             }
@@ -90,9 +117,19 @@ public class StampFragment extends Fragment {
     }
 
     private void updateTransportationType(String type) {
+        if (allTransportations == null) {
+            Log.e(TAG, "allTransportations is null");
+            return;
+        }
+
         for (Transportation transportation : allTransportations) {
             if (transportation.getType().equals(type)) {
-                adapter.updateData(transportation.getVisited_libraries());
+                List<String> visitedLibraries = transportation.getVisited_libraries();
+                if (visitedLibraries != null) {
+                    adapter.updateData(visitedLibraries);
+                } else {
+                    adapter.updateData(new ArrayList<>());
+                }
                 currentTransportationTextView.setText(type);
                 updateTransportationIcon(type);
                 break;

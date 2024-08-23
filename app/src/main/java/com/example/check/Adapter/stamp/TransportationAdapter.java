@@ -23,39 +23,43 @@ public class TransportationAdapter extends RecyclerView.Adapter<TransportationAd
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_stamp, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_stamp_row, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        if (position < visitedLibraries.size()) {
-            String libraryName = visitedLibraries.get(position);
-            holder.libraryImageView.setImageResource(getLibraryImageResourceId(libraryName));
-            holder.libraryImageView.setVisibility(View.VISIBLE);
-            holder.addStampButton.setVisibility(View.GONE);
+        int startIndex = position * 2;
+
+        if (startIndex < visitedLibraries.size()) {
+            holder.leftStamp.setImageResource(getLibraryImageResourceId(visitedLibraries.get(startIndex)));
+            holder.leftStamp.setVisibility(View.VISIBLE);
         } else {
-            holder.libraryImageView.setVisibility(View.GONE);
-            holder.addStampButton.setVisibility(View.VISIBLE);
+            holder.leftStamp.setVisibility(View.INVISIBLE);
         }
 
-        // Set arrow visibility
-        if (position % 3 == 2 && position < visitedLibraries.size() - 1) {
+        if (startIndex + 1 < visitedLibraries.size()) {
+            holder.rightStamp.setImageResource(getLibraryImageResourceId(visitedLibraries.get(startIndex + 1)));
+            holder.rightStamp.setVisibility(View.VISIBLE);
             holder.arrowRight.setVisibility(View.VISIBLE);
         } else {
-            holder.arrowRight.setVisibility(View.GONE);
+            holder.rightStamp.setVisibility(View.INVISIBLE);
+            holder.arrowRight.setVisibility(View.INVISIBLE);
         }
 
-        if (position > 0 && position % 3 == 0) {
-            holder.arrowDown.setVisibility(View.VISIBLE);
-        } else {
-            holder.arrowDown.setVisibility(View.GONE);
+        // Show diagonal arrow for all rows except the last one
+        holder.arrowDiagonal.setVisibility(position < getItemCount() - 1 ? View.VISIBLE : View.INVISIBLE);
+
+        // Show add button if it's the last stamp
+        if (startIndex == visitedLibraries.size()) {
+            holder.leftStamp.setImageResource(R.drawable.icon_add);
+            holder.leftStamp.setVisibility(View.VISIBLE);
         }
     }
 
     @Override
     public int getItemCount() {
-        return visitedLibraries.size() + 1; // +1 for the add stamp button
+        return (visitedLibraries.size() + 1) / 2;  // +1 to account for the add button
     }
 
     private int getLibraryImageResourceId(String libraryName) {
@@ -65,17 +69,14 @@ public class TransportationAdapter extends RecyclerView.Adapter<TransportationAd
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView libraryImageView;
-        ImageView addStampButton;
-        ImageView arrowRight;
-        ImageView arrowDown;
+        ImageView leftStamp, rightStamp, arrowRight, arrowDiagonal;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            libraryImageView = itemView.findViewById(R.id.libraryImageView);
-            addStampButton = itemView.findViewById(R.id.addStampButton);
+            leftStamp = itemView.findViewById(R.id.leftStamp);
+            rightStamp = itemView.findViewById(R.id.rightStamp);
             arrowRight = itemView.findViewById(R.id.arrowRight);
-            arrowDown = itemView.findViewById(R.id.arrowDown);
+            arrowDiagonal = itemView.findViewById(R.id.arrowDiagonal);
         }
     }
 
