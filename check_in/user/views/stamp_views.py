@@ -3,37 +3,59 @@ from user.models import LibCode, Visitlib
 from django.http import JsonResponse
 import datetime, json
 
-level_name = ['뚜벅이', '킥보드', '자전거', '버스', '기차', '비행기', '우주선']
-
 class BoardView(View):
     def get(self, request):
         userid = request.GET['userid']
         
-        query_set = Visitlib.objects.filter(idnum=userid).order_by('visitdate').values()
+        query_set = Visitlib.objects.filter(idnum=userid).order_by('visitdate').values('visitlib')
         
-        stamps = []
+        visitlib = []
+        for i in query_set:
+            visitlib.append(i['visitlib'])
         
-        level = 0
-        query_count = 0
+        stamp_result = \
+        {
+            "userid": userid,
+            "transportation":
+                [ {
+                    "type": "뚜벅이",
+                    "visited_libraries": []
+                },
+                {
+                    "type": "킥보드",
+                    "visited_libraries": [] 
+                },
+                {
+                    "type": "자전거",
+                    "visited_libraries": [] 
+                },
+                {
+                    "type": "버스",
+                    "visited_libraries": [] 
+                },
+                {
+                    "type": "기차",
+                    "visited_libraries": [] 
+                },
+                {
+                    "type": "비행기",
+                    "visited_libraries": [] 
+                },
+                {
+                    "type": "우주선",
+                    "visited_libraries": [] 
+                },                                                    
+                ]
+        }
 
-        while level<len(level_name):
-            visited = []
-            for i in range(8):
-                if query_count < len(query_set):
-                    visited.append(query_set[query_count]['visitlib'])
-                    query_count += 1
-                else:
-                    break
-            
-            if visited == []:
-                visited = "None"
-            stamp = {"type": level_name[level], "visited_libraries": visited }
-            stamps.append(stamp)
-            level += 1
-            
+        for i in range(len(visitlib)): # 최대 70번
+            stamp_result['transportation'][i // 10]['visited_libraries'].append(visitlib[i])
 
-        response = {"userid": userid, "transportation": stamps}
-        return JsonResponse(response, status=200)
+        for i in range(7 - ((len(visitlib) - 1) // 10 + 1)):
+            if len(visitlib) < 61:
+                stamp_result['transportation'][(len(visitlib) - 1) // 10 + 1 + i]['visited_libraries'] = "None"
+
+        return JsonResponse(stamp_result, status=200)
 
 class RegisterView(View):
     def post(self, request):
