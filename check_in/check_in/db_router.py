@@ -1,6 +1,6 @@
 class RecordRouter:
     # app Name
-    route_app_labels = {'book', 'visit'}
+    route_app_labels = {'book', 'visit', 'userinfo'}
     db_name = 'aws_db'
 
     def db_for_read(self, model, **hints):
