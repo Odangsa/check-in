@@ -11,7 +11,7 @@ class BbtiView(View):
         cursor = connection.cursor()
 
         randnum = 7
-        inputBBTI = [int(request.GET['bbti1']), int(request.GET['bbti2']), int(request.GET['bbti3'])] # parameter
+        inputBBTI = [int(request.GET['bbti'])//100, int(request.GET['bbti'])//10%10, int(request.GET['bbti'])%10] # parameter
         recommend_result = \
             [ { 
             "recommendations": 

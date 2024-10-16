@@ -33,7 +33,7 @@ class Visitlib(models.Model):
 class UserInfo(models.Model):
     idnum = models.BigIntegerField(db_column='IDnum', primary_key=True)
     nickname = models.CharField(db_column='nickName', max_length=30)
-    bbti = models.CharField(db_column='bbti', max_length=5, null=True)
+    bbti = models.IntegerField(db_column='bbti', null=True)
 
     class Meta:
         app_label = 'userinfo'
