@@ -1,7 +1,8 @@
 from django.views import View
 from django.conf import settings
 from django.http import JsonResponse
-import requests, json
+from user.models import UserInfo
+import requests
 
 class KakaoCallBackView(View):
    def get(self, request):
@@ -11,7 +12,7 @@ class KakaoCallBackView(View):
          "redirection_uri" : "http://127.0.0.1/user/kakao/callback",
          "code"         : request.GET["code"]
       }
-
+      
       kakao_token_api = 'https://kauth.kakao.com/oauth/token'
       access_token = requests.post(kakao_token_api, data=data).json()["access_token"]
 
@@ -20,11 +21,17 @@ class KakaoCallBackView(View):
       user_information = requests.get(kakao_user_api, headers=header).json()
 
       kakao_id = user_information["id"]
-      kakao_nickname = user_information["properties"]["nickname"]
+      try:
+         userinfo = UserInfo.objects.get(idnum=kakao_id)
+      except:
+         kakao_nickname = user_information["properties"]["nickname"]
+         userinfo = UserInfo.objects.create(idnum=kakao_id, nickname=kakao_nickname)
 
-      test = {
-         "id" : kakao_id,
-         "nickname" : kakao_nickname
-      }
+      result = \
+               {
+                  "userid" : userinfo.idnum,
+                  "nickname" : userinfo.nickname,
+                  "bbti" : userinfo.bbti,
+               }
 
-      return JsonResponse(test, status=200)
+      return JsonResponse(result, status=200)
