@@ -31,8 +31,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.List;
 
 import retrofit2.Call;
@@ -51,7 +53,20 @@ public class HomeFragment extends Fragment {
     private static final int BBTI_CHECK_INTERVAL = 1000; // 1초마다 확인
     private static final int MAX_BBTI_CHECK_ATTEMPTS = 10; // 최대 10번 시도
     private int bbtiCheckAttempts = 0;
+    private JSONArray bbtiResults;
 
+
+
+    private final Runnable bbtiCheckRunnable = new Runnable() {
+        @Override
+        public void run() {
+            if (MainActivity.bbtiNumber != null) {
+                updateBBTIView();
+            } else {
+                handler.postDelayed(this, BBTI_CHECK_INTERVAL);
+            }
+        }
+    };
 
 
     @Override
@@ -70,6 +85,7 @@ public class HomeFragment extends Fragment {
         loadRecentLibraries();
         loadRecommendedBooks();
         startBBTICheck();
+        loadBBTIResults();
 
         SearchView searchView = view.findViewById(R.id.search);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -85,7 +101,38 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        handler = new Handler(Looper.getMainLooper());
+
+
         return view;
+    }
+
+
+
+    private void loadBBTIResults() {
+        JSONObject bbtiResultsObj = loadJSONFromResource(R.raw.bbti);
+        try {
+            bbtiResults = bbtiResultsObj.getJSONArray("results");
+            Log.d(TAG, "BBTI Results loaded: " + bbtiResults.toString());
+        } catch (JSONException e) {
+            Log.e(TAG, "Error loading BBTI results: " + e.getMessage());
+            bbtiResults = new JSONArray();
+        }
+    }
+
+
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        handler.post(bbtiCheckRunnable);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        handler.removeCallbacks(bbtiCheckRunnable);
     }
 
 
@@ -108,43 +155,73 @@ public class HomeFragment extends Fragment {
 
 
 
-    private void updateBBTIView() {
-        try {
-            String jsonString = loadJSONFromAsset("bbti.json");
-            JSONObject bbtiData = new JSONObject(jsonString);
-            BBTIUtil.BBTINumberResult result = BBTIUtil.getBBTIResultByNumber(bbtiData, MainActivity.bbtiNumber);
 
-            if (result != null) {
-                Glide.with(this)
-                        .load(getResources().getIdentifier(result.imageName, "drawable", requireContext().getPackageName()))
-                        .into(bbtiImage);
-                bbtiTitle.setText(result.title);
-            } else {
-                Log.e(TAG, "BBTI result not found for number: " + MainActivity.bbtiNumber);
-                showToast("BBTI 결과를 찾을 수 없습니다.");
+
+    private JSONObject loadJSONFromResource(int resourceId) {
+        try {
+            InputStream is = getResources().openRawResource(resourceId);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            StringBuilder sb = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
             }
-        } catch (JSONException e) {
-            Log.e(TAG, "Error parsing BBTI JSON: " + e.getMessage());
-            showToast("BBTI 데이터 파싱 중 오류가 발생했습니다.");
-        } catch (IOException e) {
-            Log.e(TAG, "Error reading BBTI JSON file: " + e.getMessage());
-            showToast("BBTI 데이터 파일을 읽는 중 오류가 발생했습니다.");
+            reader.close();
+            return new JSONObject(sb.toString());
+        } catch (IOException | JSONException e) {
+            Log.e(TAG, "Error loading JSON from resource: " + e.getMessage());
+            return new JSONObject();
         }
     }
+
+    private void updateBBTIView() {
+        if (bbtiResults == null || bbtiResults.length() == 0) {
+            Log.e(TAG, "BBTI results not loaded");
+            return;
+        }
+
+        try {
+            for (int i = 0; i < bbtiResults.length(); i++) {
+                JSONObject result = bbtiResults.getJSONObject(i);
+                if (result.getString("번호").equals(MainActivity.bbtiNumber)) {
+                    updateUIWithBBTIInfo(result);
+                    break;
+                }
+            }
+        } catch (JSONException e) {
+            Log.e(TAG, "Error updating BBTI view: " + e.getMessage());
+        }
+    }
+
+    private void updateUIWithBBTIInfo(JSONObject bbtiInfo) throws JSONException {
+        ImageView bbtiImage = getView().findViewById(R.id.bbti_image);
+        TextView bbtiTitle = getView().findViewById(R.id.bbti_title);
+
+        String imageName = bbtiInfo.getString("이미지").replace(".png", "");
+        int imageResId = getResources().getIdentifier(imageName, "drawable", requireContext().getPackageName());
+        if (imageResId != 0) {
+            bbtiImage.setImageResource(imageResId);
+        } else {
+            Log.e(TAG, "Image resource not found: " + imageName);
+            bbtiImage.setImageResource(R.drawable.img_bookbti_tmp);
+        }
+
+        bbtiTitle.setText(bbtiInfo.getString("타이틀"));
+    }
+
+
 
 
     private String loadJSONFromAsset(String fileName) throws IOException {
         String json;
-        try {
-            InputStream is = getContext().getAssets().open(fileName);
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, "UTF-8");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            throw ex;
+        try (InputStream is = getContext().getAssets().open(fileName);
+             BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
+            StringBuilder sb = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
+            }
+            json = sb.toString();
         }
         return json;
     }

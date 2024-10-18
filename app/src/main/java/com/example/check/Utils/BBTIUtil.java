@@ -35,23 +35,26 @@ public class BBTIUtil {
         public String imageName;
         public String title;
         public String description;
+        public String number;
 
-        public BBTIResult(String imageName, String title, String description) {
+        public BBTIResult(String imageName, String title, String description, String number) {
             this.imageName = imageName;
             this.title = title;
             this.description = description;
+            this.number = number;
         }
     }
 
-    public static BBTIResult getBBTIResult(JSONArray bbtiResults, String bbtiType) {
+    public static BBTIResult getBBTIResult(JSONArray bbtiResults, String identifier) {
         try {
             for (int i = 0; i < bbtiResults.length(); i++) {
                 JSONObject result = bbtiResults.getJSONObject(i);
-                if (result.getString("조합").equals(bbtiType)) {
+                if (result.getString("조합").equals(identifier) || result.getString("번호").equals(identifier)) {
                     String imageName = result.getString("이미지");
                     String title = result.getString("타이틀");
                     String description = result.getString("설명");
-                    return new BBTIResult(imageName, title, description);
+                    String number = result.getString("번호");
+                    return new BBTIResult(imageName, title, description, number);
                 }
             }
         } catch (JSONException e) {
@@ -59,30 +62,20 @@ public class BBTIUtil {
         }
         return null; // 결과를 찾지 못한 경우
     }
-    public static class BBTINumberResult {
-        public String imageName;
-        public String title;
 
-        public BBTINumberResult(String imageName, String title) {
-            this.imageName = imageName;
-            this.title = title;
-        }
-    }
-
-    public static BBTINumberResult getBBTIResultByNumber(JSONObject bbtiData, String number) {
+    // MainActivity에서 사용할 메소드
+    public static BBTIResult getBBTIResultByNumber(JSONObject bbtiData, String number) {
         try {
             JSONArray results = bbtiData.getJSONArray("results");
-            for (int i = 0; i < results.length(); i++) {
-                JSONObject result = results.getJSONObject(i);
-                if (result.getString("번호").equals(number)) {
-                    String imageName = result.getString("이미지");
-                    String title = result.getString("타이틀");
-                    return new BBTINumberResult(imageName, title);
-                }
-            }
+            return getBBTIResult(results, number);
         } catch (JSONException e) {
-            Log.e(TAG, "Error parsing BBTI result by number: " + e.getMessage());
+            Log.e(TAG, "Error parsing BBTI data: " + e.getMessage());
         }
-        return null; // 결과를 찾지 못한 경우
+        return null;
+    }
+
+    // BBTIFragment에서 사용할 메소드
+    public static BBTIResult getBBTIResultByType(JSONArray bbtiResults, String bbtiType) {
+        return getBBTIResult(bbtiResults, bbtiType);
     }
 }

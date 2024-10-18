@@ -220,69 +220,6 @@ public class BBTIFragment extends Fragment {
         }
     }
 
-//    private void displayResult(String bbtiType) {
-//        View resultView = rootView.findViewById(R.id.resultView);
-//        if (resultView == null) {
-//            Log.e(TAG, "resultView is null");
-//            return;
-//        }
-//
-//        ImageView resultImageView = resultView.findViewById(R.id.resultImageView);
-//        TextView resultTitleTextView = resultView.findViewById(R.id.resultTitleTextView);
-//        TextView resultDescription1TextView = resultView.findViewById(R.id.resultDescription1TextView);
-//        TextView resultDescription2TextView = resultView.findViewById(R.id.resultDescription2TextView);
-//
-//        // Check each view individually
-//        if (resultImageView == null) Log.e(TAG, "resultImageView is null");
-//        if (resultTitleTextView == null) Log.e(TAG, "resultTitleTextView is null");
-//        if (resultDescription1TextView == null) Log.e(TAG, "resultDescription1TextView is null");
-//        if (resultDescription2TextView == null) Log.e(TAG, "resultDescription2TextView is null");
-//
-//        // Proceed only if all views are available
-//        if (resultImageView != null && resultTitleTextView != null &&
-//                resultDescription1TextView != null && resultDescription2TextView != null) {
-//
-//            // Make the result view visible
-//            resultView.setVisibility(View.VISIBLE);
-//
-//            JSONObject result = BBTIUtil.findBBTIResult(bbtiResults, bbtiType);
-//            if (result != null) {
-//                try {
-//                    // Set the image
-//                    resultImageView.setImageResource(R.drawable.img_bookbti_tmp);
-//
-//                    // Set the title
-//                    String title = "■ " + result.getString("타이틀");
-//                    resultTitleTextView.setText(title);
-//                    resultTitleTextView.setVisibility(View.VISIBLE);
-//
-//                    // Set the descriptions
-//                    String description = result.getString("설명");
-//                    String[] splitDescription = splitDescription(description);
-//                    resultDescription1TextView.setText(splitDescription[0]);
-//                    resultDescription2TextView.setText(splitDescription[1]);
-//
-//                    resultDescription1TextView.setVisibility(View.VISIBLE);
-//                    resultDescription2TextView.setVisibility(View.VISIBLE);
-//
-//                    // Log the results for debugging
-//                    Log.d(TAG, "BBTI Type: " + bbtiType);
-//                    Log.d(TAG, "Title: " + title);
-//                    Log.d(TAG, "Description 1: " + splitDescription[0]);
-//                    Log.d(TAG, "Description 2: " + splitDescription[1]);
-//
-//                } catch (JSONException e) {
-//                    Log.e(TAG, "Error setting BBTI result: " + e.getMessage());
-//                    setErrorResult(resultTitleTextView, resultDescription1TextView, resultDescription2TextView);
-//                }
-//            } else {
-//                Log.e(TAG, "BBTI result not found for type: " + bbtiType);
-//                setErrorResult(resultTitleTextView, resultDescription1TextView, resultDescription2TextView);
-//            }
-//        } else {
-//            Log.e(TAG, "One or more result views are null");
-//        }
-//    }
     private void displayResult(String bbtiType) {
         View resultView = rootView.findViewById(R.id.resultView);
         if (resultView == null) {
@@ -352,18 +289,6 @@ public class BBTIFragment extends Fragment {
         return result;
     }
 
-    // If you have specific images for each BBTI type, you can use this method
-//    private int getImageResourceForType(String bbtiType) {
-//        switch (bbtiType) {
-//            case "ACFR":
-//                return R.drawable.img_acfr;
-//            case "ACFL":
-//                return R.drawable.img_acfl;
-//            // Add cases for other BBTI types
-//            default:
-//                return R.drawable.img_bookbti_tmp;
-//        }
-//    }
 
     private void sendResultsToServer(String bbtiType) {
         // TODO: Implement the logic to send results to server
