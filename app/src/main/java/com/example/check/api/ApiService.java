@@ -33,12 +33,9 @@ public interface ApiService {
             @Query("lat") double latitude
     );
 
-//    book/recommend/bbti?bbti1=1&bbti2=3&bbti3=7
     @GET("book/recommend/bbti")
     Call<RecommendationsWrapper> getTodayBooks(
-            @Query("bbti1") int bbti1,
-            @Query("bbti2") int bbti2,
-            @Query("bbti3") int bbti3
+            @Query("bbti") String bbti
     );
 
 

@@ -121,8 +121,6 @@ public class HomeFragment extends Fragment {
     }
 
 
-
-
     @Override
     public void onResume() {
         super.onResume();
@@ -210,21 +208,6 @@ public class HomeFragment extends Fragment {
     }
 
 
-
-
-    private String loadJSONFromAsset(String fileName) throws IOException {
-        String json;
-        try (InputStream is = getContext().getAssets().open(fileName);
-             BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
-            StringBuilder sb = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                sb.append(line);
-            }
-            json = sb.toString();
-        }
-        return json;
-    }
 
     private void loadRecentLibraries() {
         apiService.getRecentLibraries(MainActivity.userId).enqueue(new Callback<RecentLibrariesWrapper>() {
