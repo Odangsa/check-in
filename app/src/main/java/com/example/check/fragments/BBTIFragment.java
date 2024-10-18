@@ -220,6 +220,69 @@ public class BBTIFragment extends Fragment {
         }
     }
 
+//    private void displayResult(String bbtiType) {
+//        View resultView = rootView.findViewById(R.id.resultView);
+//        if (resultView == null) {
+//            Log.e(TAG, "resultView is null");
+//            return;
+//        }
+//
+//        ImageView resultImageView = resultView.findViewById(R.id.resultImageView);
+//        TextView resultTitleTextView = resultView.findViewById(R.id.resultTitleTextView);
+//        TextView resultDescription1TextView = resultView.findViewById(R.id.resultDescription1TextView);
+//        TextView resultDescription2TextView = resultView.findViewById(R.id.resultDescription2TextView);
+//
+//        // Check each view individually
+//        if (resultImageView == null) Log.e(TAG, "resultImageView is null");
+//        if (resultTitleTextView == null) Log.e(TAG, "resultTitleTextView is null");
+//        if (resultDescription1TextView == null) Log.e(TAG, "resultDescription1TextView is null");
+//        if (resultDescription2TextView == null) Log.e(TAG, "resultDescription2TextView is null");
+//
+//        // Proceed only if all views are available
+//        if (resultImageView != null && resultTitleTextView != null &&
+//                resultDescription1TextView != null && resultDescription2TextView != null) {
+//
+//            // Make the result view visible
+//            resultView.setVisibility(View.VISIBLE);
+//
+//            JSONObject result = BBTIUtil.findBBTIResult(bbtiResults, bbtiType);
+//            if (result != null) {
+//                try {
+//                    // Set the image
+//                    resultImageView.setImageResource(R.drawable.img_bookbti_tmp);
+//
+//                    // Set the title
+//                    String title = "■ " + result.getString("타이틀");
+//                    resultTitleTextView.setText(title);
+//                    resultTitleTextView.setVisibility(View.VISIBLE);
+//
+//                    // Set the descriptions
+//                    String description = result.getString("설명");
+//                    String[] splitDescription = splitDescription(description);
+//                    resultDescription1TextView.setText(splitDescription[0]);
+//                    resultDescription2TextView.setText(splitDescription[1]);
+//
+//                    resultDescription1TextView.setVisibility(View.VISIBLE);
+//                    resultDescription2TextView.setVisibility(View.VISIBLE);
+//
+//                    // Log the results for debugging
+//                    Log.d(TAG, "BBTI Type: " + bbtiType);
+//                    Log.d(TAG, "Title: " + title);
+//                    Log.d(TAG, "Description 1: " + splitDescription[0]);
+//                    Log.d(TAG, "Description 2: " + splitDescription[1]);
+//
+//                } catch (JSONException e) {
+//                    Log.e(TAG, "Error setting BBTI result: " + e.getMessage());
+//                    setErrorResult(resultTitleTextView, resultDescription1TextView, resultDescription2TextView);
+//                }
+//            } else {
+//                Log.e(TAG, "BBTI result not found for type: " + bbtiType);
+//                setErrorResult(resultTitleTextView, resultDescription1TextView, resultDescription2TextView);
+//            }
+//        } else {
+//            Log.e(TAG, "One or more result views are null");
+//        }
+//    }
     private void displayResult(String bbtiType) {
         View resultView = rootView.findViewById(R.id.resultView);
         if (resultView == null) {
@@ -232,12 +295,6 @@ public class BBTIFragment extends Fragment {
         TextView resultDescription1TextView = resultView.findViewById(R.id.resultDescription1TextView);
         TextView resultDescription2TextView = resultView.findViewById(R.id.resultDescription2TextView);
 
-        // Check each view individually
-        if (resultImageView == null) Log.e(TAG, "resultImageView is null");
-        if (resultTitleTextView == null) Log.e(TAG, "resultTitleTextView is null");
-        if (resultDescription1TextView == null) Log.e(TAG, "resultDescription1TextView is null");
-        if (resultDescription2TextView == null) Log.e(TAG, "resultDescription2TextView is null");
-
         // Proceed only if all views are available
         if (resultImageView != null && resultTitleTextView != null &&
                 resultDescription1TextView != null && resultDescription2TextView != null) {
@@ -245,60 +302,41 @@ public class BBTIFragment extends Fragment {
             // Make the result view visible
             resultView.setVisibility(View.VISIBLE);
 
-            JSONObject result = BBTIUtil.findBBTIResult(bbtiResults, bbtiType);
+            BBTIUtil.BBTIResult result = BBTIUtil.getBBTIResult(bbtiResults, bbtiType);
             if (result != null) {
-                try {
-                    // Set the image
+                // Set the image
+                int imageResId = getResources().getIdentifier(result.imageName.replace(".png", ""), "drawable", getContext().getPackageName());
+                if (imageResId != 0) {
+                    resultImageView.setImageResource(imageResId);
+                } else {
+                    Log.e(TAG, "Image resource not found: " + result.imageName);
                     resultImageView.setImageResource(R.drawable.img_bookbti_tmp);
-
-                    // Set the title
-                    String title = "■ " + result.getString("타이틀");
-                    resultTitleTextView.setText(title);
-                    resultTitleTextView.setVisibility(View.VISIBLE);
-
-                    // Set the descriptions
-                    String description = result.getString("설명");
-                    String[] splitDescription = splitDescription(description);
-                    resultDescription1TextView.setText(splitDescription[0]);
-                    resultDescription2TextView.setText(splitDescription[1]);
-
-                    resultDescription1TextView.setVisibility(View.VISIBLE);
-                    resultDescription2TextView.setVisibility(View.VISIBLE);
-
-                    // Log the results for debugging
-                    Log.d(TAG, "BBTI Type: " + bbtiType);
-                    Log.d(TAG, "Title: " + title);
-                    Log.d(TAG, "Description 1: " + splitDescription[0]);
-                    Log.d(TAG, "Description 2: " + splitDescription[1]);
-
-                } catch (JSONException e) {
-                    Log.e(TAG, "Error setting BBTI result: " + e.getMessage());
-                    setErrorResult(resultTitleTextView, resultDescription1TextView, resultDescription2TextView);
                 }
+
+                // Set the title
+                String title = "■ " + result.title;
+                resultTitleTextView.setText(title);
+                resultTitleTextView.setVisibility(View.VISIBLE);
+
+                // Set the descriptions
+                String[] splitDescription = splitDescription(result.description);
+                resultDescription1TextView.setText(splitDescription[0]);
+                resultDescription2TextView.setText(splitDescription[1]);
+
+                resultDescription1TextView.setVisibility(View.VISIBLE);
+                resultDescription2TextView.setVisibility(View.VISIBLE);
+
+                // Log the results for debugging
+                Log.d(TAG, "BBTI Type: " + bbtiType);
+                Log.d(TAG, "Title: " + title);
+                Log.d(TAG, "Description 1: " + splitDescription[0]);
+                Log.d(TAG, "Description 2: " + splitDescription[1]);
             } else {
                 Log.e(TAG, "BBTI result not found for type: " + bbtiType);
-                setErrorResult(resultTitleTextView, resultDescription1TextView, resultDescription2TextView);
             }
         } else {
             Log.e(TAG, "One or more result views are null");
         }
-    }
-
-    private void setErrorResult(TextView title, TextView desc1, TextView desc2) {
-        if (title != null) {
-            title.setText("■ 알 수 없는 유형");
-            title.setVisibility(View.VISIBLE);
-        }
-        if (desc1 != null) {
-            desc1.setText("유형을 분석할 수 없습니다.");
-            desc1.setVisibility(View.VISIBLE);
-        }
-        if (desc2 != null) {
-            desc2.setText("다시 테스트를 진행해 주세요.");
-            desc2.setVisibility(View.VISIBLE);
-        }
-
-        Log.e(TAG, "Error result displayed");
     }
 
     private String[] splitDescription(String description) {

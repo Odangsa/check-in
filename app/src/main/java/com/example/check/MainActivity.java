@@ -2,6 +2,7 @@ package com.example.check;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,8 +16,9 @@ import com.example.check.api.ApiClient;
 import com.example.check.api.ApiService;
 import com.example.check.fragments.BBTIFragment;
 import com.example.check.fragments.HomeFragment;
-import com.example.check.fragments.StampMap.StampFragment;
 import com.example.check.fragments.TodayBookFragment;
+import com.example.check.map.LibraryMapFragment;
+import com.example.check.model.bbti.BBTIResponse;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.kakao.vectormap.KakaoMapSdk;
 
@@ -24,13 +26,19 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class MainActivity extends AppCompatActivity {
 
 
-    public static final String userId = "123456789";
+    public static final String userId = "2";
     private static final String TAG = "MainActivity";
     private ApiService apiService;
     private LocationUtil locationUtil;
+    public static String bbtiNumber;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +52,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         KakaoMapSdk.init(this, "768f4a0e53607a3a3be9e0348e0a3ee2");
-        // API 서비스 초기화
         apiService = ApiClient.getClient().create(ApiService.class);
 
-        // BottomNavigationView 설정 (기존 코드 유지)
+        loadBBTIResult();
         setupBottomNavigation();
 
-        // 초기 Fragment 설정
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, new HomeFragment())
@@ -72,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
             } else if (itemId == R.id.navigation_today_book) {
                 selectedFragment = new TodayBookFragment();
             } else if (itemId == R.id.navigation_person) {
-                selectedFragment = new StampFragment();
+//                selectedFragment = new StampFragment();
+                selectedFragment = new LibraryMapFragment();
             }
 
             if (selectedFragment != null) {
@@ -85,6 +92,38 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+
+    private void loadBBTIResult() {
+        apiService.getBBTI(Integer.parseInt(userId)).enqueue(new Callback<BBTIResponse>() {
+            @Override
+            public void onResponse(Call<BBTIResponse> call, Response<BBTIResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    BBTIResponse result = response.body();
+                    if (result.isSuccess()) {
+                        bbtiNumber = result.getBbti();
+                        Log.d(TAG, "BBTI number loaded: " + bbtiNumber);
+                    } else {
+                        Log.e(TAG, "Failed to get BBTI result");
+                        showToast("BBTI 결과를 가져오는데 실패했습니다.");
+                    }
+                } else {
+                    Log.e(TAG, "Failed to fetch BBTI result: " + response.code());
+                    showToast("BBTI 결과를 가져오는데 실패했습니다.");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<BBTIResponse> call, Throwable t) {
+                Log.e(TAG, "Error fetching BBTI result", t);
+                showToast("네트워크 오류가 발생했습니다.");
+            }
+        });
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
 
 
     private String formatJson(String jsonStr) {

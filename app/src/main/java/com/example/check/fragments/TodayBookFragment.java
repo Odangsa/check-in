@@ -48,11 +48,11 @@ public class TodayBookFragment extends Fragment implements RecommendationAdapter
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         apiService = ApiClient.getClient().create(ApiService.class);
-        loadRecommendations("123456789");
+        loadRecommendations();
     }
 
-    private void loadRecommendations(String userId) {
-        apiService.getTodayBooks(userId).enqueue(new Callback<RecommendationsWrapper>() {
+    private void loadRecommendations() {
+        apiService.getTodayBooks(1, 2, 7).enqueue(new Callback<RecommendationsWrapper>() {
             @Override
             public void onResponse(Call<RecommendationsWrapper> call, Response<RecommendationsWrapper> response) {
                 if (response.isSuccessful() && response.body() != null && !response.body().getRecommendations().isEmpty()) {

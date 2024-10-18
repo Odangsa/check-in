@@ -1,6 +1,8 @@
 package com.example.check.api;
 
+import com.example.check.model.bbti.BBTIResponse;
 import com.example.check.model.bookDetail.BookDetailModel;
+import com.example.check.model.home.RecentLibrariesWrapper;
 import com.example.check.model.home.RecentLibrary;
 import com.example.check.model.home.RecommendedBooksWrapper;
 import com.example.check.model.stampboard.StampBoard;
@@ -17,29 +19,36 @@ import retrofit2.http.Query;
 public interface ApiService {
 
 
+    @GET("user/bbti")
+    Call<BBTIResponse> getBBTI(@Query("userid") int userId);
+
     @GET("/api/stamp_board")
     Call<StampBoard> getStampBoard(@Query("userId") int userId);
 
 
-    @GET("api/book_details/{isbn}")
+    @GET("book/detail")
     Call<BookDetailModel> getBookDetails(
-            @Path("isbn") String isbn,
-            @Query("latitude") double latitude,
-            @Query("longitude") double longitude
+            @Query("isbn") String isbn,
+            @Query("lng") double longitude,
+            @Query("lat") double latitude
     );
 
-    @GET("api/recommendations_today_book")
-    Call<RecommendationsWrapper> getTodayBooks(@Query("userId") String userId);
+//    book/recommend/bbti?bbti1=1&bbti2=3&bbti3=7
+    @GET("book/recommend/bbti")
+    Call<RecommendationsWrapper> getTodayBooks(
+            @Query("bbti1") int bbti1,
+            @Query("bbti2") int bbti2,
+            @Query("bbti3") int bbti3
+    );
 
 
     // 홈화면 받아야할 데이터들
     // 최근 방문한 도서관
-    @GET("api/recent_libraries/{userId}")
-    Call<List<RecentLibrary>> getRecentLibraries(@Path("userId") String userId);
-
+    @GET("/user/recentlib")
+    Call<RecentLibrariesWrapper> getRecentLibraries(@Query("userid") String userId);
 
     //추천 도서 홈용
-    @GET("api/recommendation_book_two")
+    @GET("/book/recommend/popular")
     Call<RecommendedBooksWrapper> getRecommendedBooks();
 
 
