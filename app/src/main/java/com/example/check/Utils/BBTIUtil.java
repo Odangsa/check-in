@@ -9,6 +9,32 @@ import java.util.Map;
 public class BBTIUtil {
     private static final String TAG = "BBTIUtil";
 
+
+    public static int convertBBTITypeToNumber(String bbtiType) {
+        switch (bbtiType) {
+            case "ACFR": return 137;
+            case "ACNR": return 138;
+            case "ACFL": return 147;
+            case "ACNL": return 148;
+            case "ADFR": return 157;
+            case "ADNR": return 158;
+            case "ADFL": return 167;
+            case "ADNL": return 168;
+            case "BCFR": return 237;
+            case "BCNR": return 238;
+            case "BCFL": return 247;
+            case "BCNL": return 248;
+            case "BDFR": return 257;
+            case "BDNR": return 258;
+            case "BDFL": return 267;
+            case "BDNL": return 268;
+            default:
+                Log.e(TAG, "Invalid BBTI type: " + bbtiType);
+                return -1; // 오류 상황을 나타내는 값
+        }
+    }
+
+
     public static String calculateBBTIType(Map<String, Integer> scores) {
         StringBuilder bbtiType = new StringBuilder();
         bbtiType.append(scores.getOrDefault("AB", 0) > 1 ? "A" : "B");

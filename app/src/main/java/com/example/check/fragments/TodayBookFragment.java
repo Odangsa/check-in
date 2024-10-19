@@ -75,7 +75,6 @@ public class TodayBookFragment extends Fragment implements RecommendationAdapter
         loadTodayBooks();
     }
 
-    // ... (이전 코드와 동일)
 
     private void loadTodayBooks() {
         if (MainActivity.bbtiNumber != null) {
@@ -84,8 +83,8 @@ public class TodayBookFragment extends Fragment implements RecommendationAdapter
                 @Override
                 public void onResponse(Call<RecommendationsWrapper> call, Response<RecommendationsWrapper> response) {
                     if (response.isSuccessful() && response.body() != null) {
-                        RecommendationsWrapper recommendations = response.body();
-                        updateRecommendations(recommendations.getRecommendations());
+                        RecommendationsWrapper wrapper = response.body();
+                        updateRecommendations(wrapper.getRecommendations());
                         Log.d(TAG, "Successfully fetched today's books for BBTI: " + MainActivity.bbtiNumber);
                     } else {
                         Log.e(TAG, "Error fetching today's books: " + response.code());
@@ -97,7 +96,6 @@ public class TodayBookFragment extends Fragment implements RecommendationAdapter
                 public void onFailure(Call<RecommendationsWrapper> call, Throwable t) {
                     Log.e(TAG, "Network error when fetching today's books: " + t.getMessage());
                     showToast("네트워크 오류가 발생했습니다. 연결을 확인하고 다시 시도해주세요.");
-                    // Consider implementing a retry mechanism here
                 }
             });
         } else {
@@ -106,21 +104,22 @@ public class TodayBookFragment extends Fragment implements RecommendationAdapter
         }
     }
 
-    private void setupApiService() {
-        OkHttpClient client = new OkHttpClient.Builder()
-                .connectTimeout(30, TimeUnit.SECONDS)
-                .readTimeout(30, TimeUnit.SECONDS)
-                .writeTimeout(30, TimeUnit.SECONDS)
-                .build();
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(ApiClient.SERVER_URL)
-                .client(client)
-                .addConverterFactory(ApiClient.getConverterFactory())
-                .build();
-
-        apiService = retrofit.create(ApiService.class);
+    private void updateRecommendations(List<RecommendationCategory> recommendations) {
+        adapter = new RecommendationAdapter(recommendations, this);
+        recyclerView.setAdapter(adapter);
     }
+
+    @Override
+    public void onBookClick(Book book) {
+        if (book != null && book.getISBN() != null) {
+            Log.d(TAG, "Book clicked: " + book.getISBN());
+            navigateToBookDetail(book.getISBN());
+        } else {
+            Log.e(TAG, "Invalid book data");
+            showToast("책 정보를 불러올 수 없습니다.");
+        }
+    }
+
 
     private void loadBBTIResults() {
         JSONObject bbtiResultsObj = loadJSONFromResource(R.raw.bbti);
@@ -185,21 +184,21 @@ public class TodayBookFragment extends Fragment implements RecommendationAdapter
 
 
 
-    private void updateRecommendations(List<RecommendationCategory> recommendations) {
-        adapter = new RecommendationAdapter(recommendations, this);
-        recyclerView.setAdapter(adapter);
-    }
-
-    @Override
-    public void onBookClick(Book book) {
-        if (book != null && book.getISBN() != null) {
-            Log.d(TAG, "Book clicked: " + book.getISBN());
-            navigateToBookDetail(book.getISBN());
-        } else {
-            Log.e(TAG, "Invalid book data");
-            showToast("책 정보를 불러올 수 없습니다.");
-        }
-    }
+//    private void updateRecommendations(List<RecommendationCategory> recommendations) {
+//        adapter = new RecommendationAdapter(recommendations, this);
+//        recyclerView.setAdapter(adapter);
+//    }
+//
+//    @Override
+//    public void onBookClick(Book book) {
+//        if (book != null && book.getISBN() != null) {
+//            Log.d(TAG, "Book clicked: " + book.getISBN());
+//            navigateToBookDetail(book.getISBN());
+//        } else {
+//            Log.e(TAG, "Invalid book data");
+//            showToast("책 정보를 불러올 수 없습니다.");
+//        }
+//    }
 
     private void navigateToBookDetail(String isbn) {
         BookDetailFragment fragment = BookDetailFragment.newInstance(isbn);

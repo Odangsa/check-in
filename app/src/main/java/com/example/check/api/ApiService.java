@@ -1,6 +1,7 @@
 package com.example.check.api;
 
 import com.example.check.model.bbti.BBTIResponse;
+import com.example.check.model.bbti.BBTIResultRequest;
 import com.example.check.model.bookDetail.BookDetailModel;
 import com.example.check.model.home.RecentLibrariesWrapper;
 import com.example.check.model.home.RecentLibrary;
@@ -12,7 +13,9 @@ import java.util.List;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -34,9 +37,8 @@ public interface ApiService {
     );
 
     @GET("book/recommend/bbti")
-    Call<RecommendationsWrapper> getTodayBooks(
-            @Query("bbti") String bbti
-    );
+    Call<RecommendationsWrapper> getTodayBooks(@Query("bbti") String bbtiNumber);
+
 
 
     // 홈화면 받아야할 데이터들
@@ -59,6 +61,9 @@ public interface ApiService {
             @Query("verificationCode") String verificationCode,
             @Query("date") String date
     );
+
+    @POST("user/bbti")
+    Call<ResponseBody> postBBTIResult(@Body BBTIResultRequest request);
 
 
 }

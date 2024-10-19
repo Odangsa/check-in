@@ -13,10 +13,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.check.MainActivity;
 import com.example.check.R;
 import com.example.check.Utils.BBTIUtil;
 import com.example.check.api.ApiClient;
 import com.example.check.api.ApiService;
+import com.example.check.model.bbti.BBTIResultRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,6 +30,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BBTIFragment extends Fragment {
 
@@ -291,6 +298,28 @@ public class BBTIFragment extends Fragment {
 
 
     private void sendResultsToServer(String bbtiType) {
-        // TODO: Implement the logic to send results to server
+        int bbtiNumber = BBTIUtil.convertBBTITypeToNumber(bbtiType);
+        int userId = Integer.parseInt(MainActivity.userId);
+
+        BBTIResultRequest request = new BBTIResultRequest(userId, bbtiNumber);
+        Log.d(TAG, "Sending BBTI result: " + request.toString());
+        Call<ResponseBody> call = apiService.postBBTIResult(request);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()) {
+                    Log.d(TAG, "BBTI result sent successfully: " + request);
+                } else {
+                    Log.e(TAG, "Failed to send BBTI result: " + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Log.e(TAG, "Error sending BBTI result: " + t.getMessage());
+            }
+        });
     }
+
+
 }

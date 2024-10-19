@@ -52,7 +52,7 @@ public class RecommendationAdapter extends RecyclerView.Adapter<RecommendationAd
         }
 
         void bind(RecommendationCategory category) {
-            categoryTitleTextView.setText(category.getRecommendationTitle());
+            categoryTitleTextView.setText(category.getType());
             BookAdapter bookAdapter = new BookAdapter(category.getBooks(), listener);
             booksRecyclerView.setAdapter(bookAdapter);
         }
