@@ -1,5 +1,6 @@
 package com.example.check.api;
 
+import com.example.check.MainActivity;
 import com.example.check.model.bbti.BBTIResponse;
 import com.example.check.model.bbti.BBTIResultRequest;
 import com.example.check.model.bookDetail.BookDetailModel;
@@ -25,9 +26,8 @@ public interface ApiService {
     @GET("user/bbti")
     Call<BBTIResponse> getBBTI(@Query("userid") int userId);
 
-    @GET("/api/stamp_board")
-    Call<StampBoard> getStampBoard(@Query("userId") int userId);
-
+    @GET("/user/stamp/board")
+    Call<StampBoard> getStampBoard(@Query("userid") int userId);
 
     @GET("book/detail")
     Call<BookDetailModel> getBookDetails(
@@ -39,28 +39,12 @@ public interface ApiService {
     @GET("book/recommend/bbti")
     Call<RecommendationsWrapper> getTodayBooks(@Query("bbti") String bbtiNumber);
 
-
-
-    // 홈화면 받아야할 데이터들
-    // 최근 방문한 도서관
     @GET("/user/recentlib")
     Call<RecentLibrariesWrapper> getRecentLibraries(@Query("userid") String userId);
 
     //추천 도서 홈용
     @GET("/book/recommend/popular")
     Call<RecommendedBooksWrapper> getRecommendedBooks();
-
-
-
-    @GET("api/stamp_board/{userId}")
-    Call<ResponseBody> getStampBoard(@Path("userId") String userId);
-
-    @GET("api/stamp_verification")
-    Call<ResponseBody> verifyStamp(
-            @Query("userId") String userId,
-            @Query("verificationCode") String verificationCode,
-            @Query("date") String date
-    );
 
     @POST("user/bbti")
     Call<ResponseBody> postBBTIResult(@Body BBTIResultRequest request);

@@ -16,6 +16,8 @@ import com.example.check.api.ApiClient;
 import com.example.check.api.ApiService;
 import com.example.check.fragments.BBTIFragment;
 import com.example.check.fragments.HomeFragment;
+//import com.example.check.fragments.StampFragment;
+import com.example.check.fragments.StampBoardFragment;
 import com.example.check.fragments.TodayBookFragment;
 import com.example.check.map.LibraryMapFragment;
 import com.example.check.model.bbti.BBTIResponse;
@@ -78,8 +80,8 @@ public class MainActivity extends AppCompatActivity {
             } else if (itemId == R.id.navigation_today_book) {
                 selectedFragment = new TodayBookFragment();
             } else if (itemId == R.id.navigation_person) {
-//                selectedFragment = new StampFragment();
-                selectedFragment = new LibraryMapFragment();
+                selectedFragment = new StampBoardFragment();
+//                selectedFragment = new LibraryMapFragment();
             }
 
             if (selectedFragment != null) {

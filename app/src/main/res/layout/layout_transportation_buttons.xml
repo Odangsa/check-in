@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="3"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/walkButton"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:layout_marginEnd="5dp"
+        android:text="  뚜벅이"
+        android:textSize="16sp"
+        android:textColor="@color/navy"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:background="@drawable/background_gray_stroke"
+        android:drawableStart="@drawable/icon_walk"
+        android:drawablePadding="5dp"/>
+
+    <TextView
+        android:id="@+id/busButton"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:text="  버스"
+        android:textSize="16sp"
+        android:textColor="@color/navy"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:background="@drawable/background_gray_stroke"
+        android:drawableStart="@drawable/icon_bus"
+        android:drawablePadding="5dp"/>
+
+    <ImageButton
+        android:id="@+id/nextButton"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/icon_next"
+        android:background="@color/transparent"
+        android:scaleType="fitCenter"
+        android:padding="10dp"/>
+
+</LinearLayout>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="horizontal"-->
+<!--    android:weightSum="3">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/walkButton"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:text="  뚜벅이"-->
+<!--        android:textSize="16sp"-->
+<!--        android:textColor="@color/navy"-->
+<!--        android:textStyle="bold"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:paddingLeft="10dp"-->
+<!--        android:background="@drawable/background_gray_stroke"-->
+<!--        android:drawableLeft="@drawable/icon_walk"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/busButton"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:text="  버스"-->
+<!--        android:textSize="16sp"-->
+<!--        android:textColor="@color/navy"-->
+<!--        android:textStyle="bold"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:paddingLeft="10dp"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:background="@drawable/background_gray_stroke"-->
+<!--        android:drawableLeft="@drawable/icon_bus"/>-->
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/nextButton"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:src="@drawable/icon_next"-->
+<!--        android:background="@color/transparent"-->
+<!--        android:paddingLeft="80dp"/>-->
+
+<!--</LinearLayout>-->

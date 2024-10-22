@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:background="@color/white">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/icon_back"
+        android:background="@color/transparent"/>
+
+    <TextView
+        android:id="@+id/transportationType"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:textSize="16sp"
+        android:textColor="@color/navy"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:layout_gravity="end"
+        android:paddingLeft="10dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/background_gray_stroke"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/stampBoardRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6.5"
+        android:layout_margin="25dp"/>
+
+    <LinearLayout
+        android:id="@+id/transportationButtonsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:orientation="horizontal"/>
+
+    <!-- navbar로 변경 예정 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>
