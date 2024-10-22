@@ -7,5 +7,6 @@ urlpatterns = [
     path('stamp/register', views.RegisterView.as_view()),
     path('bbti', views.BbtiView.as_view()),
     path('kakao/callback', views.KakaoCallBackView.as_view()),
-    path('kakao/login', views.KakaoLoginView.as_view())
+    path('kakao/login', views.KakaoLoginView.as_view()),
+    path('login', views.LoginView.as_view())
 ]
