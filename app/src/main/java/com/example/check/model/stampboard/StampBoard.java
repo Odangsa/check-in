@@ -3,14 +3,14 @@ package com.example.check.model.stampboard;
 import java.util.List;
 
 public class StampBoard {
-    private int userid;
+    private Long userid;
     private List<Transportation> transportation;
 
-    public int getUserid() {
+    public Long getUserid() {
         return userid;
     }
 
-    public void setUserid(int userid) {
+    public void setUserid(Long userid) {
         this.userid = userid;
     }
 
@@ -18,9 +18,6 @@ public class StampBoard {
         return transportation;
     }
 
-    public void setTransportation(List<Transportation> transportation) {
-        this.transportation = transportation;
-    }
 
     @Override
     public String toString() {
@@ -40,6 +37,10 @@ public class StampBoard {
         }
         sb.append("]}");
         return sb.toString();
+    }
+
+    public void setTransportation(List<Transportation> transportation) {
+        this.transportation = transportation;
     }
 }
 

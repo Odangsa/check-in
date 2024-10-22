@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 import com.example.check.api.ApiClient;
 import com.example.check.api.ApiService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -82,7 +83,8 @@ public class StampBoardViewModel extends ViewModel {
     }
 
 
-    public void fetchStampBoard(int userId) {
+
+    public void fetchStampBoard(Long userId) {
         Log.d("StampBoardViewModel", "fetchStampBoard called with userId: " + userId);
         apiService.getStampBoard(userId).enqueue(new Callback<StampBoard>() {
             @Override
@@ -93,16 +95,34 @@ public class StampBoardViewModel extends ViewModel {
                     Log.i("StampBoardViewModel", "StampBoard fetched successfully: " + receivedStampBoard.toString());
                 } else {
                     Log.e("StampBoardViewModel", "Error fetching StampBoard: " + response.code());
-                    // 에러 상태를 나타내는 빈 StampBoard 설정
-                    stampBoard.setValue(new StampBoard());
+                    // 초기 상태의 StampBoard 생성
+                    StampBoard initialBoard = new StampBoard();
+                    List<Transportation> initialTransportations = new ArrayList<>();
+
+                    Transportation walkTransportation = new Transportation();
+                    walkTransportation.setType("뚜벅이");
+                    walkTransportation.setVisited_libraries(new ArrayList<>());
+                    initialTransportations.add(walkTransportation);
+
+                    initialBoard.setTransportation(initialTransportations);
+                    stampBoard.setValue(initialBoard);
                 }
             }
 
             @Override
             public void onFailure(Call<StampBoard> call, Throwable t) {
                 Log.e("StampBoardViewModel", "Failed to fetch StampBoard", t);
-                // 에러 상태를 나타내는 빈 StampBoard 설정
-                stampBoard.setValue(new StampBoard());
+                // 초기 상태의 StampBoard 생성
+                StampBoard initialBoard = new StampBoard();
+                List<Transportation> initialTransportations = new ArrayList<>();
+
+                Transportation walkTransportation = new Transportation();
+                walkTransportation.setType("뚜벅이");
+                walkTransportation.setVisited_libraries(new ArrayList<>());
+                initialTransportations.add(walkTransportation);
+
+                initialBoard.setTransportation(initialTransportations);
+                stampBoard.setValue(initialBoard);
             }
         });
     }

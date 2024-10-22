@@ -299,7 +299,7 @@ public class BBTIFragment extends Fragment {
 
     private void sendResultsToServer(String bbtiType) {
         int bbtiNumber = BBTIUtil.convertBBTITypeToNumber(bbtiType);
-        int userId = Integer.parseInt(MainActivity.userId);
+        Long userId = MainActivity.userId;
 
         BBTIResultRequest request = new BBTIResultRequest(userId, bbtiNumber);
         Log.d(TAG, "Sending BBTI result: " + request.toString());

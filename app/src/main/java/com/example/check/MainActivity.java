@@ -35,7 +35,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
 
-    public static final String userId = "2";
+    public static Long userId = 2L;
     private static final String TAG = "MainActivity";
     private ApiService apiService;
     private LocationUtil locationUtil;
@@ -47,6 +47,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        // Intent에서 userId 받기
+        String receivedUserId = getIntent().getStringExtra("userId");
+        if (receivedUserId != null) {
+            userId = Long.parseLong(receivedUserId);
+            Log.d(TAG, "Received userId: " + userId);
+        } else {
+            Log.d(TAG, "No userId received, using default: " + userId);
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -97,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void loadBBTIResult() {
-        apiService.getBBTI(Integer.parseInt(userId)).enqueue(new Callback<BBTIResponse>() {
+        apiService.getBBTI(userId).enqueue(new Callback<BBTIResponse>() {
             @Override
             public void onResponse(Call<BBTIResponse> call, Response<BBTIResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {

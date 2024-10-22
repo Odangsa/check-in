@@ -7,6 +7,7 @@ import com.example.check.model.bookDetail.BookDetailModel;
 import com.example.check.model.home.RecentLibrariesWrapper;
 import com.example.check.model.home.RecentLibrary;
 import com.example.check.model.home.RecommendedBooksWrapper;
+import com.example.check.model.login.LoginRequest;
 import com.example.check.model.stampboard.StampBoard;
 import com.example.check.model.today_book.RecommendationsWrapper;
 
@@ -24,10 +25,10 @@ public interface ApiService {
 
 
     @GET("user/bbti")
-    Call<BBTIResponse> getBBTI(@Query("userid") int userId);
+    Call<BBTIResponse> getBBTI(@Query("userid") Long userId);
 
     @GET("/user/stamp/board")
-    Call<StampBoard> getStampBoard(@Query("userid") int userId);
+    Call<StampBoard> getStampBoard(@Query("userid") Long userId);
 
     @GET("book/detail")
     Call<BookDetailModel> getBookDetails(
@@ -40,7 +41,7 @@ public interface ApiService {
     Call<RecommendationsWrapper> getTodayBooks(@Query("bbti") String bbtiNumber);
 
     @GET("/user/recentlib")
-    Call<RecentLibrariesWrapper> getRecentLibraries(@Query("userid") String userId);
+    Call<RecentLibrariesWrapper> getRecentLibraries(@Query("userid") Long userId);
 
     //추천 도서 홈용
     @GET("/book/recommend/popular")
@@ -49,6 +50,7 @@ public interface ApiService {
     @POST("user/bbti")
     Call<ResponseBody> postBBTIResult(@Body BBTIResultRequest request);
 
-
-
+//    /user/login
+    @POST("/user/login")
+    Call<ResponseBody> postLogin(@Body LoginRequest request);
 }

@@ -1,20 +1,22 @@
 package com.example.check.model.bbti;
 
+import android.util.Log;
+
 public class BBTIResultRequest {
-    private int userid;
+    private Long userid;
     private int bbti;
 
-    public BBTIResultRequest(int userid, int bbti) {
+    public BBTIResultRequest(Long userid, int bbti) {
         this.userid = userid;
         this.bbti = bbti;
     }
 
     // Getters and setters
-    public int getUserid() {
+    public Long getUserid() {
         return userid;
     }
 
-    public void setUserid(int userid) {
+    public void setUserid(Long userid) {
         this.userid = userid;
     }
 

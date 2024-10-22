@@ -81,7 +81,7 @@ public class StampBoardFragment extends Fragment {
         nextButton.setOnClickListener(v -> viewModel.nextTransportation());
 
         try {
-            int userId = Integer.parseInt(MainActivity.userId);
+            Long userId = MainActivity.userId;
             viewModel.fetchStampBoard(userId);
         } catch (NumberFormatException e) {
             Log.e("StampBoardFragment", "Invalid user ID format: " + MainActivity.userId);
@@ -205,14 +205,33 @@ public class StampBoardFragment extends Fragment {
 
 
     private void updateUI(StampBoard stampBoard) {
-        if (stampBoard == null || stampBoard.getTransportation().isEmpty()) {
+        // 스탬프보드가 null이거나 transportation이 null일 때의 초기 상태 처리
+        if (stampBoard == null || stampBoard.getTransportation() == null || stampBoard.getTransportation().isEmpty()) {
+            // 초기 상태: 뚜벅이 버튼만 표시
+            List<Transportation> initialTransportation = new ArrayList<>();
+            Transportation walkTransportation = new Transportation();
+            walkTransportation.setType("뚜벅이");
+            walkTransportation.setVisited_libraries(new ArrayList<>()); // 빈 리스트로 초기화
+            initialTransportation.add(walkTransportation);
+
+            updateTransportationButtons(initialTransportation);
+            updateTransportationType(walkTransportation);
+            updateStampBoard(new ArrayList<>()); // 빈 스탬프 리스트로 업데이트 (+ 버튼이 표시됨)
             return;
         }
 
-        // 유효한 transportation만 필터링 (None이 아닌 경우만)
+        // 기존 로직: 유효한 transportation 필터링
         List<Transportation> validTransportations = stampBoard.getTransportation().stream()
                 .filter(t -> !"None".equals(t.getVisited_libraries()) && t.getVisited_libraries() != null)
                 .collect(Collectors.toList());
+
+        // 아무 데이터도 없는 경우 초기 상태로 설정
+        if (validTransportations.isEmpty()) {
+            Transportation walkTransportation = new Transportation();
+            walkTransportation.setType("뚜벅이");
+            walkTransportation.setVisited_libraries(new ArrayList<>());
+            validTransportations.add(walkTransportation);
+        }
 
         // 이전 타입의 도서관이 10개 이상인 경우에만 다음 타입도 표시
         List<Transportation> displayTransportations = new ArrayList<>();
@@ -227,6 +246,12 @@ public class StampBoardFragment extends Fragment {
 
         // 현재 선택된 transportation 업데이트
         Transportation currentTransportation = viewModel.getCurrentTransportation();
+        if (currentTransportation == null && !displayTransportations.isEmpty()) {
+            // 현재 선택된 transportation이 없으면 첫 번째 것 선택
+            currentTransportation = displayTransportations.get(0);
+            viewModel.setCurrentTransportation(currentTransportation);
+        }
+
         if (currentTransportation != null) {
             updateTransportationType(currentTransportation);
             updateStampBoard(currentTransportation.getVisited_libraries());
