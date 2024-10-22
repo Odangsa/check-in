@@ -51,14 +51,15 @@ public class StampBoardFragment extends Fragment {
         return view;
     }
 
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         viewModel = new ViewModelProvider(this).get(StampBoardViewModel.class);
+        stampBoardScrollView.setBackgroundResource(R.drawable.img_stamp_background); // 초기 배경 설정
 
         viewModel.getStampBoard().observe(getViewLifecycleOwner(), this::updateUI);
-
         backButton.setOnClickListener(v -> requireActivity().onBackPressed());
         nextButton.setOnClickListener(v -> viewModel.nextTransportation());
 
@@ -131,9 +132,6 @@ public class StampBoardFragment extends Fragment {
     private void updateBackgroundImage(String transportationType) {
         int backgroundResId;
         switch (transportationType.toLowerCase()) {
-            case "뚜벅이":
-                backgroundResId = R.drawable.img_stamp_background;
-                break;
             case "킥보드":
                 backgroundResId = R.drawable.stamp_kickboard;
                 break;
@@ -153,7 +151,7 @@ public class StampBoardFragment extends Fragment {
                 backgroundResId = R.drawable.stamp_spaceship;
                 break;
             default:
-                backgroundResId = R.drawable.stamp_walk;
+                backgroundResId = R.drawable.img_stamp_background;
                 break;
         }
 

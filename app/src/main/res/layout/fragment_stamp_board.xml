@@ -31,6 +31,7 @@
         android:background="@drawable/background_gray_stroke"/>
 
     <ScrollView
+        android:id="@+id/stampBoardScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="6.5"
