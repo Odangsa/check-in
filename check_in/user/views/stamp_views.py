@@ -1,18 +1,22 @@
 from django.views import View
 from user.models import LibCode, Visitlib
 from django.http import JsonResponse
-import datetime, json
+import datetime, json, urllib
 
 class BoardView(View):
     def get(self, request):
         userid = request.GET['userid']
+        try:
+            int(userid)
+        except:
+            userid = userid[1:]
         
         query_set = Visitlib.objects.filter(idnum=userid).order_by('visitdate').values('visitlib')
         
         visitlib = []
         for i in query_set:
             visitlib.append(i['visitlib'])
-        
+
         stamp_result = \
         {
             "userid": userid,
@@ -48,7 +52,8 @@ class BoardView(View):
                 ]
         }
 
-        for i in range(len(visitlib)): # 최대 70번
+        repeat = len(visitlib) if len(visitlib)<=70 else 70
+        for i in range(repeat): # 최대 70번
             stamp_result['transportation'][i // 10]['visited_libraries'].append(visitlib[i])
 
         for i in range(7 - ((len(visitlib) - 1) // 10 + 1)):

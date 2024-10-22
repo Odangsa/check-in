@@ -6,6 +6,10 @@ from django.db.models.aggregates import Max, Count
 class RecentLibView(View):
     def get(self, request):
         userid = request.GET['userid']
+        try:
+            int(userid)
+        except:
+            userid = userid[1:]
 
         recentlib_result = \
             {

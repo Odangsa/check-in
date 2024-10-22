@@ -6,7 +6,11 @@ import json
 class BbtiView(View):
     def get(self, request):
         userid = request.GET['userid']
-
+        try:
+            int(userid)
+        except:
+            userid = userid[1:]
+            
         result = \
             {
                 "success": "False",
