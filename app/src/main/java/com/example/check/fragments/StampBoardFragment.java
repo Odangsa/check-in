@@ -1,6 +1,7 @@
 package com.example.check.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import android.util.TypedValue;
 import android.graphics.Typeface;
 import android.view.Gravity;
 
+import com.example.check.MainActivity;
 import com.example.check.R;
 import com.example.check.model.stampboard.StampBoard;
 import com.example.check.model.stampboard.StampBoardViewModel;
@@ -57,13 +59,30 @@ public class StampBoardFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         viewModel = new ViewModelProvider(this).get(StampBoardViewModel.class);
-        stampBoardScrollView.setBackgroundResource(R.drawable.img_stamp_background); // 초기 배경 설정
 
+        // 초기 배경 설정
+        stampBoardScrollView.setBackgroundResource(R.drawable.img_stamp_background);
+
+        // Observer 설정
         viewModel.getStampBoard().observe(getViewLifecycleOwner(), this::updateUI);
+        viewModel.getCurrentTransportationIndex().observe(getViewLifecycleOwner(), index -> {
+            Transportation currentTransportation = viewModel.getCurrentTransportation();
+            if (currentTransportation != null) {
+                updateTransportationType(currentTransportation);
+                updateStampBoard(currentTransportation.getVisited_libraries());
+            }
+        });
+
         backButton.setOnClickListener(v -> requireActivity().onBackPressed());
         nextButton.setOnClickListener(v -> viewModel.nextTransportation());
 
-        viewModel.fetchStampBoard(2); // Assuming user ID is 2
+        try {
+            int userId = Integer.parseInt(MainActivity.userId);
+            viewModel.fetchStampBoard(userId);
+        } catch (NumberFormatException e) {
+            Log.e("StampBoardFragment", "Invalid user ID format: " + MainActivity.userId);
+            // 에러 처리 (예: 기본값 사용 또는 사용자에게 알림)
+        }
     }
 
 
@@ -91,47 +110,31 @@ public class StampBoardFragment extends Fragment {
     private void updateTransportationButtons(List<Transportation> validTransportations) {
         transportationButtonsContainer.removeAllViews();
 
-        // 버튼들을 담을 LinearLayout 생성
-        LinearLayout buttonRow = new LinearLayout(getContext());
-        buttonRow.setLayoutParams(new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT));
-        buttonRow.setOrientation(LinearLayout.HORIZONTAL);
-        buttonRow.setWeightSum(3);
-        buttonRow.setPadding(
-                dpToPx(10), dpToPx(10), dpToPx(10), dpToPx(10));
-
-        for (int i = 0; i < Math.min(2, validTransportations.size()); i++) {
+        for (int i = 0; i < validTransportations.size(); i++) {
             Transportation transportation = validTransportations.get(i);
-            TextView button = createTransportationButton(transportation, i == 0);
-            buttonRow.addView(button);
-        }
+            TextView button = createTransportationButton(transportation);
 
-        // Next 버튼 추가
-        if (validTransportations.size() > 2) {
-            ImageButton nextBtn = createNextButton();
-            buttonRow.addView(nextBtn);
-        }
+            // 버튼 사이 마진 설정
+            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) button.getLayoutParams();
+            params.setMarginEnd(dpToPx(10));
+            button.setLayoutParams(params);
 
-        transportationButtonsContainer.addView(buttonRow);
+            transportationButtonsContainer.addView(button);
+        }
     }
 
     private void updateTransportationType(Transportation transportation) {
-        // 타입 텍스트 업데이트
         transportationType.setText(transportation.getType());
-
-        // 아이콘 업데이트
         int iconResId = getTransportationIconResId(transportation.getType());
         transportationType.setCompoundDrawablesWithIntrinsicBounds(iconResId, 0, 0, 0);
 
         // 배경 이미지 업데이트
-        updateBackgroundImage(transportation.getType());
-    }
-
-
-    private void updateBackgroundImage(String transportationType) {
+        String type = transportation.getType().toLowerCase();
         int backgroundResId;
-        switch (transportationType.toLowerCase()) {
+        switch (type) {
+            case "뚜벅이":
+                backgroundResId = R.drawable.img_stamp_background;
+                break;
             case "킥보드":
                 backgroundResId = R.drawable.stamp_kickboard;
                 break;
@@ -154,22 +157,16 @@ public class StampBoardFragment extends Fragment {
                 backgroundResId = R.drawable.img_stamp_background;
                 break;
         }
-
-        // ScrollView의 배경 이미지 설정
         stampBoardScrollView.setBackgroundResource(backgroundResId);
     }
 
-    private TextView createTransportationButton(Transportation transportation, boolean isFirst) {
-        TextView button = new TextView(getContext());
 
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0,
-                dpToPx(50), 1f);
-        if (isFirst) {
-            params.setMarginEnd(dpToPx(5));
-        } else {
-            params.setMarginStart(dpToPx(5));
-            params.setMarginEnd(dpToPx(5));
-        }
+
+    private TextView createTransportationButton(Transportation transportation) {
+        TextView button = new TextView(getContext());
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                dpToPx(120), // 고정된 너비
+                ViewGroup.LayoutParams.MATCH_PARENT);
         button.setLayoutParams(params);
 
         button.setText(transportation.getType());
@@ -177,7 +174,7 @@ public class StampBoardFragment extends Fragment {
         button.setTextColor(getResources().getColor(R.color.navy));
         button.setTypeface(button.getTypeface(), Typeface.BOLD);
         button.setGravity(Gravity.CENTER_VERTICAL);
-        button.setPadding(dpToPx(10), 0, 0, 0);
+        button.setPadding(dpToPx(10), 0, dpToPx(10), 0);
         button.setBackground(getResources().getDrawable(R.drawable.background_gray_stroke));
 
         int iconResId = getTransportationIconResId(transportation.getType());
@@ -186,28 +183,9 @@ public class StampBoardFragment extends Fragment {
 
         button.setOnClickListener(v -> {
             viewModel.setCurrentTransportation(transportation);
-            updateStampBoard(transportation.getVisited_libraries());
         });
 
         return button;
-    }
-
-
-    private ImageButton createNextButton() {
-        ImageButton nextBtn = new ImageButton(getContext());
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0,
-                dpToPx(50), 1f);
-        params.setMarginStart(dpToPx(5));
-        nextBtn.setLayoutParams(params);
-
-        nextBtn.setImageResource(R.drawable.icon_next);
-        nextBtn.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-        nextBtn.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        nextBtn.setPadding(dpToPx(10), dpToPx(10), dpToPx(10), dpToPx(10));
-
-        nextBtn.setOnClickListener(v -> viewModel.nextTransportation());
-
-        return nextBtn;
     }
 
     private void updateStampBoard(List<String> visitedLibraries) {
@@ -255,49 +233,6 @@ public class StampBoardFragment extends Fragment {
                 stampBoardContainer.addView(arrowDown);
             }
         }
-    }
-
-    private void updateTransportationButtons(Integer currentIndex) {
-        StampBoard stampBoard = viewModel.getStampBoard().getValue();
-        if (stampBoard == null || stampBoard.getTransportation() == null) {
-            return;
-        }
-        List<Transportation> transportations = stampBoard.getTransportation();
-
-        TextView walkButton = getView().findViewById(R.id.walkButton);
-        TextView busButton = getView().findViewById(R.id.busButton);
-
-        // 첫 번째와 두 번째 transportation 타입으로 버튼 설정
-        if (transportations.size() > 0) {
-            setTransportationButton(walkButton, transportations.get(0));
-        }
-        if (transportations.size() > 1) {
-            setTransportationButton(busButton, transportations.get(1));
-        }
-
-        // Next 버튼 가시성 설정
-        nextButton.setVisibility(transportations.size() > 2 ? View.VISIBLE : View.GONE);
-    }
-
-    private void setTransportationButton(TextView button, Transportation transportation) {
-        button.setText(transportation.getType());
-        button.setCompoundDrawablesWithIntrinsicBounds(getTransportationIconResId(transportation.getType()), 0, 0, 0);
-        button.setOnClickListener(v -> viewModel.setCurrentTransportation(transportation));
-    }
-
-    private TextView createTransportationButton(Transportation transportation) {
-        TextView button = (TextView) getLayoutInflater().inflate(R.layout.layout_transportation_button, null);
-        button.setText(transportation.getType());
-        button.setOnClickListener(v -> viewModel.setCurrentTransportation(transportation));
-
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f);
-        params.setMargins(0, 0, 10, 0);
-        button.setLayoutParams(params);
-
-        int iconResId = getTransportationIconResId(transportation.getType());
-        button.setCompoundDrawablesWithIntrinsicBounds(iconResId, 0, 0, 0);
-
-        return button;
     }
 
     private int getTransportationIconResId(String type) {

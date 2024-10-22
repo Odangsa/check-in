@@ -11,14 +11,25 @@
         android:orientation="vertical"
         android:gravity="center">
 
-        <ImageView
-            android:id="@+id/stampImage1"
+        <FrameLayout
             android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/img_seoul_library"
-            android:background="@drawable/background_stamp"
-            android:padding="10dp"/>
+            android:layout_height="80dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/background_stamp"
+                android:scaleType="fitCenter"/>
+
+            <ImageView
+                android:id="@+id/stampImage1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_seoul_library"
+                android:layout_margin="12dp"
+                android:clipToOutline="true"/>
+        </FrameLayout>
 
         <TextView
             android:id="@+id/libraryName1"
@@ -26,6 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:textSize="12sp"
+            android:textStyle="bold"
             android:textColor="@android:color/black" />
 
     </LinearLayout>
@@ -51,14 +63,25 @@
         android:orientation="vertical"
         android:gravity="center">
 
-        <ImageView
-            android:id="@+id/stampImage2"
+        <FrameLayout
             android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/img_seoul_library"
-            android:background="@drawable/background_stamp"
-            android:padding="10dp"/>
+            android:layout_height="80dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/background_stamp"
+                android:scaleType="fitCenter"/>
+
+            <ImageView
+                android:id="@+id/stampImage2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_seoul_library"
+                android:layout_margin="12dp"
+                android:clipToOutline="true"/>
+        </FrameLayout>
 
         <TextView
             android:id="@+id/libraryName2"
@@ -66,6 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:textSize="12sp"
+            android:textStyle="bold"
             android:textColor="@android:color/black" />
 
     </LinearLayout>
