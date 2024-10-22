@@ -18,7 +18,6 @@ import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 import com.example.check.MainActivity;
 import com.example.check.R;
-import com.example.check.Utils.BBTIUtil;
 import com.example.check.api.ApiClient;
 import com.example.check.api.ApiService;
 import com.example.check.model.home.RecentLibrariesWrapper;
@@ -109,6 +108,7 @@ public class HomeFragment extends Fragment {
 
 
 
+
     private void loadBBTIResults() {
         JSONObject bbtiResultsObj = loadJSONFromResource(R.raw.bbti);
         try {
@@ -119,6 +119,7 @@ public class HomeFragment extends Fragment {
             bbtiResults = new JSONArray();
         }
     }
+
 
 
     @Override
@@ -171,6 +172,8 @@ public class HomeFragment extends Fragment {
             return new JSONObject();
         }
     }
+
+
 
     private void updateBBTIView() {
         if (bbtiResults == null || bbtiResults.length() == 0) {
@@ -239,32 +242,107 @@ public class HomeFragment extends Fragment {
         });
     }
 
+    private void addBookView(RecommendedBook book) {
+        // Fragment가 attached 되어있는지 확인
+        if (!isAdded() || getActivity() == null) {
+            Log.e(TAG, "Fragment is not attached or activity is null");
+            return;
+        }
+
+        // 메인 스레드에서 UI 업데이트
+        getActivity().runOnUiThread(() -> {
+            try {
+                // Fragment가 여전히 attached 되어있는지 다시 확인
+                if (!isAdded() || getActivity() == null) {
+                    return;
+                }
+
+                // Activity의 LayoutInflater 사용
+                LayoutInflater inflater = requireActivity().getLayoutInflater();
+                View bookView = inflater.inflate(R.layout.item_recommended_book, recommendedBooksContainer, false);
+
+                // UI 컴포넌트 설정
+                ImageView bookImage = bookView.findViewById(R.id.book_image);
+                TextView bookNameView = bookView.findViewById(R.id.book_name);
+                TextView authorView = bookView.findViewById(R.id.book_author);
+                TextView detailView = bookView.findViewById(R.id.btn_book_detail);
+
+                // UI 업데이트
+                if (isAdded()) {  // 한번 더 확인
+                    Glide.with(requireContext()).load(book.getBookimageURL()).into(bookImage);
+                    bookNameView.setText(book.getBookname());
+                    authorView.setText("▸ 저자: " + book.getAuthors());
+
+                    detailView.setOnClickListener(v -> {
+                        if (isAdded()) {  // 클릭 시에도 확인
+                            BookDetailFragment detailFragment = BookDetailFragment.newInstance(book.getISBN());
+                            getParentFragmentManager().beginTransaction()
+                                    .replace(R.id.fragment_container, detailFragment)
+                                    .addToBackStack(null)
+                                    .commit();
+                        }
+                    });
+
+                    recommendedBooksContainer.addView(bookView);
+
+                    // 구분선 추가
+                    if (recommendedBooksContainer.getChildCount() > 1) {
+                        View divider = new View(requireContext());
+                        divider.setLayoutParams(new ViewGroup.LayoutParams(
+                                ViewGroup.LayoutParams.MATCH_PARENT, 1));
+                        divider.setBackgroundColor(getResources().getColor(R.color.gray));
+                        recommendedBooksContainer.addView(divider);
+                    }
+                }
+            } catch (Exception e) {
+                Log.e(TAG, "Error adding book view", e);
+            }
+        });
+    }
+
     private void loadRecommendedBooks() {
+        if (!isAdded()) return;
+
         apiService.getRecommendedBooks().enqueue(new Callback<RecommendedBooksWrapper>() {
             @Override
             public void onResponse(Call<RecommendedBooksWrapper> call, Response<RecommendedBooksWrapper> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    List<RecommendedBook> books = response.body().getBooks();
-                    if (books != null && !books.isEmpty()) {
-                        recommendedBooksContainer.removeAllViews();
-                        for (RecommendedBook book : books) {
-                            addBookView(book);
+                if (!isAdded() || getActivity() == null) return;
+
+                getActivity().runOnUiThread(() -> {
+                    try {
+                        if (!isAdded()) return;
+
+                        if (response.isSuccessful() && response.body() != null) {
+                            List<RecommendedBook> books = response.body().getBooks();
+                            if (books != null && !books.isEmpty()) {
+                                recommendedBooksContainer.removeAllViews();
+                                for (RecommendedBook book : books) {
+                                    addBookView(book);
+                                }
+                                Log.d(TAG, "Recommended books loaded successfully");
+                            } else {
+                                Log.e(TAG, "No recommended books found");
+                                showToast("추천 도서 데이터를 찾을 수 없습니다.");
+                            }
+                        } else {
+                            Log.e(TAG, "Failed to fetch recommended books: " + response.code());
+                            showToast("추천 도서 데이터를 가져오는데 실패했습니다.");
                         }
-                        Log.d(TAG, "Recommended books loaded successfully");
-                    } else {
-                        Log.e(TAG, "No recommended books found");
-                        showToast("추천 도서 데이터를 찾을 수 없습니다.");
+                    } catch (Exception e) {
+                        Log.e(TAG, "Error processing recommended books response", e);
                     }
-                } else {
-                    Log.e(TAG, "Failed to fetch recommended books: " + response.code());
-                    showToast("추천 도서 데이터를 가져오는데 실패했습니다.");
-                }
+                });
             }
 
             @Override
             public void onFailure(Call<RecommendedBooksWrapper> call, Throwable t) {
-                Log.e(TAG, "Error fetching recommended books", t);
-                showToast("네트워크 오류가 발생했습니다.");
+                if (!isAdded() || getActivity() == null) return;
+
+                getActivity().runOnUiThread(() -> {
+                    if (!isAdded()) return;
+                    Log.e(TAG, "Error fetching recommended books", t);
+                    showToast("네트워크 오류가 발생했습니다.");
+                });
             }
         });
     }
@@ -283,35 +361,7 @@ public class HomeFragment extends Fragment {
         recentLibrariesContainer.addView(libraryView);
     }
 
-    private void addBookView(RecommendedBook book) {
-        View bookView = getLayoutInflater().inflate(R.layout.item_recommended_book, recommendedBooksContainer, false);
 
-        ImageView bookImage = bookView.findViewById(R.id.book_image);
-        TextView bookNameView = bookView.findViewById(R.id.book_name);
-        TextView authorView = bookView.findViewById(R.id.book_author);
-        TextView detailView = bookView.findViewById(R.id.btn_book_detail);
-
-        Glide.with(this).load(book.getBookimageURL()).into(bookImage);
-        bookNameView.setText(book.getBookname());
-        authorView.setText("▸ 저자: " + book.getAuthors());
-
-        detailView.setOnClickListener(v -> {
-            BookDetailFragment detailFragment = BookDetailFragment.newInstance(book.getISBN());
-            getParentFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, detailFragment)
-                    .addToBackStack(null)
-                    .commit();
-        });
-
-        recommendedBooksContainer.addView(bookView);
-
-        if (recommendedBooksContainer.getChildCount() > 1) {
-            View divider = new View(getContext());
-            divider.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1));
-            divider.setBackgroundColor(getResources().getColor(R.color.gray));
-            recommendedBooksContainer.addView(divider);
-        }
-    }
 
     private void performSearch(String query) {
         // TODO: Implement search functionality
@@ -327,6 +377,10 @@ public class HomeFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        // Handler 콜백 제거
         handler.removeCallbacksAndMessages(null);
+        // View 참조 정리
+        bbtiImage = null;
+        bbtiTitle = null;
     }
 }

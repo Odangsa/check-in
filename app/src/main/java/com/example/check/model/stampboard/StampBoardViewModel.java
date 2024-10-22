@@ -37,15 +37,17 @@ public class StampBoardViewModel extends ViewModel {
     public void nextTransportation() {
         StampBoard board = stampBoard.getValue();
         if (board != null) {
-            List<Transportation> validTransportations = board.getTransportation().stream()
-                    .filter(t -> t.getVisited_libraries() != null && !t.getVisited_libraries().isEmpty())
-                    .collect(Collectors.toList());
+            List<Transportation> transportations = board.getTransportation();
+            int currentIndex = transportations.indexOf(getCurrentTransportation());
 
-            if (!validTransportations.isEmpty()) {
-                int current = currentTransportationIndex.getValue() != null ?
-                        currentTransportationIndex.getValue() : 0;
-                int nextIndex = (current + 1) % validTransportations.size();
-                currentTransportationIndex.setValue(nextIndex);
+            // 현재 타입이 10개 이상인 경우에만 다음으로 이동
+            if (currentIndex >= 0 && currentIndex < transportations.size() - 1) {
+                Transportation current = transportations.get(currentIndex);
+                if (current != null &&
+                        current.getVisited_libraries() != null &&
+                        current.getVisited_libraries().size() >= 10) {
+                    currentTransportationIndex.setValue(currentIndex + 1);
+                }
             }
         }
     }
@@ -104,4 +106,6 @@ public class StampBoardViewModel extends ViewModel {
             }
         });
     }
+
+
 }
