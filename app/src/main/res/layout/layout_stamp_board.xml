@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_stamp_background"
+    android:orientation="vertical"
+    android:weightSum="6">
+
+    <!-- 첫 번째 줄 -->
+    <include layout="@layout/layout_stamp_row"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:src="@drawable/icon_arrow_down_left"/>
+
+    <!-- 두 번째 줄 -->
+    <include layout="@layout/layout_stamp_row"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:src="@drawable/icon_arrow_down_left"/>
+
+    <!-- 세 번째 줄 -->
+    <include layout="@layout/layout_stamp_row"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:src="@drawable/icon_arrow_down_left"/>
+
+    <!-- 네 번째 줄 -->
+    <include layout="@layout/layout_stamp_row"/>
+
+</LinearLayout>

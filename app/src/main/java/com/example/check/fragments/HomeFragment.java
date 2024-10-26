@@ -1,6 +1,8 @@
 package com.example.check.fragments;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,11 +20,21 @@ import com.example.check.MainActivity;
 import com.example.check.R;
 import com.example.check.api.ApiClient;
 import com.example.check.api.ApiService;
+import com.example.check.model.home.RecentLibrariesWrapper;
 import com.example.check.model.home.RecentLibrary;
 import com.example.check.model.home.RecommendedBook;
 import com.example.check.model.home.RecommendedBooksWrapper;
 import com.example.check.fragments.todayBook.BookDetailFragment;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.List;
 
 import retrofit2.Call;
@@ -35,19 +47,45 @@ public class HomeFragment extends Fragment {
     private LinearLayout recentLibrariesContainer;
     private LinearLayout recommendedBooksContainer;
     private ApiService apiService;
+    private ImageView bbtiImage;
+    private TextView bbtiTitle;
+    private Handler handler;
+    private static final int BBTI_CHECK_INTERVAL = 1000; // 1초마다 확인
+    private static final int MAX_BBTI_CHECK_ATTEMPTS = 10; // 최대 10번 시도
+    private int bbtiCheckAttempts = 0;
+    private JSONArray bbtiResults;
+    private ShimmerFrameLayout shimmerLayout;
+    private View contentLayout;
+
+
+
+    private final Runnable bbtiCheckRunnable = new Runnable() {
+        @Override
+        public void run() {
+            if (MainActivity.bbtiNumber != null) {
+                updateBBTIView();
+            } else {
+                handler.postDelayed(this, BBTI_CHECK_INTERVAL);
+            }
+        }
+    };
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        recentLibrariesContainer = view.findViewById(R.id.recent_libraries_container);
-        recommendedBooksContainer = view.findViewById(R.id.recommended_books_container);
+        initializeViews(view);
+
+        // 초기 상태 설정
+        showShimmer();
 
         apiService = ApiClient.getClient().create(ApiService.class);
+        handler = new Handler(Looper.getMainLooper());
 
-        loadRecentLibraries();
-        loadRecommendedBooks();
+        loadData();
 
         SearchView searchView = view.findViewById(R.id.search);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -66,16 +104,71 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
+    private void initializeViews(View view) {
+        // 기존 뷰 초기화
+        recentLibrariesContainer = view.findViewById(R.id.recent_libraries_container);
+        recommendedBooksContainer = view.findViewById(R.id.recommended_books_container);
+        bbtiImage = view.findViewById(R.id.bbti_image);
+        bbtiTitle = view.findViewById(R.id.bbti_title);
+
+        // 시머 관련 뷰 초기화
+        shimmerLayout = view.findViewById(R.id.shimmerLayout);
+        contentLayout = view.findViewById(R.id.contentLayout);
+    }
+
+
+    private void loadData() {
+        // 모든 데이터 로딩 시작
+        loadRecentLibraries();
+        loadRecommendedBooks();
+        startBBTICheck();
+        loadBBTIResults();
+    }
+
+    private void showShimmer() {
+        if (shimmerLayout != null) {
+            contentLayout.setVisibility(View.GONE);
+            shimmerLayout.setVisibility(View.VISIBLE);
+            shimmerLayout.startShimmer();
+        }
+    }
+
+
+
+    private void hideShimmer() {
+        if (shimmerLayout != null) {
+            shimmerLayout.stopShimmer();
+            shimmerLayout.setVisibility(View.GONE);
+            contentLayout.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void checkAllDataLoaded() {
+        // 모든 데이터가 로드되었는지 확인하고 시머를 숨김
+        if (bbtiResults != null &&
+                recentLibrariesContainer.getChildCount() > 0 &&
+                recommendedBooksContainer.getChildCount() > 0) {
+            hideShimmer();
+        }
+    }
+
     private void loadRecentLibraries() {
-        apiService.getRecentLibraries(MainActivity.userId).enqueue(new Callback<List<RecentLibrary>>() {
+        apiService.getRecentLibraries(MainActivity.userId).enqueue(new Callback<RecentLibrariesWrapper>() {
             @Override
-            public void onResponse(Call<List<RecentLibrary>> call, Response<List<RecentLibrary>> response) {
+            public void onResponse(Call<RecentLibrariesWrapper> call, Response<RecentLibrariesWrapper> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    List<RecentLibrary> libraries = response.body();
-                    for (RecentLibrary library : libraries) {
-                        addLibraryView(library.getLibrary(), library.getVisitCount());
+                    List<RecentLibrary> libraries = response.body().getRecentLibraries();
+                    if (libraries != null && !libraries.isEmpty()) {
+                        recentLibrariesContainer.removeAllViews();
+                        for (RecentLibrary library : libraries) {
+                            addLibraryView(library.getLibrary(), library.getVisitCount());
+                        }
+                        Log.d(TAG, "Recent libraries loaded successfully");
+                        checkAllDataLoaded();
+                    } else {
+                        Log.e(TAG, "No recent libraries found");
+                        showToast("최근 도서관 데이터를 찾을 수 없습니다.");
                     }
-                    Log.d(TAG, "Recent libraries loaded successfully");
                 } else {
                     Log.e(TAG, "Failed to fetch recent libraries: " + response.code());
                     showToast("최근 도서관 데이터를 가져오는데 실패했습니다.");
@@ -83,9 +176,171 @@ public class HomeFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<List<RecentLibrary>> call, Throwable t) {
+            public void onFailure(Call<RecentLibrariesWrapper> call, Throwable t) {
                 Log.e(TAG, "Error fetching recent libraries", t);
                 showToast("네트워크 오류가 발생했습니다.");
+            }
+        });
+    }
+
+    private void loadBBTIResults() {
+        JSONObject bbtiResultsObj = loadJSONFromResource(R.raw.bbti);
+        try {
+            bbtiResults = bbtiResultsObj.getJSONArray("results");
+            Log.d(TAG, "BBTI Results loaded: " + bbtiResults.toString());
+        } catch (JSONException e) {
+            Log.e(TAG, "Error loading BBTI results: " + e.getMessage());
+            bbtiResults = new JSONArray();
+        }
+    }
+
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        handler.post(bbtiCheckRunnable);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        handler.removeCallbacks(bbtiCheckRunnable);
+    }
+
+
+    private void startBBTICheck() {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (MainActivity.bbtiNumber != null) {
+                    updateBBTIView();
+                } else if (bbtiCheckAttempts < MAX_BBTI_CHECK_ATTEMPTS) {
+                    bbtiCheckAttempts++;
+                    handler.postDelayed(this, BBTI_CHECK_INTERVAL);
+                } else {
+                    Log.e(TAG, "Failed to load BBTI after maximum attempts");
+                    showToast("BBTI 정보를 불러오는데 실패했습니다.");
+                }
+            }
+        }, BBTI_CHECK_INTERVAL);
+    }
+
+
+
+
+
+    private JSONObject loadJSONFromResource(int resourceId) {
+        try {
+            InputStream is = getResources().openRawResource(resourceId);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            StringBuilder sb = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
+            }
+            reader.close();
+            return new JSONObject(sb.toString());
+        } catch (IOException | JSONException e) {
+            Log.e(TAG, "Error loading JSON from resource: " + e.getMessage());
+            return new JSONObject();
+        }
+    }
+
+
+
+    private void updateBBTIView() {
+        if (bbtiResults == null || bbtiResults.length() == 0) {
+            Log.e(TAG, "BBTI results not loaded");
+            return;
+        }
+
+        try {
+            for (int i = 0; i < bbtiResults.length(); i++) {
+                JSONObject result = bbtiResults.getJSONObject(i);
+                if (result.getString("번호").equals(MainActivity.bbtiNumber)) {
+                    updateUIWithBBTIInfo(result);
+                    break;
+                }
+            }
+        } catch (JSONException e) {
+            Log.e(TAG, "Error updating BBTI view: " + e.getMessage());
+        }
+    }
+
+    private void updateUIWithBBTIInfo(JSONObject bbtiInfo) throws JSONException {
+        ImageView bbtiImage = getView().findViewById(R.id.bbti_image);
+        TextView bbtiTitle = getView().findViewById(R.id.bbti_title);
+
+        String imageName = bbtiInfo.getString("이미지").replace(".png", "");
+        int imageResId = getResources().getIdentifier(imageName, "drawable", requireContext().getPackageName());
+        if (imageResId != 0) {
+            bbtiImage.setImageResource(imageResId);
+        } else {
+            Log.e(TAG, "Image resource not found: " + imageName);
+            bbtiImage.setImageResource(R.drawable.img_bookbti_tmp);
+        }
+
+        bbtiTitle.setText(bbtiInfo.getString("타이틀"));
+    }
+
+
+
+
+    private void addBookView(RecommendedBook book) {
+        // Fragment가 attached 되어있는지 확인
+        if (!isAdded() || getActivity() == null) {
+            Log.e(TAG, "Fragment is not attached or activity is null");
+            return;
+        }
+
+        // 메인 스레드에서 UI 업데이트
+        getActivity().runOnUiThread(() -> {
+            try {
+                // Fragment가 여전히 attached 되어있는지 다시 확인
+                if (!isAdded() || getActivity() == null) {
+                    return;
+                }
+
+                // Activity의 LayoutInflater 사용
+                LayoutInflater inflater = requireActivity().getLayoutInflater();
+                View bookView = inflater.inflate(R.layout.item_recommended_book, recommendedBooksContainer, false);
+
+                // UI 컴포넌트 설정
+                ImageView bookImage = bookView.findViewById(R.id.book_image);
+                TextView bookNameView = bookView.findViewById(R.id.book_name);
+                TextView authorView = bookView.findViewById(R.id.book_author);
+                TextView detailView = bookView.findViewById(R.id.btn_book_detail);
+
+                // UI 업데이트
+                if (isAdded()) {  // 한번 더 확인
+                    Glide.with(requireContext()).load(book.getBookimageURL()).into(bookImage);
+                    bookNameView.setText(book.getBookname());
+                    authorView.setText("▸ 저자: " + book.getAuthors());
+
+                    detailView.setOnClickListener(v -> {
+                        if (isAdded()) {  // 클릭 시에도 확인
+                            BookDetailFragment detailFragment = BookDetailFragment.newInstance(book.getISBN());
+                            getParentFragmentManager().beginTransaction()
+                                    .replace(R.id.fragment_container, detailFragment)
+                                    .addToBackStack(null)
+                                    .commit();
+                        }
+                    });
+
+                    recommendedBooksContainer.addView(bookView);
+
+                    // 구분선 추가
+                    if (recommendedBooksContainer.getChildCount() > 1) {
+                        View divider = new View(requireContext());
+                        divider.setLayoutParams(new ViewGroup.LayoutParams(
+                                ViewGroup.LayoutParams.MATCH_PARENT, 1));
+                        divider.setBackgroundColor(getResources().getColor(R.color.gray));
+                        recommendedBooksContainer.addView(divider);
+                    }
+                }
+            } catch (Exception e) {
+                Log.e(TAG, "Error adding book view", e);
             }
         });
     }
@@ -96,10 +351,17 @@ public class HomeFragment extends Fragment {
             public void onResponse(Call<RecommendedBooksWrapper> call, Response<RecommendedBooksWrapper> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     List<RecommendedBook> books = response.body().getBooks();
-                    for (RecommendedBook book : books) {
-                        addBookView(book);
+                    if (books != null && !books.isEmpty()) {
+                        recommendedBooksContainer.removeAllViews();
+                        for (RecommendedBook book : books) {
+                            addBookView(book);
+                        }
+                        Log.d(TAG, "Recommended books loaded successfully");
+                        checkAllDataLoaded();
+                    } else {
+                        Log.e(TAG, "No recommended books found");
+                        showToast("추천 도서 데이터를 찾을 수 없습니다.");
                     }
-                    Log.d(TAG, "Recommended books loaded successfully");
                 } else {
                     Log.e(TAG, "Failed to fetch recommended books: " + response.code());
                     showToast("추천 도서 데이터를 가져오는데 실패했습니다.");
@@ -125,38 +387,31 @@ public class HomeFragment extends Fragment {
         libraryName.setText(name);
         visitCountView.setText("방문횟수: " + visitCount);
 
+        // 전체 레이아웃에 클릭 이벤트 추가
+        libraryView.setOnClickListener(v -> navigateToStampBoard());
+
+        // 최근 방문한 도서관 전체 섹션에도 클릭 이벤트 추가
+        View recentLibrariesSection = getView().findViewById(R.id.recent_libraries_section);
+        if (recentLibrariesSection != null) {
+            recentLibrariesSection.setOnClickListener(v -> navigateToStampBoard());
+        }
+
         recentLibrariesContainer.addView(libraryView);
     }
 
-    private void addBookView(RecommendedBook book) {
-        View bookView = getLayoutInflater().inflate(R.layout.item_recommended_book, recommendedBooksContainer, false);
-
-        ImageView bookImage = bookView.findViewById(R.id.book_image);
-        TextView bookNameView = bookView.findViewById(R.id.book_name);
-        TextView authorView = bookView.findViewById(R.id.book_author);
-        TextView detailView = bookView.findViewById(R.id.btn_book_detail);
-
-        Glide.with(this).load(book.getBookimageURL()).into(bookImage);
-        bookNameView.setText(book.getBookname());
-        authorView.setText("▸ 저자: " + book.getAuthors());
-
-        detailView.setOnClickListener(v -> {
-            BookDetailFragment detailFragment = BookDetailFragment.newInstance(book.getISBN());
-            getParentFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, detailFragment)
-                    .addToBackStack(null)
+    // StampBoardFragment로 전환하는 메서드
+    private void navigateToStampBoard() {
+        if (getActivity() != null) {
+            StampBoardFragment stampBoardFragment = new StampBoardFragment();
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, stampBoardFragment)
+                    .addToBackStack(null)  // 백 스택에 추가하여 뒤로가기 가능하게 함
                     .commit();
-        });
-
-        recommendedBooksContainer.addView(bookView);
-
-        if (recommendedBooksContainer.getChildCount() > 1) {
-            View divider = new View(getContext());
-            divider.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1));
-            divider.setBackgroundColor(getResources().getColor(R.color.gray));
-            recommendedBooksContainer.addView(divider);
         }
     }
+
+
 
     private void performSearch(String query) {
         // TODO: Implement search functionality
@@ -167,5 +422,15 @@ public class HomeFragment extends Fragment {
         if (getContext() != null) {
             Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        // Handler 콜백 제거
+        handler.removeCallbacksAndMessages(null);
+        // View 참조 정리
+        bbtiImage = null;
+        bbtiTitle = null;
     }
 }

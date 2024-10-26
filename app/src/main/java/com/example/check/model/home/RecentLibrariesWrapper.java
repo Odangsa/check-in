@@ -1,21 +1,28 @@
 package com.example.check.model.home;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class RecentLibrariesWrapper {
-    private int userid;
-    private List<RecentLibrary> recent_libraries;
+    private Long userid;
 
+    @SerializedName("recent_libraries")
+    private List<RecentLibrary> recentLibraries;
 
-    public int getUserid() {
+    public Long getUserid() {
         return userid;
     }
-    public void setUserid(int userid) {
+
+    public void setUserid(Long userid) {
         this.userid = userid;
     }
 
-    public List<RecentLibrary> getRecent_libraries() {
-        return recent_libraries;
+    public List<RecentLibrary> getRecentLibraries() {
+        return recentLibraries;
     }
-    // 게터, 세터
+
+    public void setRecentLibraries(List<RecentLibrary> recentLibraries) {
+        this.recentLibraries = recentLibraries;
+    }
 }

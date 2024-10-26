@@ -7,7 +7,7 @@
 <color name="teal_700">#FF018786</color>
 <color name="black">#FF000000</color>
 <color name="white">#FFFFFFFF</color>
-
+<color name="light_gray">#EEEEEE</color>
 <color name="navy">#222831</color>
 <!-- 회색 -->
 <color name="gray_dark">#6B6B6B</color>
@@ -15,5 +15,5 @@
 <color name="gray_light">#CCCCCC</color>
 <!-- 투명 -->
 <color name="transparent">#00000000</color>
-
+<color name="shimmer_color">#DDDDDD</color>
 </resources>

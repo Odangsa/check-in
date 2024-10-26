@@ -23,23 +23,29 @@ import com.example.check.Utils.LocationUtil;
 import com.example.check.api.ApiClient;
 import com.example.check.api.ApiService;
 import com.example.check.model.bookDetail.BookDetailModel;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class BookDetailFragment extends Fragment {
+public class BookDetailFragment extends Fragment implements LocationUtil.CustomLocationCallback {
     private static final String TAG = "BookDetailFragment";
     private static final String ARG_ISBN = "isbn";
     private LocationUtil locationUtil;
+    private ShimmerFrameLayout shimmerLayout;
+    private View contentLayout; // contentLayout 변수 추가
+
 
     private ImageView bookImageView;
     private TextView bookNameTextView, authorTextView, publisherTextView, publishYearTextView, descriptionTextView;
     private RecyclerView librariesRecyclerView;
     private BookDetailLibraryAdapter libraryAdapter;
 
+
     private ApiService apiService;
     private String isbn;
+
 
     public static BookDetailFragment newInstance(String isbn) {
         BookDetailFragment fragment = new BookDetailFragment();
@@ -48,6 +54,8 @@ public class BookDetailFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -76,32 +84,34 @@ public class BookDetailFragment extends Fragment {
         }
     }
 
-    private void getCurrentLocation() {
-        locationUtil.getCurrentLocation(requireActivity(), new LocationUtil.LocationCallback() {
-            @Override
-            public void onLocationResult(Location location) {
-                if (location != null) {
-                    Log.d(TAG, "현재 위치: 위도 = " + location.getLatitude() + ", 경도 = " + location.getLongitude());
-                    loadBookDetails(isbn, location);
-                    if (libraryAdapter != null && libraryAdapter.getLibraries() != null) {
-                        LocationUtil.updateLibrariesWithCurrentLocation(location, libraryAdapter.getLibraries());
-                        libraryAdapter.notifyDataSetChanged();
-                    }
-                } else {
-                    // 권한이 새로 부여되어 위치 조회를 다시 시도해야 하는 경우
-                    getCurrentLocation();
-                }
-            }
 
-            @Override
-            public void onLocationError(String error) {
-                Log.e(TAG, "위치 오류: " + error);
-                showToast("위치 정보를 가져올 수 없습니다. " + error);
+    private void getCurrentLocation() {
+        locationUtil.getCurrentLocation(requireActivity(), this);
+    }
+
+    @Override
+    public void onLocationResult(Location location) {
+        if (location != null) {
+            Log.d(TAG, "현재 위치: 위도 = " + location.getLatitude() + ", 경도 = " + location.getLongitude());
+            loadBookDetails(isbn, location);
+            if (libraryAdapter != null && libraryAdapter.getLibraries() != null) {
+                LocationUtil.updateLibrariesWithCurrentLocation(location, libraryAdapter.getLibraries());
+                libraryAdapter.notifyDataSetChanged();
             }
-        });
+        } else {
+            // 권한이 새로 부여되어 위치 조회를 다시 시도해야 하는 경우
+            getCurrentLocation();
+        }
+    }
+
+    @Override
+    public void onLocationError(String error) {
+        Log.e(TAG, "위치 오류: " + error);
+        showToast("위치 정보를 가져올 수 없습니다. " + error);
     }
 
     private void loadBookDetails(String isbn, Location location) {
+        showShimmer();
         if (location == null) {
             Log.e(TAG, "위치 정보가 없습니다. 책 정보를 가져올 수 없습니다.");
             showToast("위치 정보를 확인할 수 없습니다. 다시 시도해 주세요.");
@@ -119,6 +129,7 @@ public class BookDetailFragment extends Fragment {
                 } else {
                     Log.e(TAG, "책 정보 가져오기 실패: " + response.code());
                     showToast("책 정보를 가져오는데 실패했습니다.");
+                    hideShimmer(); // 실패시에도 shimmer 숨기기
                 }
             }
 
@@ -126,11 +137,16 @@ public class BookDetailFragment extends Fragment {
             public void onFailure(Call<BookDetailModel> call, Throwable t) {
                 Log.e(TAG, "책 정보 가져오기 오류", t);
                 showToast("네트워크 오류가 발생했습니다.");
+                hideShimmer(); // 실패시에도 shimmer 숨기기
             }
         });
     }
 
     private void initializeViews(View view) {
+        // 컨텐츠 레이아웃과 시머 레이아웃 초기화 추가
+        contentLayout = view.findViewById(R.id.contentLayout);
+        shimmerLayout = view.findViewById(R.id.shimmerLayout);
+
         bookImageView = view.findViewById(R.id.bookImageView);
         bookNameTextView = view.findViewById(R.id.bookNameTextView);
         authorTextView = view.findViewById(R.id.authorTextView);
@@ -145,10 +161,12 @@ public class BookDetailFragment extends Fragment {
     }
 
     private void displayBookDetail(BookDetailModel bookDetail) {
+        hideShimmer();
         if (getView() == null) {
             Log.e(TAG, "Fragment view is null");
             return;
         }
+
 
         if (bookImageView != null) {
             Glide.with(this)
@@ -189,23 +207,25 @@ public class BookDetailFragment extends Fragment {
         }
     }
 
+    private void showShimmer() {
+        if (shimmerLayout != null) {
+            contentLayout.setVisibility(View.GONE);
+            shimmerLayout.setVisibility(View.VISIBLE);
+            shimmerLayout.startShimmer();
+        }
+    }
+
+    private void hideShimmer() {
+        if (shimmerLayout != null) {
+            shimmerLayout.stopShimmer();
+            shimmerLayout.setVisibility(View.GONE);
+            contentLayout.setVisibility(View.VISIBLE);
+        }
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        LocationUtil.handlePermissionResult(requestCode, permissions, grantResults, new LocationUtil.LocationCallback() {
-            @Override
-            public void onLocationResult(Location location) {
-                getCurrentLocation();
-            }
-
-            @Override
-            public void onLocationError(String error) {
-                showToast(error);
-                // 권한이 거부된 경우 사용자에게 추가 설명을 제공하거나
-                // 앱의 기능이 제한됨을 알릴 수 있습니다.
-                if (error.contains("권한이 거부되었습니다")) {
-                }
-            }
-        });
+        LocationUtil.handlePermissionResult(requestCode, permissions, grantResults, this);
     }
 }

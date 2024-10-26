@@ -28,6 +28,7 @@
         android:padding="10dp">
 
         <ImageView
+            android:id="@+id/bbtiImage"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:background="@drawable/background_round_white"
@@ -35,10 +36,11 @@
             android:scaleType="centerCrop"/>
 
         <TextView
+            android:id="@+id/bbtiTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="파도와 한몸! 파도 타는 서퍼"
+            android:text="BBTI 타이틀"
             android:textSize="18dp"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -48,19 +50,43 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/bbtiDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:text="″휴식과 편안함을 중요시 하는 유형″"
+        android:text="BBTI 상세 설명"
         android:textStyle="bold"
         android:textSize="15dp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/gray"
         android:layout_margin="25dp"/>
+
+    <!-- Shimmer 효과를 위한 컨테이너 -->
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_skeleton_today_book_item"/>
+            <include layout="@layout/layout_skeleton_today_book_item"/>
+            <include layout="@layout/layout_skeleton_today_book_item"/>
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recommendationsRecyclerView"

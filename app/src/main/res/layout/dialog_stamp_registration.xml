@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="도서관 이름을 입력하세요"
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/libraryNameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="도서관 이름"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="12dp"
+        android:background="@drawable/background_gray_stroke"/>
+
+</LinearLayout>

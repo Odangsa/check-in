@@ -3,16 +3,16 @@ package com.example.check.model.today_book;
 import java.util.List;
 
 public class RecommendationCategory {
-    private String recommendationTitle;
+    private String type;
     private List<Book> books;
 
     // Getters and setters
-    public String getRecommendationTitle() {
-        return recommendationTitle;
+    public String getType() {
+        return type;
     }
 
-    public void setRecommendationTitle(String recommendationTitle) {
-        this.recommendationTitle = recommendationTitle;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public List<Book> getBooks() {
@@ -26,7 +26,7 @@ public class RecommendationCategory {
     @Override
     public String toString() {
         return "RecommendationCategory{" +
-                "type='" + recommendationTitle + '\'' +
+                "type='" + type + '\'' +
                 ", books=" + books +
                 '}';
     }

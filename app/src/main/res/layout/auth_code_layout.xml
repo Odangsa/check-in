@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/transparent"
+        android:src="@drawable/icon_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="인증코드"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Code Display -->
+    <LinearLayout
+        android:id="@+id/codeDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleText">
+
+        <TextView
+            android:id="@+id/code1"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/code2"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/code3"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/code4"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <!-- Keypad Grid -->
+    <GridLayout
+        android:id="@+id/keypadGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:columnCount="3"
+        android:rowCount="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/codeDisplay">
+
+        <!-- Numbers 1-9 -->
+        <TextView
+            android:id="@+id/key1"
+            style="@style/KeypadButton"
+            android:background="@drawable/background_keypad_button"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/key2"
+            style="@style/KeypadButton"
+            android:background="@drawable/background_keypad_button"
+            android:text="2" />
+
+        <TextView
+            android:id="@+id/key3"
+            style="@style/KeypadButton"
+            android:background="@drawable/background_keypad_button"
+            android:text="3" />
+
+        <TextView
+            android:id="@+id/key4"
+            style="@style/KeypadButton"
+            android:background="@drawable/background_keypad_button"
+            android:text="4" />
+
+        <TextView
+            android:id="@+id/key5"
+            style="@style/KeypadButton"
+            android:background="@drawable/background_keypad_button"
+            android:text="5" />
+
+        <TextView
+            android:id="@+id/key6"
+            style="@style/KeypadButton"
+            android:background="@drawable/background_keypad_button"
+            android:text="6" />
+
+        <TextView
+            android:id="@+id/key7"
+            style="@style/KeypadButton"
+            android:background="@drawable/background_keypad_button"
+            android:text="7" />
+
+        <TextView
+            android:id="@+id/key8"
+            style="@style/KeypadButton"
+            android:background="@drawable/background_keypad_button"
+            android:text="8" />
+
+        <TextView
+            android:id="@+id/key9"
+            style="@style/KeypadButton"
+            android:background="@drawable/background_keypad_button"
+            android:text="9" />
+
+        <!-- Empty space and 0 -->
+        <Space
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+        <TextView
+            android:id="@+id/key0"
+            style="@style/KeypadButton"
+            android:background="@drawable/background_keypad_button"
+            android:text="0" />
+
+    </GridLayout>
+
+    <!-- Bottom Message -->
+    <TextView
+        android:id="@+id/bottomMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="문의사항은 각 도서관 사서에게 문의 해주세요!"
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

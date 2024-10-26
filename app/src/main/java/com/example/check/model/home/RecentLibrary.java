@@ -1,8 +1,12 @@
 package com.example.check.model.home;
 
+import com.google.gson.annotations.SerializedName;
+
 public class RecentLibrary {
     private String library;
-    private int visit_count;
+
+    @SerializedName("visit_count")
+    private int visitCount;
 
     public String getLibrary() {
         return library;
@@ -13,10 +17,11 @@ public class RecentLibrary {
     }
 
     public int getVisitCount() {
-        return visit_count;
+        return visitCount;
     }
 
-    public void setVisitCount(int visit_count) {
-        this.visit_count = visit_count;
+    public void setVisitCount(int visitCount) {
+        this.visitCount = visitCount;
     }
 }
+
