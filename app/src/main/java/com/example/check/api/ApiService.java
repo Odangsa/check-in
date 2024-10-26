@@ -1,14 +1,13 @@
 package com.example.check.api;
 
-import com.example.check.MainActivity;
 import com.example.check.model.bbti.BBTIResponse;
 import com.example.check.model.bbti.BBTIResultRequest;
 import com.example.check.model.bookDetail.BookDetailModel;
 import com.example.check.model.home.RecentLibrariesWrapper;
-import com.example.check.model.home.RecentLibrary;
 import com.example.check.model.home.RecommendedBooksWrapper;
 import com.example.check.model.login.LoginRequest;
 import com.example.check.model.stampboard.StampBoard;
+import com.example.check.model.stampboard.StampRegisterRequest;
 import com.example.check.model.today_book.RecommendationsWrapper;
 
 import java.util.List;
@@ -53,4 +52,7 @@ public interface ApiService {
 //    /user/login
     @POST("/user/login")
     Call<ResponseBody> postLogin(@Body LoginRequest request);
+
+    @POST("user/stamp/register")
+    Call<ResponseBody> registerStamp(@Body StampRegisterRequest request);
 }

@@ -24,6 +24,10 @@
         >
 
         <activity
+            android:name=".fragments.stamp.AuthCodeActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".login.LoginActivity"
             android:exported="true">
             <intent-filter>

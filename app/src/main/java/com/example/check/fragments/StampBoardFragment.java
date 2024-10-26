@@ -1,6 +1,7 @@
 package com.example.check.fragments;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,6 +24,7 @@ import android.widget.Toast;
 
 import com.example.check.MainActivity;
 import com.example.check.R;
+import com.example.check.fragments.stamp.AuthCodeActivity;
 import com.example.check.model.stampboard.StampBoard;
 import com.example.check.model.stampboard.StampBoardViewModel;
 import com.example.check.model.stampboard.Transportation;
@@ -170,16 +172,20 @@ public class StampBoardFragment extends Fragment {
         }
     }
 
-    // + 버튼 표시 여부 결정
     private boolean shouldShowAddButton() {
         StampBoard board = viewModel.getStampBoard().getValue();
         if (board == null) return false;
 
         Transportation currentTransportation = viewModel.getCurrentTransportation();
-        int currentIndex = board.getTransportation().indexOf(currentTransportation);
+        if (currentTransportation == null) return false;
 
-        // 현재 타입의 스탬프 개수
+        int currentIndex = board.getTransportation().indexOf(currentTransportation);
         int currentStamps = currentTransportation.getVisited_libraries().size();
+
+        // 우주선인 경우 항상 + 버튼 표시
+        if ("우주선".equals(currentTransportation.getType())) {
+            return true;
+        }
 
         // 첫 번째 타입이거나 이전 타입이 10개 이상일 때 + 버튼 표시
         if (currentStamps < 10 && (currentIndex == 0 ||
@@ -202,6 +208,38 @@ public class StampBoardFragment extends Fragment {
 
         return false;
     }
+    // + 버튼 표시 여부 결정
+//    private boolean shouldShowAddButton() {
+//        StampBoard board = viewModel.getStampBoard().getValue();
+//        if (board == null) return false;
+//
+//        Transportation currentTransportation = viewModel.getCurrentTransportation();
+//        int currentIndex = board.getTransportation().indexOf(currentTransportation);
+//
+//        // 현재 타입의 스탬프 개수
+//        int currentStamps = currentTransportation.getVisited_libraries().size();
+//
+//        // 첫 번째 타입이거나 이전 타입이 10개 이상일 때 + 버튼 표시
+//        if (currentStamps < 10 && (currentIndex == 0 ||
+//                (currentIndex > 0 &&
+//                        board.getTransportation().get(currentIndex - 1).getVisited_libraries().size() >= 10))) {
+//            return true;
+//        }
+//
+//        // 현재 타입이 10개 이상이고 다음 타입이 None인 경우
+//        if (currentStamps >= 10) {
+//            for (int i = currentIndex + 1; i < board.getTransportation().size(); i++) {
+//                Transportation nextTransportation = board.getTransportation().get(i);
+//                if ("None".equals(nextTransportation.getVisited_libraries())) {
+//                    // 다음 타입으로 이동하고 + 버튼 표시
+//                    viewModel.setCurrentTransportation(nextTransportation);
+//                    return true;
+//                }
+//            }
+//        }
+//
+//        return false;
+//    }
 
 
     private void updateUI(StampBoard stampBoard) {
@@ -341,26 +379,9 @@ public class StampBoardFragment extends Fragment {
 
 
     private void showStampRegistrationDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
-
-        // 커스텀 다이얼로그 레이아웃 inflate
-        View dialogView = getLayoutInflater().inflate(R.layout.dialog_stamp_registration, null);
-        EditText libraryNameInput = dialogView.findViewById(R.id.libraryNameInput);
-
-        builder.setTitle("새로운 스탬프 등록")
-                .setView(dialogView)
-                .setPositiveButton("등록", (dialog, which) -> {
-                    String libraryName = libraryNameInput.getText().toString().trim();
-                    if (!libraryName.isEmpty()) {
-                        registerNewStamp(libraryName);
-                    } else {
-                        Toast.makeText(getContext(), "도서관 이름을 입력해주세요", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .setNegativeButton("취소", null);
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
+        // 새로운 Activity로 전환
+        Intent intent = new Intent(getActivity(), AuthCodeActivity.class);
+        startActivity(intent);
     }
 
     private void registerNewStamp(String libraryName) {
@@ -398,9 +419,9 @@ public class StampBoardFragment extends Fragment {
 //            case "킥보드": return R.drawable.icon_kickboard;
             case "자전거": return R.drawable.icon_bike;
             case "버스": return R.drawable.icon_bus;
-            case "기차": return R.drawable.icon_train;
-            case "비행기": return R.drawable.icon_airplane;
-            case "우주선": return R.drawable.icon_spaceship;
+//            case "기차": return R.drawable.icon_train;
+//            case "비행기": return R.drawable.icon_airplane;
+//            case "우주선": return R.drawable.icon_spaceship;
             default: return R.drawable.icon_walk;
         }
     }
