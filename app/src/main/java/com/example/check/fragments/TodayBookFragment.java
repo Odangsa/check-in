@@ -24,6 +24,7 @@ import com.example.check.fragments.todayBook.BookDetailFragment;
 import com.example.check.model.today_book.Book;
 import com.example.check.model.today_book.RecommendationCategory;
 import com.example.check.model.today_book.RecommendationsWrapper;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,13 +35,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 public class TodayBookFragment extends Fragment implements RecommendationAdapter.OnBookClickListener {
     private static final String TAG = "TodayBookFragment";
@@ -51,6 +49,7 @@ public class TodayBookFragment extends Fragment implements RecommendationAdapter
     private TextView bbtiTitle;
     private TextView bbtiDescription;
     private JSONArray bbtiResults;
+    private ShimmerFrameLayout shimmerLayout;
 
     @Nullable
     @Override
@@ -64,17 +63,32 @@ public class TodayBookFragment extends Fragment implements RecommendationAdapter
 
         recyclerView = view.findViewById(R.id.recommendationsRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        shimmerLayout = view.findViewById(R.id.shimmerLayout);
 
         bbtiImage = view.findViewById(R.id.bbtiImage);
         bbtiTitle = view.findViewById(R.id.bbtiTitle);
         bbtiDescription = view.findViewById(R.id.bbtiDescription);
 
         apiService = ApiClient.getClient().create(ApiService.class);
+
+        // 데이터 로딩 시작
+        showShimmer();
         loadBBTIResults();
         updateBBTIView();
         loadTodayBooks();
     }
 
+    private void showShimmer() {
+        shimmerLayout.setVisibility(View.VISIBLE);
+        shimmerLayout.startShimmer();
+        recyclerView.setVisibility(View.GONE);
+    }
+
+    private void hideShimmer() {
+        shimmerLayout.stopShimmer();
+        shimmerLayout.setVisibility(View.GONE);
+        recyclerView.setVisibility(View.VISIBLE);
+    }
 
     private void loadTodayBooks() {
         if (MainActivity.bbtiNumber != null) {
@@ -85,8 +99,10 @@ public class TodayBookFragment extends Fragment implements RecommendationAdapter
                     if (response.isSuccessful() && response.body() != null) {
                         RecommendationsWrapper wrapper = response.body();
                         updateRecommendations(wrapper.getRecommendations());
+                        hideShimmer();
                         Log.d(TAG, "Successfully fetched today's books for BBTI: " + MainActivity.bbtiNumber);
                     } else {
+                        hideShimmer();
                         Log.e(TAG, "Error fetching today's books: " + response.code());
                         showToast("오늘의 책을 불러오는데 실패했습니다. 다시 시도해주세요.");
                     }
@@ -94,11 +110,13 @@ public class TodayBookFragment extends Fragment implements RecommendationAdapter
 
                 @Override
                 public void onFailure(Call<RecommendationsWrapper> call, Throwable t) {
+                    hideShimmer();
                     Log.e(TAG, "Network error when fetching today's books: " + t.getMessage());
                     showToast("네트워크 오류가 발생했습니다. 연결을 확인하고 다시 시도해주세요.");
                 }
             });
         } else {
+            hideShimmer();
             Log.e(TAG, "BBTI number is not available");
             showToast("BBTI 번호를 불러올 수 없습니다. 앱을 다시 시작해주세요.");
         }
@@ -119,6 +137,28 @@ public class TodayBookFragment extends Fragment implements RecommendationAdapter
             showToast("책 정보를 불러올 수 없습니다.");
         }
     }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (shimmerLayout != null && shimmerLayout.getVisibility() == View.VISIBLE) {
+            shimmerLayout.startShimmer();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        if (shimmerLayout != null) {
+            shimmerLayout.stopShimmer();
+        }
+        super.onPause();
+    }
+
+
+
+
+
 
 
     private void loadBBTIResults() {
@@ -184,22 +224,6 @@ public class TodayBookFragment extends Fragment implements RecommendationAdapter
 
 
 
-//    private void updateRecommendations(List<RecommendationCategory> recommendations) {
-//        adapter = new RecommendationAdapter(recommendations, this);
-//        recyclerView.setAdapter(adapter);
-//    }
-//
-//    @Override
-//    public void onBookClick(Book book) {
-//        if (book != null && book.getISBN() != null) {
-//            Log.d(TAG, "Book clicked: " + book.getISBN());
-//            navigateToBookDetail(book.getISBN());
-//        } else {
-//            Log.e(TAG, "Invalid book data");
-//            showToast("책 정보를 불러올 수 없습니다.");
-//        }
-//    }
-
     private void navigateToBookDetail(String isbn) {
         BookDetailFragment fragment = BookDetailFragment.newInstance(isbn);
         getParentFragmentManager()
@@ -214,4 +238,5 @@ public class TodayBookFragment extends Fragment implements RecommendationAdapter
             Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
         }
     }
+
 }

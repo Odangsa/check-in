@@ -208,38 +208,6 @@ public class StampBoardFragment extends Fragment {
 
         return false;
     }
-    // + 버튼 표시 여부 결정
-//    private boolean shouldShowAddButton() {
-//        StampBoard board = viewModel.getStampBoard().getValue();
-//        if (board == null) return false;
-//
-//        Transportation currentTransportation = viewModel.getCurrentTransportation();
-//        int currentIndex = board.getTransportation().indexOf(currentTransportation);
-//
-//        // 현재 타입의 스탬프 개수
-//        int currentStamps = currentTransportation.getVisited_libraries().size();
-//
-//        // 첫 번째 타입이거나 이전 타입이 10개 이상일 때 + 버튼 표시
-//        if (currentStamps < 10 && (currentIndex == 0 ||
-//                (currentIndex > 0 &&
-//                        board.getTransportation().get(currentIndex - 1).getVisited_libraries().size() >= 10))) {
-//            return true;
-//        }
-//
-//        // 현재 타입이 10개 이상이고 다음 타입이 None인 경우
-//        if (currentStamps >= 10) {
-//            for (int i = currentIndex + 1; i < board.getTransportation().size(); i++) {
-//                Transportation nextTransportation = board.getTransportation().get(i);
-//                if ("None".equals(nextTransportation.getVisited_libraries())) {
-//                    // 다음 타입으로 이동하고 + 버튼 표시
-//                    viewModel.setCurrentTransportation(nextTransportation);
-//                    return true;
-//                }
-//            }
-//        }
-//
-//        return false;
-//    }
 
 
     private void updateUI(StampBoard stampBoard) {
@@ -384,33 +352,6 @@ public class StampBoardFragment extends Fragment {
         startActivity(intent);
     }
 
-    private void registerNewStamp(String libraryName) {
-        Transportation currentTransportation = viewModel.getCurrentTransportation();
-        if (currentTransportation != null) {
-            // TODO: 실제 API 연동 시 사용할 코드
-        /*
-        viewModel.registerStamp(libraryName, currentTransportation.getType(),
-            new OnStampRegistrationCallback() {
-                @Override
-                public void onSuccess() {
-                    Toast.makeText(getContext(), "스탬프가 등록되었습니다.", Toast.LENGTH_SHORT).show();
-                    // 스탬프 보드 새로고침
-                    viewModel.fetchStampBoard(Integer.parseInt(MainActivity.userId));
-                }
-
-                @Override
-                public void onError(String message) {
-                    Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-                }
-            });
-        */
-
-            // 임시 테스트용 토스트 메시지
-            String message = String.format("%s 도서관에 %s 타입의 스탬프를 등록합니다",
-                    libraryName, currentTransportation.getType());
-            Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-        }
-    }
 
 
     private int getTransportationIconResId(String type) {

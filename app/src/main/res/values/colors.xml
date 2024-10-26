@@ -15,5 +15,5 @@
 <color name="gray_light">#CCCCCC</color>
 <!-- 투명 -->
 <color name="transparent">#00000000</color>
-
+<color name="shimmer_color">#DDDDDD</color>
 </resources>

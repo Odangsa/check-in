@@ -11,273 +11,244 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="16dp">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:drawableLeft="@drawable/icon_bookmark_checked"
-                android:drawableRight="@drawable/icon_notifications"
-                android:gravity="center|left"
-                android:text="책크인"
-                android:textColor="@color/navy"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-
+            <!-- 실제 콘텐츠 -->
             <LinearLayout
+                android:id="@+id/contentLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@drawable/background_gray_filled"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp">
+                android:paddingBottom="16dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="최근 방문한 도서관"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:gravity="center_vertical"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:drawableLeft="@drawable/icon_bookmark_checked"
+                    android:drawableRight="@drawable/icon_notifications"
+                    android:gravity="center|left"
+                    android:text="책크인"
+                    android:textColor="@color/navy"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
-                    android:id="@+id/recent_libraries_container"
+                    android:id="@+id/recent_libraries_section"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="15dp"/>
+                    android:background="@drawable/background_gray_filled"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="최근 방문한 도서관"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="10dp"/>
 
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/search"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:focusable="true"
-                android:padding="20dp"
-                app:iconifiedByDefault="false"
-                app:queryHint="도서관 및 도서 검색"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginTop="16dp"/>
+                    <LinearLayout
+                        android:id="@+id/recent_libraries_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="15dp"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="5"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/background_gray_stroke"
-                android:padding="10dp">
+                </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/bbti_image"
-                    android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/background_round_white"
-                    android:scaleType="centerCrop"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"/>
-
-                <TextView
-                    android:id="@+id/bbti_title"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:gravity="center_vertical"
-                    android:layout_marginLeft="10dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginTop="16dp">
-
-                <TextView
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="오늘의 추천 도서"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_height="80dp"
+                    android:focusable="true"
+                    android:padding="20dp"
+                    app:iconifiedByDefault="false"
+                    app:queryHint="도서관 및 도서 검색"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="16dp"/>
 
                 <LinearLayout
-                    android:id="@+id/recommended_books_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"/>
+                    android:orientation="horizontal"
+                    android:weightSum="5"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/background_gray_stroke"
+                    android:padding="10dp">
 
+                    <ImageView
+                        android:id="@+id/bbti_image"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/background_round_white"
+                        android:scaleType="centerCrop"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:id="@+id/bbti_title"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="10dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="오늘의 추천 도서"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="10dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/recommended_books_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"/>
+
+                </LinearLayout>
             </LinearLayout>
 
-        </LinearLayout>
+            <!-- 스켈레톤 UI -->
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="16dp">
+
+                    <!-- Header -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@color/shimmer_color"
+                        android:minHeight="40dp"/>
+
+                    <!-- Recent Libraries Section -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/background_gray_filled"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp">
+
+                        <View
+                            android:layout_width="150dp"
+                            android:layout_height="24dp"
+                            android:background="@color/shimmer_color"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp"/>
+
+                        <include layout="@layout/layout_home_recent_library_skeleton" />
+                        <include layout="@layout/layout_home_recent_library_skeleton" />
+                        <include layout="@layout/layout_home_recent_library_skeleton" />
+                    </LinearLayout>
+
+                    <!-- Search -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:background="@color/shimmer_color"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginTop="16dp"/>
+
+                    <!-- BBTI Section -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/background_gray_stroke"
+                        android:padding="10dp">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:background="@color/shimmer_color"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="4"
+                            android:background="@color/shimmer_color"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center_vertical"/>
+                    </LinearLayout>
+
+                    <!-- Recommended Books Section -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginTop="16dp">
+
+                        <View
+                            android:layout_width="150dp"
+                            android:layout_height="24dp"
+                            android:background="@color/shimmer_color"
+                            android:layout_marginBottom="10dp"/>
+
+                        <include layout="@layout/layout_home_recommended_book_skeleton" />
+                        <include layout="@layout/layout_home_recommended_book_skeleton" />
+                        <include layout="@layout/layout_home_recommended_book_skeleton" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+        </FrameLayout>
     </ScrollView>
-
 </LinearLayout>
-
-    <!--<?xml version="1.0" encoding="utf-8"?>-->
-    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--    android:layout_width="match_parent"-->
-    <!--    android:layout_height="match_parent"-->
-    <!--    android:orientation="vertical"-->
-    <!--    android:background="@color/white">-->
-
-    <!--    <ScrollView-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="0dp"-->
-    <!--        android:layout_weight="1">-->
-
-    <!--        <LinearLayout-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:orientation="vertical"-->
-    <!--            android:paddingBottom="16dp">-->
-
-    <!--            <TextView-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                android:layout_marginLeft="25dp"-->
-    <!--                android:layout_marginRight="25dp"-->
-    <!--                android:layout_marginTop="16dp"-->
-    <!--                android:layout_marginBottom="16dp"-->
-    <!--                android:drawableLeft="@drawable/icon_bookmark_checked"-->
-    <!--                android:drawableRight="@drawable/icon_notifications"-->
-    <!--                android:gravity="center|left"-->
-    <!--                android:text="책크인"-->
-    <!--                android:textColor="@color/navy"-->
-    <!--                android:textSize="30sp"-->
-    <!--                android:textStyle="bold" />-->
-
-    <!--            <LinearLayout-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                android:orientation="vertical"-->
-    <!--                android:background="@drawable/background_gray_filled"-->
-    <!--                android:layout_marginLeft="25dp"-->
-    <!--                android:layout_marginRight="25dp">-->
-
-    <!--                <TextView-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:text="최근 방문한 도서관"-->
-    <!--                    android:textSize="18sp"-->
-    <!--                    android:textStyle="bold"-->
-    <!--                    android:textColor="@color/black"-->
-    <!--                    android:gravity="center_vertical"-->
-    <!--                    android:layout_marginLeft="15dp"-->
-    <!--                    android:layout_marginTop="15dp"-->
-    <!--                    android:layout_marginBottom="10dp"/>-->
-
-    <!--                <LinearLayout-->
-    <!--                    android:id="@+id/recent_libraries_container"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:orientation="vertical"-->
-    <!--                    android:layout_marginLeft="15dp"-->
-    <!--                    android:layout_marginRight="15dp"-->
-    <!--                    android:layout_marginBottom="15dp"/>-->
-
-    <!--            </LinearLayout>-->
-
-    <!--            <androidx.appcompat.widget.SearchView-->
-    <!--                android:id="@+id/search"-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="80dp"-->
-    <!--                android:focusable="true"-->
-    <!--                android:padding="20dp"-->
-    <!--                app:iconifiedByDefault="false"-->
-    <!--                app:queryHint="도서관 및 도서 검색"-->
-    <!--                android:layout_marginLeft="25dp"-->
-    <!--                android:layout_marginRight="25dp"-->
-    <!--                android:layout_marginTop="16dp"/>-->
-
-    <!--            <LinearLayout-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                android:orientation="horizontal"-->
-    <!--                android:weightSum="5"-->
-    <!--                android:layout_marginLeft="25dp"-->
-    <!--                android:layout_marginRight="25dp"-->
-    <!--                android:layout_marginTop="16dp"-->
-    <!--                android:background="@drawable/background_gray_stroke"-->
-    <!--                android:padding="10dp">-->
-
-    <!--                <ImageView-->
-    <!--                    android:layout_width="0dp"-->
-    <!--                    android:layout_height="60dp"-->
-    <!--                    android:layout_weight="1"-->
-    <!--                    android:background="@drawable/background_round_white"-->
-    <!--                    android:src="@drawable/img_bookbti_tmp"-->
-    <!--                    android:scaleType="centerCrop"-->
-    <!--                    android:layout_marginLeft="15dp"-->
-    <!--                    android:layout_marginTop="10dp"-->
-    <!--                    android:layout_marginBottom="10dp"/>-->
-
-    <!--                <TextView-->
-    <!--                    android:layout_width="0dp"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:layout_weight="4"-->
-    <!--                    android:text="파도와 한몸! 파도 타는 서퍼"-->
-    <!--                    android:textSize="18sp"-->
-    <!--                    android:textStyle="bold"-->
-    <!--                    android:textColor="@color/black"-->
-    <!--                    android:gravity="center_vertical"-->
-    <!--                    android:layout_marginLeft="10dp"/>-->
-
-    <!--            </LinearLayout>-->
-
-    <!--            <LinearLayout-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                android:orientation="vertical"-->
-    <!--                android:layout_marginLeft="25dp"-->
-    <!--                android:layout_marginRight="25dp"-->
-    <!--                android:layout_marginTop="16dp">-->
-
-    <!--                <TextView-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:text="오늘의 추천 도서"-->
-    <!--                    android:textSize="16sp"-->
-    <!--                    android:textStyle="bold"-->
-    <!--                    android:textColor="@color/black"-->
-    <!--                    android:layout_marginBottom="10dp"/>-->
-
-    <!--                <LinearLayout-->
-    <!--                    android:id="@+id/recommended_books_container"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:orientation="vertical"/>-->
-
-    <!--            </LinearLayout>-->
-
-    <!--        </LinearLayout>-->
-    <!--    </ScrollView>-->
-
-    <!--</LinearLayout>-->

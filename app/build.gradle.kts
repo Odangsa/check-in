@@ -55,6 +55,8 @@ dependencies {
     implementation(libs.navigation.ui)
     annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
 
+    implementation("com.facebook.shimmer:shimmer:0.5.0")
+
     // OkHttp
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
 
