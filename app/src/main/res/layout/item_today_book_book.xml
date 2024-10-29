@@ -1,0 +1,6 @@
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bookImageView"
+    android:layout_width="100dp"
+    android:layout_height="150dp"
+    android:scaleType="centerCrop"
+    android:layout_marginRight="10dp"/>
